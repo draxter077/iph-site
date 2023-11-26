@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-import { webkitStyle, fastTransition, colorDarkGreen, colorDarkBlue, fontSizeMedium } from "../visualValues.js"
+import { webkitStyle, fastTransition, colorDarkBlue, fontSizeMedium, colorDarkOrange } from "../visualValues.js"
 
 const GeneralStyle = createGlobalStyle`
     body{
@@ -18,7 +18,7 @@ const GeneralStyle = createGlobalStyle`
 
         :focus-visible, :hover{
             outline: none;
-            border: 1px solid ${colorDarkGreen};
+            border: 1px solid ${colorDarkBlue};
         }
     }
 
@@ -30,13 +30,13 @@ const GeneralStyle = createGlobalStyle`
         font-size: ${fontSizeMedium};
         font-weight: bold;
 
-        background: ${colorDarkBlue};
+        background: ${colorDarkOrange};
         color: rgb(255, 255, 255);
 
         transition: background ${fastTransition};
 
         :hover{
-            background: ${colorDarkGreen};
+            background: ${colorDarkBlue};
             color: rgb(255, 255, 255);
         }
     }

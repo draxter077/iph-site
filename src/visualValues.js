@@ -1,6 +1,6 @@
-export const colorDarkGreen = "rgb(0, 200, 150)";
-export const colorSoftGreen = "rgb(0, 220, 200)";
-export const colorDarkBlue = "rgb(50, 80, 200)";
+export const colorDarkBlue = "rgb(0, 150, 250)";
+export const colorSoftBlue = "rgb(10, 186, 255)";
+export const colorDarkOrange = "rgb(250, 150, 0)";
 
 export const fontSizeLarge = "100px";
 export const fontSizePlus = "51px"
@@ -24,7 +24,7 @@ export const webkitStyle = `
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: ${colorDarkGreen};
+    background-color: ${colorDarkBlue};
     border-radius: 20px;
     border: 4px solid rgb(255, 255, 255);
 }

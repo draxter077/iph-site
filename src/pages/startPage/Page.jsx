@@ -129,7 +129,7 @@ export default function StartPage(){
         <Background>
 
             <Topo>
-                <Logo>MoneyCare</Logo>
+                <Logo>inv:PH</Logo>
                 <div>
                     <TopoButton onClick={() => console.log("oi")}>Ajuda</TopoButton>
                 </div>

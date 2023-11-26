@@ -1,12 +1,12 @@
 import styled from "styled-components"
-import { colorDarkGreen, colorSoftGreen, colorDarkBlue, fontSizeMedium, fontSizeLarge, fontSizeMediumLarge, fastTransition, mediumTransition, backChangeTime, fastMediumTransition } from "../../visualValues"
+import { fontSizeMedium, fontSizeLarge, fontSizeMediumLarge, fastTransition, mediumTransition, backChangeTime, fastMediumTransition, colorDarkBlue, colorSoftBlue, colorDarkOrange } from "../../visualValues"
 
 export const Background = styled.div`
     box-sizing: border-box;
 
     @keyframes changeBack{
-        0% {background: ${colorDarkGreen}}
-        100% {background: ${colorSoftGreen}}
+        0% {background: ${colorDarkBlue}}
+        100% {background: ${colorSoftBlue}}
     }
 
     width: 100vw;
@@ -14,7 +14,7 @@ export const Background = styled.div`
 
     padding: 20px;
 
-    background: ${colorDarkGreen};
+    background: ${colorDarkBlue};
 
     animation: changeBack ${backChangeTime} infinite alternate linear;
 
@@ -43,7 +43,7 @@ export const Logo = styled.div`
     padding: 0px 0px 0px 50px;
     font-size: ${fontSizeLarge};
     font-weight: bold;
-    color: ${colorDarkBlue};
+    color: ${colorDarkOrange};
 
     @media (max-width: 1080px){
         font-size: 45px;
@@ -62,20 +62,20 @@ export const TopoButton = styled.button`
     font-size: ${fontSizeMedium};
     font-weight: bold;
 
-    color: ${colorDarkGreen};
+    color: ${colorDarkBlue};
     background: rgb(255, 255, 255);
 
     transition: color ${fastTransition};
 
     :hover{
-        color: ${colorDarkBlue};
+        color: ${colorDarkOrange};
         background: rgb(255, 255, 255);
     }
 `
 export const AcessContainer = styled.div`
     @keyframes loading{
         0% {box-shadow: none}
-        100% {box-shadow: 0px 0px 15px 3px ${colorDarkBlue}}
+        100% {box-shadow: 0px 0px 15px 3px ${colorDarkOrange}}
     }   
 
     animation: ${atr => atr.$loading ? `loading ${mediumTransition} infinite alternate linear;` : "none"};
@@ -91,7 +91,7 @@ export const AcessContainer = styled.div`
 
     font-size: ${fontSizeMediumLarge};
     font-weight: bold;
-    color: ${colorDarkBlue};
+    color: ${colorDarkOrange};
 
     background: rgb(255, 255, 255);
 
@@ -120,14 +120,14 @@ export const Button = styled.button`
     border-radius: 5px;
 
     background: rgb(255, 255, 255);
-    color: ${colorDarkGreen};
+    color: ${colorDarkBlue};
 
     font-weight: bold;
 
     transition: color ${fastTransition};
 
     :hover{
-        color: ${colorDarkBlue}; 
+        color: ${colorDarkOrange}; 
         background: rgb(255, 255, 255);   
     }
 `

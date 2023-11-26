@@ -1,9 +1,9 @@
 import styled from "styled-components"
-import { colorDarkBlue } from "../../../visualValues.js"
+import { colorDarkOrange } from "../../../visualValues.js"
 
 export const Logo = styled.div`
     font-size: 50px;
     font-weight: bold;
-    color: ${colorDarkBlue};
+    color: ${colorDarkOrange};
     z-index: 5;
 `

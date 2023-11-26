@@ -1,12 +1,12 @@
 import styled from "styled-components"
-import { colorSoftGreen, colorDarkBlue, colorDarkGreen, fontSizeMediumLarge } from "../../../visualValues"
+import { colorDarkBlue, colorDarkOrange, fontSizeMediumLarge } from "../../../visualValues"
 
 export const Background = styled.div`
     box-sizing: border-box;
 
-    background: ${colorDarkGreen};
+    background: ${colorDarkBlue};
 
-    box-shadow: ${atr => atr.top == "0px" ? "none" : `0px 0px 5px 1px ${colorDarkBlue}`};
+    box-shadow: ${atr => atr.top == "0px" ? "none" : `0px 0px 5px 1px ${colorDarkOrange}`};
 
     width: 100vw;
     height: 100vh;
@@ -29,6 +29,6 @@ export const Background = styled.div`
     span{
         font-size: ${fontSizeMediumLarge};
         margin: 50px 0px 0px 0px;
-        color: ${colorDarkBlue};
+        color: ${colorDarkOrange};
     }
 `
