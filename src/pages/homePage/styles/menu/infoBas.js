@@ -37,57 +37,6 @@ export const InfoBas = styled.div`
 
     div:nth-child(2){
         font-size: ${fontSizeMediumLarge};
-        color: ${atr => atr.color};
-    }
-`
-
-export const NewTrans = styled.button`
-    width: fit-content;
-    height: 100%;
-
-    background: rgb(255, 255, 255);
-
-    padding: 15px 18px;
-    border-radius: 5px;
-
-    margin: 30px 0px 0px 0px;
-
-    img{
-        height: ${fontSizePlus};
-        transition: transform ${fastTransition} linear;
-    }
-
-    :hover{
-        img{
-            transform: rotate(90deg);
-        }
-        background: rgb(255, 255, 255);
-    }
-`
-
-export const NewTransDiv = styled.div`
-    box-sizing: border-box;
-    background: rgb(255, 255, 255);
-
-    width: 100%;
-
-    max-height: ${atr => atr.$display ? "500px" : "0px"};
-    border-radius: 5px;
-    margin: 30px 0px 0px;
-
-    overflow: hidden;
-
-    transition: max-height ${mediumTransition} linear;
-
-    div{
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        input{
-            font-size: ${fontSizeMedium};
-        }
-        *{
-            margin: 10px 0px 0px 0px;
-        }
+        color: black;
     }
 `

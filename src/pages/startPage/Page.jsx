@@ -59,14 +59,8 @@ export default function StartPage(){
     async function logIn(e){
         let userEmail = e.target.parentElement.children[0].children[1].value
         let userPassword = e.target.parentElement.children[0].children[2].value
-        if(userEmail.length == 0 && userPassword.length == 0){
-            await inputError([setWrongEmail, setWrongPass], "Ops, você esqueceu de colocar seu email e sua senha :)")
-        }
-        else if(userEmail.length == 0){
-            await inputError([setWrongEmail], "Ops, você esqueceu de colocar seu email :)")
-        }
-        else if(userPassword.length == 0){
-            await inputError([setWrongPass], "Ops, você esqueceu de colocar sua senha :)")
+        if(userEmail.length == 0 || userPassword.length == 0){
+            await inputError([setWrongEmail, setWrongPass], "Ops, você esqueceu de completar todos os campos :)")
         }
         else if(!(isEmail(userEmail))){
             await inputError([setWrongEmail], "Ops, preencha o email corretamente :)")
@@ -76,7 +70,7 @@ export default function StartPage(){
             setButtonDis(true)
             let logObj = {email: userEmail, password: userPassword};
             await axios.post("http://localhost:5001" + "/login", logObj)
-                .then(resposta => {console.log(resposta.data); changeWindow()})
+                .then(resposta => {localStorage.setItem("investerUser", JSON.stringify(resposta.data)); changeWindow()})
                 .catch(async response => {
                     if (response.code == "ERR_NETWORK"){
                         await inputError([], "Ops, não consegui me conectar ao servidor :(")
@@ -111,7 +105,7 @@ export default function StartPage(){
             setButtonDis(true)
             let logObj = {name: userName, email: userEmail, password: userPassword};
             await axios.post("http://localhost:5001" + "/signup", logObj)
-                .then(resposta => {console.log(resposta)})
+                .then(resposta => {localStorage.setItem("investerUser", JSON.stringify(resposta.data)); changeWindow()})
                 .catch(async response => {
                     if (response.code == "ERR_NETWORK"){
                         await inputError([], "Ops, não consegui me conectar ao servidor :(")
