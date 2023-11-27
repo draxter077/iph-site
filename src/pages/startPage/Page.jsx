@@ -5,7 +5,7 @@ import axios from "axios"
 
 import TransitionScreen from "../transitionScreen/Page.jsx"
 
-import { homeURL } from "../../variablesValues.js"
+import { API, homeURL } from "../../variablesValues.js"
 
 export default function StartPage(){
     const navigate = useNavigate()
@@ -69,7 +69,7 @@ export default function StartPage(){
             setLoadingAnimation(!loadingAnimation);
             setButtonDis(true)
             let logObj = {email: userEmail, password: userPassword};
-            await axios.post("http://localhost:5001" + "/login", logObj)
+            await axios.post(API + "/login", logObj)
                 .then(resposta => {localStorage.setItem("investerUser", JSON.stringify(resposta.data)); changeWindow()})
                 .catch(async response => {
                     if (response.code == "ERR_NETWORK"){
@@ -104,7 +104,7 @@ export default function StartPage(){
             setLoadingAnimation(!loadingAnimation);
             setButtonDis(true)
             let logObj = {name: userName, email: userEmail, password: userPassword};
-            await axios.post("http://localhost:5001" + "/signup", logObj)
+            await axios.post(API + "/signup", logObj)
                 .then(resposta => {localStorage.setItem("investerUser", JSON.stringify(resposta.data)); changeWindow()})
                 .catch(async response => {
                     if (response.code == "ERR_NETWORK"){

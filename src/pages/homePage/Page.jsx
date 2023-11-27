@@ -9,6 +9,7 @@ import TransitionScreen from "../transitionScreen/Page.jsx"
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import { API } from "../../variablesValues.js"
 
 export default function StartPage(){
     const navigate = useNavigate()
@@ -34,7 +35,7 @@ export default function StartPage(){
     }
 
     useEffect(() => {
-        axios.post("http://localhost:5001" + "/home", userID)
+        axios.post(API + "/home", userID)
             .then(resposta => {
                 console.log(resposta);
                 setTransitionText("Olá, " + resposta.data.userLog.userName + " :)");
