@@ -6,7 +6,7 @@ export default function TransitionScreen(atr){
     return(
         <Background top={atr.top}>
             <Logo>
-                moneyCare
+                inv:PH
             </Logo>
             <span>
                 {atr.text}

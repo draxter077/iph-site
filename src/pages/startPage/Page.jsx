@@ -75,7 +75,7 @@ export default function StartPage(){
             setLoadingAnimation(!loadingAnimation);
             setButtonDis(true)
             let logObj = {email: userEmail, password: userPassword};
-            await axios.post("http://localhost:5000" + "/login", logObj)
+            await axios.post("http://localhost:5001" + "/login", logObj)
                 .then(resposta => {console.log(resposta.data); changeWindow()})
                 .catch(async response => {
                     if (response.code == "ERR_NETWORK"){
@@ -110,7 +110,7 @@ export default function StartPage(){
             setLoadingAnimation(!loadingAnimation);
             setButtonDis(true)
             let logObj = {name: userName, email: userEmail, password: userPassword};
-            await axios.post("http://localhost:5000" + "/signup", logObj)
+            await axios.post("http://localhost:5001" + "/signup", logObj)
                 .then(resposta => {console.log(resposta)})
                 .catch(async response => {
                     if (response.code == "ERR_NETWORK"){
