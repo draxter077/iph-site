@@ -2,7 +2,7 @@ import { Background } from "./styles/background/background.js"
 import { Topo, Logo, Topodiv, TopoButton } from "./styles/topo/topo.js"
 import { Menu } from "./styles/menu/menu.js"
 import { ConfigDiv } from "./styles/menu/config.js"
-import { InformacoesBasicas, InfoBas } from "./styles/menu/infoBas.js"
+import { InformacoesBasicas, InfoBas, IBTitle, IBValue } from "./styles/menu/infoBas.js"
 
 import TransitionScreen from "../transitionScreen/Page.jsx"
 
@@ -71,7 +71,10 @@ export default function StartPage(){
                 
                 <InformacoesBasicas>
                     {infoBas.map(dado =>
-                        <InfoBas><div>{dado.name}</div><div>{dado.value}</div></InfoBas>
+                        <InfoBas>
+                            <IBTitle>{dado.name}</IBTitle>
+                            {dado.change == undefined ? <IBValue $color="none"><div>{dado.value}</div></IBValue> : <IBValue color={dado.change >= 0 ? "rgb(0, 255, 0)" : "rgb(255, 0, 0)"}><div>{dado.value}</div><div>{dado.change >= 0 ? "+" : "-"}{dado.change + "%"}</div></IBValue>}
+                        </InfoBas>
                     )}
                 </InformacoesBasicas>
             </Menu>

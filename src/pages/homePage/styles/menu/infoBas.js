@@ -29,14 +29,26 @@ export const InfoBas = styled.div`
     border-radius: 5px;
 
     margin: 30px 0px 0px 0px;
+`
 
+export const IBTitle = styled.div`
+    font-size: ${fontSizeMedium};
+    margin: 0px 0px 10px 0px;
+`
+
+export const IBValue = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     div:nth-child(1){
-        font-size: ${fontSizeMedium};
-        margin: 0px 0px 10px 0px;
-    }
-
-    div:nth-child(2){
         font-size: ${fontSizeMediumLarge};
         color: black;
+        margin: 0px 10px 0px 0px;
+    }
+    div:nth-child(2){
+        font-size: ${fontSizeMedium};
+        font-weight: 1000;
+        color: ${atr => atr.color}
     }
 `
