@@ -13,6 +13,8 @@ export const InformacoesBasicas = styled.div`
 
     @media (max-width: 1080px){
         flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
     }
 `
 export const InfoBas = styled.div`

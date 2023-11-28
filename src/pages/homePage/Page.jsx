@@ -3,6 +3,7 @@ import { Topo, Logo, Topodiv, TopoButton } from "./styles/topo/topo.js"
 import { Menu } from "./styles/menu/menu.js"
 import { ConfigDiv } from "./styles/menu/config.js"
 import { InformacoesBasicas, InfoBas, IBTitle, IBValue } from "./styles/menu/infoBas.js"
+import { InfoDet, InformacoesDetalhadas, Titulo, Linha, Linhas, Dets } from "./styles/menu/infoDet.js"
 
 import TransitionScreen from "../transitionScreen/Page.jsx"
 
@@ -17,6 +18,7 @@ export default function StartPage(){
     const [blockBackChange, setBlockBackChange] = useState(false);
     const [transitionChange, setTransitionChange] = useState("0vh");
     const [infoBas, setInfoBas] = useState([]);
+    const [infoDet, setInfoDet] = useState([]);
     const [transitionText, setTransitionText] = useState("");
 
     const userID = JSON.parse(localStorage.getItem("investerUser"))
@@ -40,6 +42,7 @@ export default function StartPage(){
                 console.log(resposta);
                 setTransitionText("Olá, " + resposta.data.userLog.userName + " :)");
                 setInfoBas(resposta.data.infoBas)
+                setInfoDet(resposta.data.infoDet)
                 changeTrans()})
             .catch(response => {setTransitionText("Desculpe! Não consegui me conectar à base de dados :("); console.log(response)})
         }, []
@@ -73,10 +76,28 @@ export default function StartPage(){
                     {infoBas.map(dado =>
                         <InfoBas>
                             <IBTitle>{dado.name}</IBTitle>
-                            {dado.change == undefined ? <IBValue $color="none"><div>{dado.value}</div></IBValue> : <IBValue color={dado.change >= 0 ? "rgb(0, 255, 0)" : "rgb(255, 0, 0)"}><div>{dado.value}</div><div>{dado.change >= 0 ? "+" : "-"}{dado.change + "%"}</div></IBValue>}
+                            {dado.change == undefined ? <IBValue $color="none"><div>{dado.value}</div></IBValue> : <IBValue color={dado.change >= 0 ? "rgb(0, 210, 0)" : "rgb(255, 0, 0)"}><div>{dado.value}</div><div>{dado.change >= 0 ? "+" : "-"}{dado.change + "%"}</div></IBValue>}
                         </InfoBas>
                     )}
                 </InformacoesBasicas>
+
+                <InformacoesDetalhadas>
+                {infoDet.map(dado =>
+                    <InfoDet>
+                        <Dets>
+                            <Titulo>{dado.title}</Titulo>
+                            <Linhas>
+                            {dado.lines.map(valor =>
+                                <Linha>
+                                    <div>{valor.name}</div>
+                                    <div>R$ {valor.value}</div>
+                                </Linha>
+                            )}
+                            </Linhas>
+                         </Dets>
+                    </InfoDet>
+                )}
+                </InformacoesDetalhadas>
             </Menu>
         </Background>
         </>
