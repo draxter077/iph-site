@@ -97,7 +97,7 @@ export default function StartPage(){
                             {dado.lines.map(valor =>
                                 <Linha>
                                     <div>{valor.name}</div>
-                                    <div>R$ {valor.value}</div>
+                                    <div>{valor.value}</div>
                                 </Linha>
                             )}
                             </Linhas>
