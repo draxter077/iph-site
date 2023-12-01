@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { fastTransition, mediumTransition, fontSizeMedium, fontSizeMediumLarge, fontSizePlus, webkitStyle } from "../../../../visualValues"
+import { fastTransition, mediumTransition, fontSizeMedium, fontSizeMediumLarge, fontSizePlus, webkitStyle, colorDarkOrange, colorDarkBlue, fastMediumTransition } from "../../../../visualValues"
 
 export const InformacoesBasicas = styled.div`
     box-sizing: border-box;

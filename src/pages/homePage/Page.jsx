@@ -56,7 +56,13 @@ export default function StartPage(){
                 <Logo>inv:PH</Logo>
                 <Topodiv>
                     <div>
-                        <TopoButton onClick={() => setOpenConfig(!openConfig)}>?</TopoButton>
+                        <TopoButton onClick={() => setOpenConfig(!openConfig)}>Depósito</TopoButton>
+                    </div>
+                    <div>
+                        <TopoButton onClick={() => setOpenConfig(!openConfig)}>Retirada</TopoButton>
+                    </div>
+                    <div>
+                        <TopoButton onClick={() => setOpenConfig(!openConfig)}>Ajuda</TopoButton>
                     </div>
                     <div>
                         <TopoButton onClick={() => setOpenConfig(!openConfig)}>Configurações</TopoButton>
