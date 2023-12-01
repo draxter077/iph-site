@@ -103,7 +103,7 @@ export const AcessContainer = styled.div`
         width: fit-content;
         margin: 30px 0px 0px 0px;
         opacity: ${atr => atr.disabled ? "0" : "1"};
-        transition: opacity ${fastTransition}, background ${fastTransition};
+        transition: opacity ${fastTransition}, background ${fastMediumTransition};
     }
 
     div{
