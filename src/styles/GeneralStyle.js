@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-import { webkitStyle, fastTransition, colorDarkBlue, fontSizeMedium, colorDarkOrange } from "../visualValues.js"
+import { webkitStyle, fastTransition, fastMediumTransition, colorDarkBlue, fontSizeMedium, colorDarkOrange } from "../visualValues.js"
 
 const GeneralStyle = createGlobalStyle`
     body{
@@ -33,7 +33,7 @@ const GeneralStyle = createGlobalStyle`
         background: ${colorDarkOrange};
         color: rgb(255, 255, 255);
 
-        transition: background ${fastTransition};
+        transition: background ${fastMediumTransition};
 
         :hover{
             background: ${colorDarkBlue};

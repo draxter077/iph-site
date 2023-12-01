@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { fontSizeMedium, fontSizeLarge, fontSizeMediumLarge, fastTransition, mediumTransition, backChangeTime, fastMediumTransition, colorDarkBlue, colorSoftBlue, colorDarkOrange } from "../../visualValues"
+import { fontSizeMedium, fontSizeLarge, fontSizeMediumLarge, fastTransition, fastMediumTransition, mediumTransition, backChangeTime, fastMediumTransition, colorDarkBlue, colorSoftBlue, colorDarkOrange } from "../../visualValues"
 
 export const Background = styled.div`
     box-sizing: border-box;
@@ -124,7 +124,7 @@ export const Button = styled.button`
 
     font-weight: bold;
 
-    transition: color ${fastTransition};
+    transition: color ${fastMediumTransition};
 
     :hover{
         color: ${colorDarkOrange}; 
