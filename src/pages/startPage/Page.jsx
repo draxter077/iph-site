@@ -11,6 +11,7 @@ export default function StartPage(){
     const navigate = useNavigate()
     const [openSignUp, setOpenSignUp] = useState(false);
     const [transitionChange, setTransitionChange] = useState(false)
+    const [showHelp, setShowHelp] = useState(false)
     const [wrongName, setWrongName] = useState(false)
     const [wrongEmail, setWrongEmail] = useState(false)
     const [wrongPass, setWrongPass] = useState(false)
@@ -120,17 +121,17 @@ export default function StartPage(){
     return(
         <>
         <TransitionScreen $display={transitionChange}/>
-        <HelpScreen $top={showHelp}/>
+        <HelpScreen $display={showHelp}/>
         <Background>
 
             <Topo>
                 <Logo>inv:PH</Logo>
                 <div>
-                    <TopoButton onClick={() => console.log("oi")}>Ajuda</TopoButton>
+                    <TopoButton onClick={setShowHelp(!showHelp)}>Ajuda</TopoButton>
                 </div>
             </Topo>
 
-            <AcessContainer $loading={loadingAnimation} disabled={buttonDis}>
+            <AcessContainer $loading={loadingAnimation}>
                     {openSignUp ? "Crie uma conta" : "Entre na sua conta"}
                     <div>
                         <InputArea placeholder="Nome" $display={openSignUp} $wrong={wrongName}></InputArea>

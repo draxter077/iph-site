@@ -16,7 +16,8 @@ export default function StartPage(){
     const navigate = useNavigate()
     const [openConfig, setOpenConfig] = useState(false);
     const [blockBackChange, setBlockBackChange] = useState(false);
-    const [transitionChange, setTransitionChange] = useState("0vh");
+    const [transitionChange, setTransitionChange] = useState(true);
+    const [showHelp, setShowHelp] = useState(false);
     const [infoBas, setInfoBas] = useState([]);
     const [infoDet, setInfoDet] = useState([]);
     const [transitionText, setTransitionText] = useState("");
@@ -26,12 +27,12 @@ export default function StartPage(){
     const sleep = ms => new Promise(r => setTimeout(r, ms));
     async function changeTrans(){
         await sleep(1000);
-        setTransitionChange("-100vh");
+        setTransitionChange(false);
     }
 
     async function changeWindow(){
         setTransitionText("Até mais! :)")
-        setTransitionChange("0vh");
+        setTransitionChange(true);
         await sleep(1000);
         navigate("/");
     }
@@ -51,6 +52,7 @@ export default function StartPage(){
     return(
         <>
         <TransitionScreen top={transitionChange} text={transitionText}/>
+        <HelpScreen $display={showHelp}/>
         <Background blockBack={blockBackChange}>
             <Topo>
                 <Logo>inv:PH</Logo>
@@ -62,7 +64,7 @@ export default function StartPage(){
                         <TopoButton onClick={() => setOpenConfig(!openConfig)}>Retirada</TopoButton>
                     </div>
                     <div>
-                        <TopoButton onClick={() => setOpenConfig(!openConfig)}>Ajuda</TopoButton>
+                        <TopoButton onClick={setShowHelp(!showHelp)}>Ajuda</TopoButton>
                     </div>
                     <div>
                         <TopoButton onClick={() => setOpenConfig(!openConfig)}>Configurações</TopoButton>
