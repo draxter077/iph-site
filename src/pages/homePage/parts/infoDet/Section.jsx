@@ -1,10 +1,10 @@
-import { GroupDiv, Indicador, Titulo, Linhas, Linha } from "./style.js"
+import { SectionDiv, Info, Titulo, Linhas, Linha } from "./style.js"
 
 export function InformacoesDetalhadas(atr){
     return(
-        <GroupDiv>
+        <SectionDiv>
         {atr.infoDet.map(dado =>
-            <Indicador>
+            <Info>
                 <Titulo>{dado.title}</Titulo>
                 <Linhas>
                 {dado.lines.length == 0 ? "Sem informações para essa categoria" : undefined}
@@ -15,8 +15,8 @@ export function InformacoesDetalhadas(atr){
                     </Linha>
                 )}
                 </Linhas>
-            </Indicador>
+            </Info>
         )}
-        </GroupDiv>
+        </SectionDiv>
     )
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { fontSizeMedium, fontSizeSmall, webkitStyle } from "../../../../visualValues"
 
-export const GroupDiv = styled.div`
+export const SectionDiv = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -16,7 +16,7 @@ export const GroupDiv = styled.div`
         height: 600px;
     }
 `
-export const Indicador = styled.div`
+export const Info = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;

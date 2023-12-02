@@ -1,4 +1,4 @@
-import { HelpScreen } from "./parts/help/Help.jsx"
+import { HelpScreen } from "./parts/help/Section.jsx"
 import { Topo } from "./parts/topo/Section.jsx"
 import { Background } from "./parts/structureParts/background.js"
 import { ConfigDiv } from "./parts/structureParts/configDiv/Section.jsx"

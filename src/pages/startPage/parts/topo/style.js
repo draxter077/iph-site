@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { fontSizeMedium, colorMain, colorSecundary, transitionFast, fontSizeSmall } from "../../../../visualValues"
 
 
-export const GroupDiv = styled.div`
+export const SectionDiv = styled.div`
     box-sizing: border-box;
 
     width: 100%;
@@ -25,31 +25,30 @@ export const Logo = styled.div`
     font-weight: bold;
     color: ${colorSecundary};
 
-    button{
-        width: fit-content;
-        height: fit-content;
-    
-        padding: 5px 10px;
-        border-radius: 5px;
-        border: none;
-    
-        font-size: ${fontSizeSmall};
-        font-weight: bold;
-    
-        color: ${colorMain};
-        background: rgb(255, 255, 255);
-    
-        transition: color ${transitionFast};
-    
-        :hover{
-            color: ${colorSecundary};
-            background: rgb(255, 255, 255);
-        }
-    }
-
     @media (max-width: 1080px){
         font-size: 45px;
         padding: 0px;
         margin: 0px 0px 20px 0px;
+    }
+`
+export const Button = styled.button`
+    width: fit-content;
+    height: fit-content;
+
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+
+    font-size: ${fontSizeSmall};
+    font-weight: bold;
+
+    color: ${colorMain};
+    background: rgb(255, 255, 255);
+
+    transition: color ${transitionFast};
+
+    :hover{
+        color: ${colorSecundary};
+        background: rgb(255, 255, 255);
     }
 `

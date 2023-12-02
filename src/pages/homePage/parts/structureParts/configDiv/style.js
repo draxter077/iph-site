@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { transitionFast } from "../../../../../visualValues"
 
 
-export const GroupDiv = styled.div`
+export const SectionDiv = styled.div`
     box-sizing: border-box;
     background: rgb(255, 255, 255);
     width: 100%;

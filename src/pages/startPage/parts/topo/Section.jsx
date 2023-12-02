@@ -1,10 +1,10 @@
-import { GroupDiv, Logo } from "./style.js"
+import { SectionDiv, Logo, Button } from "./style.js"
 
 export function Topo(atr){
     return(
-        <GroupDiv>
+        <SectionDiv>
             <Logo>inv:PH</Logo>
-            <button onClick={() => atr.setShowHelp(true)}>Ajuda</button>
-        </GroupDiv>
+            <Button onClick={() => atr.setShowHelp(true)}>Ajuda</Button>
+        </SectionDiv>
     )
 }

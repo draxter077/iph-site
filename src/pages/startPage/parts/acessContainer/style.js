@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import { fontSizeMedium, colorMain, colorSecundary, transitionFast, transitionMedium, transitionSlow, fontSizeSmall } from "../../../../visualValues"
+import { fontSizeMedium, colorSecundary, transitionFast, transitionMedium, transitionSlow, fontSizeSmall } from "../../../../visualValues"
 
-export const GroupDiv = styled.div`
+export const SectionDiv = styled.div`
     @keyframes loading{
         0% {box-shadow: none}
         100% {box-shadow: 0px 0px 15px 3px ${colorSecundary}}
@@ -37,25 +37,24 @@ export const GroupDiv = styled.div`
 
     div{
         margin: 20px 0px 0px 0px;
-        
-        input{
-            @keyframes wrongInput{
-                0% {box-shadow: none}
-                100% {box-shadow: 0px 0px 5px 0px rgb(255, 0, 0)}
-            }
-        
-            display: ${atr => atr.$display ? "flex" : "none"};
-            font-size: ${fontSizeSmall};
-            width: 200px;
-            margin: 10px 0px 0px 0px;
-        
-            animation: ${atr => atr.$wrong ? `wrongInput ${transitionMedium} 2 alternate linear;` : "none"};
-        
-            @media (max-width: 1080px){
-                width: 100%;
-            }
-        }
     }
+
+    @media (max-width: 1080px){
+        width: 100%;
+    }
+`
+export const Input = styled.input`
+    @keyframes wrongInput{
+        0% {box-shadow: none}
+        100% {box-shadow: 0px 0px 5px 0px rgb(255, 0, 0)}
+    }
+
+    display: ${atr => atr.$display ? "flex" : "none"};
+    font-size: ${fontSizeSmall};
+    width: 200px;
+    margin: 10px 0px 0px 0px;
+
+    animation: ${atr => atr.$wrong ? `wrongInput ${transitionMedium} 2 alternate linear;` : "none"};
 
     @media (max-width: 1080px){
         width: 100%;
