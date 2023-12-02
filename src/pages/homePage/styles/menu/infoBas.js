@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { fastTransition, mediumTransition, fontSizeMedium, fontSizeMediumLarge, fontSizePlus, webkitStyle, colorDarkOrange, colorDarkBlue, fastMediumTransition } from "../../../../visualValues"
+import { fontSizeLarge, webkitStyle } from "../../../../visualValues"
 
 export const InformacoesBasicas = styled.div`
     box-sizing: border-box;
@@ -34,7 +34,7 @@ export const InfoBas = styled.div`
 `
 
 export const IBTitle = styled.div`
-    font-size: ${fontSizeMedium};
+    font-size: ${fontSizeLarge};
     margin: 0px 0px 10px 0px;
 `
 
@@ -44,7 +44,7 @@ export const IBValue = styled.div`
     justify-content: space-between;
     align-items: center;
     div:nth-child(1){
-        font-size: ${fontSizeMediumLarge};
+        font-size: ${fontSizeMedium};
         color: black;
         margin: 0px 10px 0px 0px;
     }

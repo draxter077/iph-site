@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { fontSizeMedium, fontSizeMediumLarge, webkitStyle } from "../../../../visualValues"
+import { fontSizeMedium, webkitStyle } from "../../../../visualValues"
 
 export const InformacoesDetalhadas = styled.div`
     box-sizing: border-box;
@@ -42,7 +42,7 @@ export const Dets = styled.div`
     height: 100%;
 `
 export const Titulo = styled.div`
-    font-size: ${fontSizeMediumLarge};
+    font-size: ${fontSizeMedium};
     margin: 0px 0px 20px 0px;
 `
 export const Linhas = styled.div`

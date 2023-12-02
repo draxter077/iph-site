@@ -1,19 +1,19 @@
 import styled from "styled-components"
-import { backChangeTime, colorDarkBlue, colorSoftBlue } from "../../../../visualValues"
+import { backChangeTime, colorMain, colorSoftMain } from "../../../../visualValues"
 
 export const Background = styled.div`
     box-sizing: border-box;
 
     @keyframes changeBack{
-        0% {background: ${colorDarkBlue}}
-        100% {background: ${colorSoftBlue}}
+        0% {background: ${colorMain}}
+        100% {background: ${colorSoftMain}}
     }
 
     width: 100%;
     height: 100%;
     padding: 20px 70px;
 
-    background: ${colorDarkBlue};
+    background: ${colorMain};
 
     animation: changeBack ${atr => atr.blockBack ? "0s" : backChangeTime} infinite alternate linear;
 

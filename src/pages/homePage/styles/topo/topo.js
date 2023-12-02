@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { fontSizeMedium, fontSizeMediumLarge, fastTransition, colorDarkOrange, colorDarkBlue } from "../../../../visualValues"
+import { fontSizeLarge, colorSecundary, transitionFast, colorMain } from "../../../../visualValues"
 
 export const Topo = styled.div`
     box-sizing: border-box;
@@ -36,9 +36,9 @@ export const Topodiv = styled.div`
     }
 `
 export const Logo = styled.div`
-    font-size: ${fontSizeMediumLarge};
+    font-size: ${fontSizeLarge};
     font-weight: bold;
-    color: ${colorDarkOrange};
+    color: ${colorSecundary};
 
     @media (max-width: 1080px){
         font-size: 45px;
@@ -57,13 +57,13 @@ export const TopoButton = styled.button`
     font-size: ${fontSizeMedium};
     font-weight: bold;
 
-    color: ${colorDarkBlue};
+    color: ${colorMain};
     background: rgb(255, 255, 255);
 
-    transition: color ${fastTransition};
+    transition: color ${transitionFast};
 
     :hover{
-        color: ${colorDarkOrange};
+        color: ${colorSecundary};
         background: rgb(255, 255, 255);
     }
 `
