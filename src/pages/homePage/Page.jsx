@@ -1,7 +1,7 @@
 import { HelpScreen } from "./parts/help/Help.jsx"
-import { Ptopo } from "./parts/topo/Ptopo.jsx"
+import { Topo } from "./parts/topo/Section.jsx"
 import { Background } from "./parts/structureParts/background.js"
-import { PconfigDiv } from "./parts/structureParts/configDiv/PconfigDiv.jsx"
+import { ConfigDiv } from "./parts/structureParts/configDiv/Section.jsx"
 import { InformacoesBasicas } from "./parts/infoBas/Section.jsx"
 import { InformacoesDetalhadas } from "./parts/infoDet/Section.jsx"
 
@@ -55,9 +55,9 @@ export default function StartPage(){
         <HelpScreen $display={showHelp} setFunc={setShowHelp}/>
 
         <Background blockBack={blockBackChange}>
-            <Ptopo changeWindow={changeWindow} setOpenConfig={setOpenConfig} setShowHelp={setShowHelp}/>
+            <Topo changeWindow={changeWindow} setOpenConfig={setOpenConfig} setShowHelp={setShowHelp}/>
 
-            <PconfigDiv openConfig={openConfig} setBlockBackChange={setBlockBackChange}/>
+            <ConfigDiv openConfig={openConfig} setBlockBackChange={setBlockBackChange}/>
                 
             <InformacoesBasicas infoBas={infoBas}/>
 

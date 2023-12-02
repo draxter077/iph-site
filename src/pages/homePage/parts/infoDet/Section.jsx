@@ -15,7 +15,6 @@ export function InformacoesDetalhadas(atr){
                     </Linha>
                 )}
                 </Linhas>
-
             </Indicador>
         )}
         </GroupDiv>

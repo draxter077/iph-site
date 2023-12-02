@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { fontSizeMedium, colorSecundary, transitionFast, colorMain, fontSizeSmall } from "../../../../visualValues"
 
-export const Topo = styled.div`
+export const GroupDiv = styled.div`
     box-sizing: border-box;
 
     width: 100%;
@@ -17,17 +17,37 @@ export const Topo = styled.div`
         align-items: center;
     }
 `
-export const Topodiv = styled.div`
+export const Buttons = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 
-    button:nth-child(1){
-        margin: 0px 20px 0px 0px;
+    button{
+        width: fit-content;
+        height: fit-content;
+    
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
 
-        @media (max-width: 1080px){
-            margin: 0px 0px 10px 0px;
+        margin: 0px 20px 0px 0px;
+    
+        font-size: ${fontSizeSmall};
+        font-weight: bold;
+    
+        color: ${colorMain};
+        background: rgb(255, 255, 255);
+    
+        transition: color ${transitionFast};
+    
+        :hover{
+            color: ${colorSecundary};
+            background: rgb(255, 255, 255);
         }
+    }
+
+    button:nth-child(n){
+        margin: none;
     }
 
     @media (max-width: 1080px){
@@ -44,26 +64,5 @@ export const Logo = styled.div`
         font-size: 45px;
         padding: 0px;
         margin: 0px 0px 20px 0px;
-    }
-`
-export const TopoButton = styled.button`
-    width: fit-content;
-    height: fit-content;
-
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: none;
-
-    font-size: ${fontSizeSmall};
-    font-weight: bold;
-
-    color: ${colorMain};
-    background: rgb(255, 255, 255);
-
-    transition: color ${transitionFast};
-
-    :hover{
-        color: ${colorSecundary};
-        background: rgb(255, 255, 255);
     }
 `
