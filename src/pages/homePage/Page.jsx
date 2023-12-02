@@ -1,10 +1,9 @@
 import { HelpScreen } from "./parts/help/Help.jsx"
 import { Ptopo } from "./parts/topo/Ptopo.jsx"
 import { Background } from "./parts/structureParts/background.js"
-import { Menu } from "./parts/structureParts/menu.js"
 import { PconfigDiv } from "./parts/structureParts/configDiv/PconfigDiv.jsx"
-import { PinformacoesBasicas } from "./parts/infoBas/PinfoBas.jsx"
-import { PinformacoesDetalhadas } from "./parts/infoDet/PinfoDet.jsx"
+import { InformacoesBasicas } from "./parts/infoBas/Section.jsx"
+import { InformacoesDetalhadas } from "./parts/infoDet/Section.jsx"
 
 import TransitionScreen from "../transitionScreen/Page.jsx"
 
@@ -54,16 +53,15 @@ export default function StartPage(){
         <>
         <TransitionScreen $display={transitionChange} text={transitionText}/>
         <HelpScreen $display={showHelp} setFunc={setShowHelp}/>
+
         <Background blockBack={blockBackChange}>
             <Ptopo changeWindow={changeWindow} setOpenConfig={setOpenConfig} setShowHelp={setShowHelp}/>
 
-            <Menu>
-                <PconfigDiv openConfig={openConfig} setBlockBackChange={setBlockBackChange}/>
+            <PconfigDiv openConfig={openConfig} setBlockBackChange={setBlockBackChange}/>
                 
-                <PinformacoesBasicas infoBas={infoBas}/>
+            <InformacoesBasicas infoBas={infoBas}/>
 
-                <PinformacoesDetalhadas infoDet={infoDet}/>
-            </Menu>
+            <InformacoesDetalhadas infoDet={infoDet}/>
         </Background>
         </>
     )

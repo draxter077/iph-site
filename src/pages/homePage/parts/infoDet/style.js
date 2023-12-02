@@ -16,7 +16,7 @@ export const InformacoesDetalhadas = styled.div`
         height: 600px;
     }
 `
-export const InfoDet = styled.div`
+export const Indicador = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -35,11 +35,6 @@ export const InfoDet = styled.div`
         height: 100%;
         margin: 0px 0px 10px 0px;
     }
-`
-export const Dets = styled.div`
-    display: flex;
-    flex-direction: column;
-    height: 100%;
 `
 export const Titulo = styled.div`
     font-size: ${fontSizeMedium};

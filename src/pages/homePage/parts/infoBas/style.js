@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { fontSizeMedium, fontSizeSmall, webkitStyle } from "../../../../visualValues"
 
-export const InformacoesBasicas = styled.div`
+export const GroupDiv = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -17,7 +17,7 @@ export const InformacoesBasicas = styled.div`
         align-items: center;
     }
 `
-export const InfoBas = styled.div`
+export const Indicador = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -33,12 +33,12 @@ export const InfoBas = styled.div`
     margin: 30px 0px 0px 0px;
 `
 
-export const IBTitle = styled.div`
+export const ITitle = styled.div`
     font-size: ${fontSizeSmall};
     margin: 0px 0px 10px 0px;
 `
 
-export const IBValue = styled.div`
+export const IValue = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
