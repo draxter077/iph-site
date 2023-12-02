@@ -1,4 +1,4 @@
-import { Background } from "./helpStyle.js"
+import { Background } from "./style.js"
 
 export function HelpScreen(atr){
     return(

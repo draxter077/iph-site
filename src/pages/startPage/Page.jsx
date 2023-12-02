@@ -1,5 +1,9 @@
-import { Background, Topo, TopoButton, AcessContainer, Logo, Button, InputArea, Alert } from "./style.js"
-import { HelpScreen } from "./Help.jsx"
+import { Background, Button, Alert } from "./style.js"
+
+import { HelpScreen } from "./parts/help/Section.jsx"
+import { Topo } from "./parts/topo/Section.jsx"
+import { AcessContainer } from "./parts/acessContainer/Section.jsx"
+
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import axios from "axios"
@@ -123,25 +127,12 @@ export default function StartPage(){
         <>
         <TransitionScreen $display={transitionChange}/>
         <HelpScreen $display={showHelp} setFunc={setShowHelp}/>
+        
         <Background>
 
-            <Topo>
-                <Logo>inv:PH</Logo>
-                <div>
-                    <TopoButton onClick={() => setShowHelp(true)}>Ajuda</TopoButton>
-                </div>
-            </Topo>
+            <Topo setShowHelp={setShowHelp}/>
 
-            <AcessContainer $loading={loadingAnimation}>
-                    {openSignUp ? "Crie uma conta" : "Entre na sua conta"}
-                    <div>
-                        <InputArea placeholder="Nome" $display={openSignUp} $wrong={wrongName}></InputArea>
-                        <InputArea placeholder="Email" $display={true} $wrong={wrongEmail}></InputArea>
-                        <InputArea type="password" placeholder="Senha" $display={true} $wrong={wrongPass}></InputArea>
-                        <InputArea type="password" placeholder="Confirme sua senha" $display={openSignUp} $wrong={wrongConfPass}></InputArea>
-                    </div>
-                    <button disabled={buttonDis} onClick={(e) => openSignUp ? signUp(e) : logIn(e)}>{openSignUp ? "Criar" : "Entrar"}</button>
-            </AcessContainer>
+            <AcessContainer loadingAnimation={loadingAnimation} openSignUp={openSignUp} wrongName={wrongName} wrongEmail={wrongEmail} wrongPass={wrongPass} wrongConfPass={wrongConfPass} buttonDis={buttonDis} signUp={signUp} logIn={logIn} />
 
             <Button onClick={() => setOpenSignUp(!openSignUp)}>{openSignUp ? "Entrar em uma conta" : "Criar uma conta"}</Button>
         </Background>
