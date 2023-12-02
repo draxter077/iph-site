@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { fontSizeLarge, colorSecundary, transitionFast, colorMain } from "../../../../visualValues"
+import { fontSizeLarge, fontSizeMedium, colorSecundary, transitionFast, colorMain } from "../../../../visualValues"
 
 export const Topo = styled.div`
     box-sizing: border-box;

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { fontSizeLarge, fontSizeMedium, backChangeTime, colorMain, colorSoftMain, colorSecundary, transitionFast, transitionMedium, transitionSlow } from "../../visualValues"
+import { fontSizeMedium, backChangeTime, colorMain, colorSoftMain, colorSecundary, transitionFast, transitionMedium, transitionSlow, fontSizeSmall } from "../../visualValues"
 
 export const Background = styled.div`
     box-sizing: border-box;
@@ -41,7 +41,7 @@ export const Topo = styled.div`
 `
 export const Logo = styled.div`
     padding: 0px 0px 0px 50px;
-    font-size: ${fontSizeLarge};
+    font-size: ${fontSizeMedium};
     font-weight: bold;
     color: ${colorSecundary};
 
@@ -59,7 +59,7 @@ export const TopoButton = styled.button`
     border-radius: 5px;
     border: none;
 
-    font-size: ${fontSizeMedium};
+    font-size: ${fontSizeSmall};
     font-weight: bold;
 
     color: ${colorMain};
@@ -138,7 +138,7 @@ export const InputArea = styled.input`
     }
 
     display: ${atr => atr.$display ? "flex" : "none"};
-    font-size: ${fontSizeMedium};
+    font-size: ${fontSizeSmall};
     width: 200px;
     margin: 10px 0px 0px 0px;
 
@@ -164,7 +164,7 @@ export const Alert = styled.div`
     border-radius: 5px;
     padding: 20px;
 
-    font-size: ${fontSizeMedium};
+    font-size: ${fontSizeSmall};
     font-weight: bold;
 
     opacity: 0;

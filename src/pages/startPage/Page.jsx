@@ -1,4 +1,5 @@
 import { Background, Topo, TopoButton, AcessContainer, Logo, Button, InputArea, Alert } from "./style.js"
+import { HelpScreen } from "./Help.jsx"
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import axios from "axios"
@@ -121,13 +122,13 @@ export default function StartPage(){
     return(
         <>
         <TransitionScreen $display={transitionChange}/>
-        <HelpScreen $display={showHelp}/>
+        <HelpScreen $display={showHelp} setFunc={setShowHelp}/>
         <Background>
 
             <Topo>
                 <Logo>inv:PH</Logo>
                 <div>
-                    <TopoButton onClick={setShowHelp(!showHelp)}>Ajuda</TopoButton>
+                    <TopoButton onClick={() => setShowHelp(true)}>Ajuda</TopoButton>
                 </div>
             </Topo>
 
