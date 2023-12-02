@@ -5,10 +5,8 @@ export function Topo(atr){
         <GroupDiv>
             <Logo>inv:PH</Logo>
             <Buttons>
-                <button onClick={() => atr.openConfig(true)}>Depósito</button>
-                <button onClick={() => atr.openConfig(true)}>Retirada</button>
                 <button onClick={() => atr.setShowHelp(true)}>Ajuda</button>
-                <button onClick={() => atr.openConfig(true)}>Configurações</button>
+                <button onClick={() => atr.setOpenConfig(!atr.openConfig)}>Configurações</button>
                 <button onClick={atr.changeWindow}>Sair</button>
             </Buttons>
         </GroupDiv>

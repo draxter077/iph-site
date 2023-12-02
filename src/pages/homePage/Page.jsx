@@ -54,7 +54,7 @@ export default function StartPage(){
         <HelpScreen $display={showHelp} setFunc={setShowHelp}/>
 
         <Background blockBack={blockBackChange}>
-            <Topo changeWindow={changeWindow} setOpenConfig={setOpenConfig} setShowHelp={setShowHelp}/>
+            <Topo changeWindow={changeWindow} openConfig={openConfig} setOpenConfig={setOpenConfig} setShowHelp={setShowHelp}/>
 
             <ConfigDiv openConfig={openConfig} setBlockBackChange={setBlockBackChange}/>
                 
