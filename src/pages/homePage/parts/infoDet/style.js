@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { fontSizeMedium, fontSizeSmall, webkitStyle } from "../../../../visualValues"
 
-export const InformacoesDetalhadas = styled.div`
+export const GroupDiv = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-direction: row;

@@ -1,6 +1,6 @@
 import { GroupDiv } from "./style.js"
 
-export function PconfigDiv(atr){
+export function ConfigDiv(atr){
     return(
         <GroupDiv $display={atr.openConfig}>
             <div>
