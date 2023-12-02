@@ -40,7 +40,6 @@ export default function StartPage(){
     useEffect(() => {
         axios.post(API + "/home", userID)
             .then(resposta => {
-                console.log(resposta);
                 setTransitionText("Olá, " + resposta.data.userLog.userName + " :)");
                 setInfoBas(resposta.data.infoBas)
                 setInfoDet(resposta.data.infoDet)
