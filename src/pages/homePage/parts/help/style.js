@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colorSecundary, transitionSlow } from "../../../visualValues"
+import { colorSecundary, transitionSlow } from "../../../../visualValues"
 
 export const Background = styled.div`
     display: flex;

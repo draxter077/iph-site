@@ -1,10 +1,10 @@
-import { Background } from "./styles/background/background.js"
-import { Topo, Logo, Topodiv, TopoButton } from "./styles/topo/topo.js"
-import { Menu } from "./styles/menu/menu.js"
-import { ConfigDiv } from "./styles/menu/config.js"
-import { InformacoesBasicas, InfoBas, IBTitle, IBValue } from "./styles/menu/infoBas.js"
-import { InfoDet, InformacoesDetalhadas, Titulo, Linha, Linhas, Dets } from "./styles/menu/infoDet.js"
-import { HelpScreen } from "./Help.jsx"
+import { HelpScreen } from "./parts/help/Help.jsx"
+import { Ptopo } from "./parts/topo/Ptopo.jsx"
+import { Background } from "./parts/structureParts/background.js"
+import { Menu } from "./parts/structureParts/menu.js"
+import { PconfigDiv } from "./parts/structureParts/configDiv/PconfigDiv.jsx"
+import { PinformacoesBasicas } from "./parts/infoBas/PinfoBas.jsx"
+import { PinformacoesDetalhadas } from "./parts/infoDet/PinfoDet.jsx"
 
 import TransitionScreen from "../transitionScreen/Page.jsx"
 
@@ -55,59 +55,14 @@ export default function StartPage(){
         <TransitionScreen $display={transitionChange} text={transitionText}/>
         <HelpScreen $display={showHelp} setFunc={setShowHelp}/>
         <Background blockBack={blockBackChange}>
-            <Topo>
-                <Logo>inv:PH</Logo>
-                <Topodiv>
-                    <div>
-                        <TopoButton onClick={() => setOpenConfig(!openConfig)}>Depósito</TopoButton>
-                    </div>
-                    <div>
-                        <TopoButton onClick={() => setOpenConfig(!openConfig)}>Retirada</TopoButton>
-                    </div>
-                    <div>
-                        <TopoButton onClick={() => setShowHelp(!showHelp)}>Ajuda</TopoButton>
-                    </div>
-                    <div>
-                        <TopoButton onClick={() => setOpenConfig(!openConfig)}>Configurações</TopoButton>
-                    </div>
-                    <TopoButton onClick={changeWindow}>Sair</TopoButton>
-                </Topodiv>
-            </Topo>
+            <Ptopo changeWindow={changeWindow} setOpenConfig={setOpenConfig} setShowHelp={setShowHelp}/>
 
             <Menu>
-                <ConfigDiv $display={openConfig}>
-                    <div>
-                        <button onClick={() => setBlockBackChange(!blockBackChange)}>parar fundo</button>
-                    </div>
-                </ConfigDiv>
+                <PconfigDiv openConfig={openConfig} setBlockBackChange={setBlockBackChange}/>
                 
-                <InformacoesBasicas>
-                    {infoBas.map(dado =>
-                        <InfoBas>
-                            <IBTitle>{dado.name}</IBTitle>
-                            {dado.change == undefined ? <IBValue $color="none"><div>{dado.value}</div></IBValue> : <IBValue color={dado.change >= 0 ? "rgb(0, 210, 0)" : "rgb(255, 0, 0)"}><div>{dado.value}</div><div>{dado.change >= 0 ? "+" : "-"}{dado.change + "%"}</div></IBValue>}
-                        </InfoBas>
-                    )}
-                </InformacoesBasicas>
+                <PinformacoesBasicas infoBas={infoBas}/>
 
-                <InformacoesDetalhadas>
-                {infoDet.map(dado =>
-                    <InfoDet>
-                        <Dets>
-                            <Titulo>{dado.title}</Titulo>
-                            <Linhas>
-                            {dado.lines.length == 0 ? "Sem informações para essa categoria" : undefined}
-                            {dado.lines.map(valor =>
-                                <Linha>
-                                    <div>{valor.name}</div>
-                                    <div>{valor.value}</div>
-                                </Linha>
-                            )}
-                            </Linhas>
-                         </Dets>
-                    </InfoDet>
-                )}
-                </InformacoesDetalhadas>
+                <PinformacoesDetalhadas infoDet={infoDet}/>
             </Menu>
         </Background>
         </>

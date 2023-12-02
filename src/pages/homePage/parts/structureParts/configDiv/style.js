@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { transitionFast } from "../../../../visualValues"
+import { transitionFast } from "../../../../../visualValues"
 
 
 export const ConfigDiv = styled.div`
