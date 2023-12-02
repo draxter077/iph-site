@@ -1,22 +1,21 @@
-export const colorDarkBlue = "rgb(0, 150, 250)";
-export const colorSoftBlue = "rgb(10, 186, 255)";
-export const colorDarkOrange = "rgb(250, 150, 0)";
+export const colorMain = "rgb(0, 150, 250)";
+export const colorSoftMain = "rgb(10, 186, 255)";
+export const colorSecundary = "rgb(250, 150, 0)";
 
 export const fontSizeLarge = "100px";
-export const fontSizePlus = "51px"
-export const fontSizeMediumLarge = "28px";
-export const fontSizeMedium = "17px";
+export const fontSizeMedium = "28px";
+export const fontSizeSmall = "17px";
 
-export const fastTransition = "0.4s";
-export const fastMediumTransition = "0.6s"
-export const mediumTransition = "1s";
+export const transitionFast = "0.4s";
+export const transitionMedium = "0.6s"
+export const transitionSlow = "1s";
 
 export const backChangeTime = "3s";
 
 export const webkitStyle = `
 ::-webkit-scrollbar{
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
 }
 
 ::-webkit-scrollbar-track{
@@ -24,7 +23,7 @@ export const webkitStyle = `
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: ${colorDarkBlue};
+    background-color: ${colorMain};
     border-radius: 20px;
     border: 4px solid rgb(255, 255, 255);
 }

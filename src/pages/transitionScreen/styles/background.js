@@ -1,34 +1,30 @@
 import styled from "styled-components"
-import { colorDarkBlue, colorDarkOrange, fontSizeMediumLarge } from "../../../visualValues"
+import { colorMain, colorSecundary, fontSizeMedium, transitionSlow } from "../../../visualValues"
 
 export const Background = styled.div`
     box-sizing: border-box;
 
-    background: ${colorDarkBlue};
+    background: ${colorMain};
 
-    box-shadow: ${atr => atr.top == "0px" ? "none" : `0px 0px 5px 1px ${colorDarkOrange}`};
+    box-shadow: ${atr => atr.$display ? "none" : `0px 0px 5px 1px ${colorSecundary}`};
 
     width: 100vw;
     height: 100vh;
 
-    z-index: 5;
+    z-index: 1;
     position: fixed;
-    top: ${atr => atr.top};
+    top: ${atr => atr.$display ? "0vh" : "-100vh"};
 
-    transition: top 1s linear; 
+    transition: top ${transitionSlow} linear; 
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    ins{
-        display: block;
-        width: 250px;
-    }
     span{
-        font-size: ${fontSizeMediumLarge};
+        font-size: ${fontSizeMedium};
         margin: 50px 0px 0px 0px;
-        color: ${colorDarkOrange};
+        color: ${colorSecundary};
     }
 `

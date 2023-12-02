@@ -1,12 +1,12 @@
 import styled from "styled-components"
-import { fontSizeMedium, fontSizeLarge, fontSizeMediumLarge, fastTransition, fastMediumTransition, mediumTransition, backChangeTime, colorDarkBlue, colorSoftBlue, colorDarkOrange } from "../../visualValues"
+import { fontSizeLarge, fontSizeMedium, backChangeTime, colorMain, colorSoftMain, colorSecundary, transitionFast, transitionMedium, transitionSlow } from "../../visualValues"
 
 export const Background = styled.div`
     box-sizing: border-box;
 
     @keyframes changeBack{
-        0% {background: ${colorDarkBlue}}
-        100% {background: ${colorSoftBlue}}
+        0% {background: ${colorMain}}
+        100% {background: ${colorSoftMain}}
     }
 
     width: 100vw;
@@ -14,7 +14,7 @@ export const Background = styled.div`
 
     padding: 20px;
 
-    background: ${colorDarkBlue};
+    background: ${colorMain};
 
     animation: changeBack ${backChangeTime} infinite alternate linear;
 
@@ -43,7 +43,7 @@ export const Logo = styled.div`
     padding: 0px 0px 0px 50px;
     font-size: ${fontSizeLarge};
     font-weight: bold;
-    color: ${colorDarkOrange};
+    color: ${colorSecundary};
 
     @media (max-width: 1080px){
         font-size: 45px;
@@ -62,23 +62,23 @@ export const TopoButton = styled.button`
     font-size: ${fontSizeMedium};
     font-weight: bold;
 
-    color: ${colorDarkBlue};
+    color: ${colorMain};
     background: rgb(255, 255, 255);
 
-    transition: color ${fastTransition};
+    transition: color ${transitionFast};
 
     :hover{
-        color: ${colorDarkOrange};
+        color: ${colorSecundary};
         background: rgb(255, 255, 255);
     }
 `
 export const AcessContainer = styled.div`
     @keyframes loading{
         0% {box-shadow: none}
-        100% {box-shadow: 0px 0px 15px 3px ${colorDarkOrange}}
+        100% {box-shadow: 0px 0px 15px 3px ${colorSecundary}}
     }   
 
-    animation: ${atr => atr.$loading ? `loading ${mediumTransition} infinite alternate linear;` : "none"};
+    animation: ${atr => atr.$loading ? `loading ${transitionSlow} infinite alternate linear;` : "none"};
 
     box-sizing: border-box;
     height: fit-content;
@@ -89,9 +89,9 @@ export const AcessContainer = styled.div`
     border: none;
     border-radius: 10px;
 
-    font-size: ${fontSizeMediumLarge};
+    font-size: ${fontSizeMedium};
     font-weight: bold;
-    color: ${colorDarkOrange};
+    color: ${colorSecundary};
 
     background: rgb(255, 255, 255);
 
@@ -103,7 +103,7 @@ export const AcessContainer = styled.div`
         width: fit-content;
         margin: 30px 0px 0px 0px;
         opacity: ${atr => atr.disabled ? "0" : "1"};
-        transition: opacity ${fastTransition}, background ${fastMediumTransition};
+        transition: opacity ${transitionFast}, background ${transitionMedium};
     }
 
     div{
@@ -120,14 +120,14 @@ export const Button = styled.button`
     border-radius: 5px;
 
     background: rgb(255, 255, 255);
-    color: ${colorDarkBlue};
+    color: ${colorMain};
 
     font-weight: bold;
 
-    transition: color ${fastTransition};
+    transition: color ${transitionFast};
 
     :hover{
-        color: ${colorDarkOrange}; 
+        color: ${colorSecundary}; 
         background: rgb(255, 255, 255);   
     }
 `
@@ -142,7 +142,7 @@ export const InputArea = styled.input`
     width: 200px;
     margin: 10px 0px 0px 0px;
 
-    animation: ${atr => atr.$wrong ? `wrongInput ${fastMediumTransition} 2 alternate linear;` : "none"};
+    animation: ${atr => atr.$wrong ? `wrongInput ${transitionMedium} 2 alternate linear;` : "none"};
 
     @media (max-width: 1080px){
         width: 100%;

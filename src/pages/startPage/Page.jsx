@@ -10,7 +10,7 @@ import { API, homeURL } from "../../variablesValues.js"
 export default function StartPage(){
     const navigate = useNavigate()
     const [openSignUp, setOpenSignUp] = useState(false);
-    const [transitionChange, setTransitionChange] = useState("-100vh")
+    const [transitionChange, setTransitionChange] = useState(false)
     const [wrongName, setWrongName] = useState(false)
     const [wrongEmail, setWrongEmail] = useState(false)
     const [wrongPass, setWrongPass] = useState(false)
@@ -23,7 +23,7 @@ export default function StartPage(){
     const sleep = ms => new Promise(r => setTimeout(r, ms));
 
     async function changeWindow(){
-        setTransitionChange("0vh"); 
+        setTransitionChange(true); 
         await sleep(1000);
         navigate(homeURL);
     }
@@ -66,7 +66,7 @@ export default function StartPage(){
             await inputError([setWrongEmail], "Ops, preencha o email corretamente :)")
         }
         else{
-            setLoadingAnimation(!loadingAnimation);
+            setLoadingAnimation(true);
             setButtonDis(true)
             let logObj = {email: userEmail, password: userPassword};
             await axios.post(API + "/login", logObj)
@@ -101,7 +101,7 @@ export default function StartPage(){
             await inputError([setWrongConfPass], "Ops, as senhas devem ser iguais :)")
         }
         else{
-            setLoadingAnimation(!loadingAnimation);
+            setLoadingAnimation(true);
             setButtonDis(true)
             let logObj = {name: userName, email: userEmail, password: userPassword};
             await axios.post(API + "/signup", logObj)
@@ -119,7 +119,8 @@ export default function StartPage(){
 
     return(
         <>
-        <TransitionScreen top={transitionChange}/>
+        <TransitionScreen $display={transitionChange}/>
+        <HelpScreen $top={showHelp}/>
         <Background>
 
             <Topo>
