@@ -4,6 +4,7 @@ import { Menu } from "./styles/menu/menu.js"
 import { ConfigDiv } from "./styles/menu/config.js"
 import { InformacoesBasicas, InfoBas, IBTitle, IBValue } from "./styles/menu/infoBas.js"
 import { InfoDet, InformacoesDetalhadas, Titulo, Linha, Linhas, Dets } from "./styles/menu/infoDet.js"
+import { HelpScreen } from "./Help.jsx"
 
 import TransitionScreen from "../transitionScreen/Page.jsx"
 
@@ -51,8 +52,8 @@ export default function StartPage(){
 
     return(
         <>
-        <TransitionScreen top={transitionChange} text={transitionText}/>
-        <HelpScreen $display={showHelp}/>
+        <TransitionScreen $display={transitionChange} text={transitionText}/>
+        <HelpScreen $display={showHelp} setFunc={setShowHelp}/>
         <Background blockBack={blockBackChange}>
             <Topo>
                 <Logo>inv:PH</Logo>
@@ -64,7 +65,7 @@ export default function StartPage(){
                         <TopoButton onClick={() => setOpenConfig(!openConfig)}>Retirada</TopoButton>
                     </div>
                     <div>
-                        <TopoButton onClick={setShowHelp(!showHelp)}>Ajuda</TopoButton>
+                        <TopoButton onClick={() => setShowHelp(!showHelp)}>Ajuda</TopoButton>
                     </div>
                     <div>
                         <TopoButton onClick={() => setOpenConfig(!openConfig)}>Configurações</TopoButton>

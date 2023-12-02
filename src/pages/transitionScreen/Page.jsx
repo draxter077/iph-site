@@ -3,7 +3,7 @@ import { Logo } from "./styles/logo.js"
 
 export default function TransitionScreen(atr){
     return(
-        <Background $display={atr.display}>
+        <Background $display={atr.$display}>
             <Logo>
                 inv:PH
             </Logo>

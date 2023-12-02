@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { fontSizeMedium, webkitStyle } from "../../../../visualValues"
+import { fontSizeMedium, fontSizeSmall, webkitStyle } from "../../../../visualValues"
 
 export const InformacoesDetalhadas = styled.div`
     box-sizing: border-box;
@@ -67,5 +67,5 @@ export const Linha = styled.div`
     flex-direction: row;
     justify-content: space-between;
 
-    font-size: ${fontSizeMedium};
+    font-size: ${fontSizeSmall};
 `

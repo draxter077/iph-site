@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { fontSizeLarge, fontSizeMedium, colorSecundary, transitionFast, colorMain } from "../../../../visualValues"
+import { fontSizeMedium, colorSecundary, transitionFast, colorMain, fontSizeSmall } from "../../../../visualValues"
 
 export const Topo = styled.div`
     box-sizing: border-box;
@@ -36,7 +36,7 @@ export const Topodiv = styled.div`
     }
 `
 export const Logo = styled.div`
-    font-size: ${fontSizeLarge};
+    font-size: ${fontSizeMedium};
     font-weight: bold;
     color: ${colorSecundary};
 
@@ -54,7 +54,7 @@ export const TopoButton = styled.button`
     border-radius: 5px;
     border: none;
 
-    font-size: ${fontSizeMedium};
+    font-size: ${fontSizeSmall};
     font-weight: bold;
 
     color: ${colorMain};

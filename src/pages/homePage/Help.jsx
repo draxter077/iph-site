@@ -1,9 +1,29 @@
-import { Background } from "./helpStyle.js"
+import { Background } from "./styles/helpStyle.js"
 
-export function HelpScreen(){
+export function HelpScreen(atr){
     return(
-        <Background>
-            teste
+        <Background $display={atr.$display}>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <span>teste</span>
+            <button onClick={() => atr.setFunc(false)}>Fechar</button>
         </Background>
     )
 }
