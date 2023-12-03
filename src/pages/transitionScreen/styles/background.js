@@ -6,7 +6,7 @@ export const Background = styled.div`
 
     background: ${colorMain};
 
-    box-shadow: ${atr => atr.$display ? "none" : `0px 0px 5px 1px ${colorSecundary}`};
+    box-shadow 0px 0px 10px 1px ${colorSecundary};
 
     width: 100vw;
     height: 100vh;

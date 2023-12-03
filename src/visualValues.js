@@ -14,8 +14,8 @@ export const backChangeTime = "3s";
 
 export const webkitStyle = `
 ::-webkit-scrollbar{
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
 }
 
 ::-webkit-scrollbar-track{
