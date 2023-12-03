@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { colorSecundary, transitionSlow } from "../../../../visualValues"
 
 export const Background = styled.div`
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
 
