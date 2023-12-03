@@ -9,7 +9,7 @@ export function InformacoesBasicas(atr){
                 <ITitle>{dado.name}</ITitle>
                 {dado.change == undefined 
                 ? <IValue $color="none"><div>{dado.value}</div>{dado.name == "Depósitos totais" || dado.name == "Retiradas totais" 
-                                                                ? <NewThing onClick={() => console.log("oi")}><img src={PlusIcon}></img></NewThing> 
+                                                                ? <NewThing onClick={dado.name == "Depósitos totais" ? () => atr.setShowDeposits(true) : () => atr.setShowWithdraws(true)}><img src={PlusIcon}></img></NewThing> 
                                                                 : undefined}</IValue> 
                 : <IValue color={dado.change >= 0 
                                 ? "rgb(0, 210, 0)" 

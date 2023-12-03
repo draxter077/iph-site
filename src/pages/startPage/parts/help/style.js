@@ -14,5 +14,6 @@ export const Background = styled.div`
     transition: top ${transitionSlow} linear;
 
     position: fixed;
+    z-index: 1;
     top: ${atr => atr.$display ? "0vh" : "-100vh"}
 `

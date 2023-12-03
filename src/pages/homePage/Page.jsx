@@ -4,6 +4,8 @@ import { Background } from "./parts/structureParts/background.js"
 import { ConfigDiv } from "./parts/structureParts/configDiv/Section.jsx"
 import { InformacoesBasicas } from "./parts/infoBas/Section.jsx"
 import { InformacoesDetalhadas } from "./parts/infoDet/Section.jsx"
+import { Deposits } from "./parts/deposits/Section.jsx"
+import { WithDraws } from "./parts/withdraws/Section.jsx"
 
 import TransitionScreen from "../transitionScreen/Page.jsx"
 
@@ -18,6 +20,8 @@ export default function StartPage(){
     const [blockBackChange, setBlockBackChange] = useState(false);
     const [transitionChange, setTransitionChange] = useState(true);
     const [showHelp, setShowHelp] = useState(false);
+    const [showDeposits, setShowDeposits] = useState(false);
+    const [showWithdraws, setShowWithdraws] = useState(false);
     const [infoBas, setInfoBas] = useState([]);
     const [infoDet, setInfoDet] = useState([]);
     const [transitionText, setTransitionText] = useState("");
@@ -52,13 +56,15 @@ export default function StartPage(){
         <>
         <TransitionScreen $display={transitionChange} text={transitionText}/>
         <HelpScreen $display={showHelp} setFunc={setShowHelp}/>
+        <Deposits showDeposits={showDeposits} setShowDeposits={setShowDeposits}/>
+        <WithDraws showWithdraws={showWithdraws} setShowWithdraws={setShowWithdraws}/>
 
         <Background blockBack={blockBackChange}>
             <Topo changeWindow={changeWindow} openConfig={openConfig} setOpenConfig={setOpenConfig} setShowHelp={setShowHelp}/>
 
             <ConfigDiv openConfig={openConfig} setBlockBackChange={setBlockBackChange}/>
                 
-            <InformacoesBasicas infoBas={infoBas}/>
+            <InformacoesBasicas infoBas={infoBas} setShowDeposits={setShowDeposits} setShowWithdraws={setShowWithdraws}/>
 
             <InformacoesDetalhadas infoDet={infoDet}/>
         </Background>
