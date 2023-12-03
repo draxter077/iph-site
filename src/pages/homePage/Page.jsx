@@ -6,6 +6,7 @@ import { InformacoesBasicas } from "./parts/infoBas/Section.jsx"
 import { InformacoesDetalhadas } from "./parts/infoDet/Section.jsx"
 import { Deposits } from "./parts/deposits/Section.jsx"
 import { WithDraws } from "./parts/withdraws/Section.jsx"
+import { ConsoleLine } from "./parts/console/Section.jsx"
 
 import TransitionScreen from "../transitionScreen/Page.jsx"
 
@@ -65,6 +66,8 @@ export default function StartPage(){
             <ConfigDiv openConfig={openConfig} setBlockBackChange={setBlockBackChange}/>
                 
             <InformacoesBasicas infoBas={infoBas} setShowDeposits={setShowDeposits} setShowWithdraws={setShowWithdraws}/>
+
+            <ConsoleLine axios={axios}/>
 
             <InformacoesDetalhadas infoDet={infoDet}/>
         </Background>
