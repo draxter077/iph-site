@@ -1,18 +1,21 @@
-import { SectionDiv, Title, BankData } from "./style.js"
+import { SectionDiv, Title, Info, BankData, Button } from "./style.js"
 
 export function Deposits(atr){
     return(
     <SectionDiv $display={atr.showDeposits}>
         <Title>Novo depósito</Title>
-        <BankData>
+        <Info>
             <div>Para realizar um novo depósito, é preciso fazer uma transferência para a conta abaixo:</div>
-            <div>Banco: 0260</div>
-            <div>Agência: 0001</div>
-            <div>Conta: 83937762-3</div>
-            <div>Chave PIX: philippe.idalgoprestes@gmail.com</div>
-            <div>Assim que você realizar o depósito, será notificado via email e seu depósito será transferido automaticamente para a conta titular da invPH</div>
-        </BankData>
-        <button onClick={() => atr.setShowDeposits(false)}>Fechar</button>
+            <BankData>
+                <div><strong>Banco:</strong> 0260</div>
+                <div><strong>Agência:</strong> 0001</div>
+                <div><strong>Conta corrente:</strong> 83937762-3</div>
+                <div><strong>Chave Pix:</strong> philippe.idalgoprestes@gmail.com</div>
+            </BankData>
+            <div>Devido a limitações impostas pelo Banco Central, as contas em corretoras de valores podem receber depósitos apenas de contas do seu titular; ou seja, é preciso que o montante a ser transferido parta de uma conta do responsável por ela. Por essa limitação, a conta para depósito da invPH está no nome do titular da conta para investimentos.</div>
+            <div>Assim que você realizar o depósito, será notificado via email e seu depósito será transferido automaticamente para a conta de investimentos. 😉</div>
+        </Info>
+        <Button><button onClick={() => atr.setShowDeposits(false)}>Fechar</button></Button>
     </SectionDiv>     
     )
 }

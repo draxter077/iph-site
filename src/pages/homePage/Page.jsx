@@ -56,7 +56,7 @@ export default function StartPage(){
     return(
         <>
         <TransitionScreen $display={transitionChange} text={transitionText}/>
-        <HelpScreen $display={showHelp} setFunc={setShowHelp}/>
+        <HelpScreen showHelp={showHelp} setShowHelp={setShowHelp}/>
         <Deposits showDeposits={showDeposits} setShowDeposits={setShowDeposits}/>
         <WithDraws showWithdraws={showWithdraws} setShowWithdraws={setShowWithdraws}/>
 

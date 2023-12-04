@@ -23,19 +23,31 @@ export const SectionDiv = styled.div`
 export const Title = styled.div`
     font-size: ${fontSizeMedium};
     color: rgb(255, 255, 255);
+    margin: 0px 0px 20px 0px;
+    font-weight: 700;
+`
+export const Info = styled.div`
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgb(255, 255, 255);
+    font-size: ${fontSizeSmall};
+    line-height: 1.2;
 `
 export const BankData = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    margin: 10px 0px;
+    font-weight: 600;
+    line-height: 1.4;
+`
+export const Button = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    padding: 0px 0px 0px 10px;
-    margin: 10px 0px 0px 0px;
-
-    font-size: ${fontSizeSmall};
-    color: rgb(255, 255, 255);
-
-    div{
-        margin: 0px 0px 10px 0px;
-    }
+    width: 100%;
+    margin: 20px 0px 0px 0px;
 `
