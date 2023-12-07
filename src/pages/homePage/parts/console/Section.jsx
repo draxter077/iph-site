@@ -5,7 +5,7 @@ export function ConsoleLine(atr){
     async function send(e){
         let line = e.target.parentElement.children[0].value
         await atr.axios.post(API + "/console", {command: line})
-            .then(resposta => {alert(resposta.status)})
+            .then(resposta => {alert(resposta.data)})
             .catch(response => {alert(response.response)})
     }
     return(
