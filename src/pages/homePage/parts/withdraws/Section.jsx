@@ -9,7 +9,7 @@ export function WithDraws(atr){
         value = Number(value)
         await axios.post(API + "/withdraw", {userID: atr.userID, value: value})
             .then(resposta => {e.target.parentElement.children[0].value = "Recebido 😉"})
-            .catch(response => {alert(response.response)})
+            .catch(response => {alert(response.response.status)})
     }
     return(
     <SectionDiv $display={atr.showWithdraws}>
