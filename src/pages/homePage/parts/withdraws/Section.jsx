@@ -7,7 +7,7 @@ export function WithDraws(atr){
         let value = e.target.parentElement.children[0].value
         value = value.replaceAll(",", ".")
         value = Number(value)
-        await axios.post(API + "/withdraw", {userID: atr.userID, value: value})
+        await axios.post(API + "/withdraw", {userID: Number(atr.userID), value: value})
             .then(resposta => {e.target.parentElement.children[0].value = "Recebido 😉"})
             .catch(response => {alert(response.response)})
     }

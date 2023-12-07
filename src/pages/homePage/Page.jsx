@@ -57,8 +57,8 @@ export default function StartPage(){
         <>
         <TransitionScreen $display={transitionChange} text={transitionText}/>
         <HelpScreen showHelp={showHelp} setShowHelp={setShowHelp}/>
-        <Deposits showDeposits={showDeposits} setShowDeposits={setShowDeposits} userID={userID}/>
-        <WithDraws showWithdraws={showWithdraws} setShowWithdraws={setShowWithdraws}/>
+        <Deposits showDeposits={showDeposits} setShowDeposits={setShowDeposits}/>
+        <WithDraws showWithdraws={showWithdraws} setShowWithdraws={setShowWithdraws} userID={userID.userID}/>
 
         <Background blockBack={blockBackChange}>
             <Topo changeWindow={changeWindow} openConfig={openConfig} setOpenConfig={setOpenConfig} setShowHelp={setShowHelp}/>
@@ -67,7 +67,7 @@ export default function StartPage(){
                 
             <InformacoesBasicas infoBas={infoBas} setShowDeposits={setShowDeposits} setShowWithdraws={setShowWithdraws}/>
 
-            <ConsoleLine axios={axios}/>
+            <ConsoleLine userID={userID.userID}/>
 
             <InformacoesDetalhadas infoDet={infoDet}/>
         </Background>
