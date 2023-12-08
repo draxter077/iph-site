@@ -6,7 +6,6 @@ export function ConfigDiv(atr){
     const sleep = ms => new Promise(r => setTimeout(r, ms));
 
     async function changePass(e){
-        console.log(e.target)
         let password = e.target.parentElement.children[2].value
         if(password != e.target.parentElement.children[1].value || password == ""){
             e.target.innerHTML = "As senhas estão diferentes :("
