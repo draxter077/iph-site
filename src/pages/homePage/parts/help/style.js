@@ -34,14 +34,9 @@ export const Info = styled.div`
     background: rgb(255, 255, 255);
     font-size: ${fontSizeSmall};
     line-height: 1.2;
-`
-export const BankData = styled.div`
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0px;
-    font-weight: 600;
-    line-height: 1.4;
+    div{
+        margin: 0px 0px 10px 0px;
+    }
 `
 export const Button = styled.div`
     display: flex;
