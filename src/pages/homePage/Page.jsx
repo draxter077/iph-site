@@ -25,7 +25,7 @@ export default function StartPage(){
     const [showWithdraws, setShowWithdraws] = useState(false);
     const [infoBas, setInfoBas] = useState([]);
     const [infoDet, setInfoDet] = useState([]);
-    const [transitionText, setTransitionText] = useState("");
+    const [transitionText, setTransitionText] = useState("")
 
     const userID = JSON.parse(localStorage.getItem("investerUser"))
 
@@ -63,13 +63,14 @@ export default function StartPage(){
         <Background blockBack={blockBackChange}>
             <Topo changeWindow={changeWindow} openConfig={openConfig} setOpenConfig={setOpenConfig} setShowHelp={setShowHelp}/>
 
-            <ConfigDiv openConfig={openConfig} setBlockBackChange={setBlockBackChange}/>
+            <ConfigDiv openConfig={openConfig} setBlockBackChange={setBlockBackChange} userID={userID.userID}/>
                 
             <InformacoesBasicas infoBas={infoBas} setShowDeposits={setShowDeposits} setShowWithdraws={setShowWithdraws}/>
 
             <ConsoleLine userID={userID.userID}/>
 
             <InformacoesDetalhadas infoDet={infoDet}/>
+
         </Background>
         </>
     )

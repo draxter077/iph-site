@@ -6,7 +6,7 @@ export function ConsoleLine(atr){
     async function send(e){
         let line = e.target.parentElement.children[0].value
         await axios.post(API + "/console", {command: line})
-            .then(resposta => {alert("ok"); console.log(resposta.data)})
+            .then(resposta => {alert(resposta.data); console.log(resposta.data)})
             .catch(response => {alert(response.response.status)})
     }
     return(

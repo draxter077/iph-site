@@ -1,29 +1,13 @@
-import { Background } from "./style.js"
+import { SectionDiv, Title, Info, Button } from "./style.js"
 
 export function HelpScreen(atr){
     return(
-        <Background $display={atr.$display}>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <span>teste</span>
-            <button onClick={() => atr.setFunc(false)}>Fechar</button>
-        </Background>
+    <SectionDiv $display={atr.$display}>
+    <Title>Ajuda</Title>
+    <Info>
+        <div>Essa seção ainda está sendo desenvolvida 😅</div>
+    </Info>
+    <Button><button onClick={() => atr.setFunc(false)}>Fechar</button></Button>
+    </SectionDiv>   
     )
 }

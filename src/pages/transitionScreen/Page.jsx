@@ -5,7 +5,7 @@ export default function TransitionScreen(atr){
     return(
         <Background $display={atr.$display}>
             <Logo>
-                inv:PH
+                iPH
             </Logo>
             <span>
                 {atr.text}

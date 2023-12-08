@@ -11,5 +11,6 @@ export const SectionDiv = styled.div`
 
     input{
         font-size: ${fontSizeSmall};
+        width: 50%;
     }
 `

@@ -5,7 +5,7 @@ export function HelpScreen(atr){
         <SectionDiv $display={atr.showHelp}>
             <Title>Ajuda</Title>
             <Info>
-                Oi
+                <div>Essa seção ainda está sendo desenvolvida 😅</div>
             </Info>
             <Button><button onClick={() => atr.setShowHelp(false)}>Fechar</button></Button>
         </SectionDiv>
