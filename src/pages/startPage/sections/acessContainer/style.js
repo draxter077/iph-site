@@ -31,7 +31,7 @@ export const SectionDiv = styled.div`
     button{
         width: fit-content;
         margin: 30px 0px 0px 0px;
-        opacity: ${atr => atr.disabled ? "0" : "1"};
+        opacity: ${atr => atr.$disabled ? "0" : "1"};
         transition: opacity ${transitionFast}, background ${transitionMedium};
     }
 
