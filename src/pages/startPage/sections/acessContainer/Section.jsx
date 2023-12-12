@@ -2,15 +2,24 @@ import { SectionDiv, Input } from "./style.js"
 
 import { inputError } from "../../../generalFunctions/windowsRelated.js"
 import { sleep } from "../../../generalFunctions/numberRelated.js"
+import { names, isEmail } from "../../../generalFunctions/stringRelated.js"
 import { API, homeURL } from "../../../../variablesValues.js"
 
 import axios from "axios"
+import { useState } from "react"
 
 export function AcessContainer(atr){
-    const setObj = {setButtonDis: atr.setButtonDis, 
+    const [loadingAnimation, setLoadingAnimation] = useState(false)
+    const [wrongName, setWrongName] = useState(false)
+    const [wrongEmail, setWrongEmail] = useState(false)
+    const [wrongPass, setWrongPass] = useState(false)
+    const [wrongConfPass, setWrongConfPass] = useState(false)
+    const [buttonDis, setButtonDis] = useState(false)
+
+    const setObj = {setButtonDis: setButtonDis, 
         setAlertText: atr.setAlertText, 
         setShowAlert: atr.setShowAlert, 
-        setLoadingAnimation: atr.setLoadingAnimation}
+        setLoadingAnimation: setLoadingAnimation}
 
     async function changeWindow(){
         atr.setTransitionChange(true); 
@@ -22,14 +31,14 @@ export function AcessContainer(atr){
         let userEmail = e.target.parentElement.children[0].children[1].value
         let userPassword = e.target.parentElement.children[0].children[2].value
         if(userEmail.length == 0 || userPassword.length == 0){
-            await inputError([atr.setWrongEmail, atr.setWrongPass], "Ops, você esqueceu de completar todos os campos :)", setObj)
+            await inputError([setWrongEmail, setWrongPass], "Ops, você esqueceu de completar todos os campos :)", setObj)
         }
         else if(!(isEmail(userEmail))){
-            await inputError([atr.setWrongEmail], "Ops, preencha o email corretamente :)", setObj)
+            await inputError([setWrongEmail], "Ops, preencha o email corretamente :)", setObj)
         }
         else{
-            atr.setLoadingAnimation(true);
-            atr.setButtonDis(true)
+            setLoadingAnimation(true);
+            setButtonDis(true)
             let logObj = {email: userEmail, password: userPassword};
             await axios.post(API + "/login", logObj)
                 .then(resposta => {localStorage.setItem("investerUser", JSON.stringify(resposta.data)); changeWindow()})
@@ -54,18 +63,18 @@ export function AcessContainer(atr){
         let userPassword = e.target.parentElement.children[0].children[2].value
         let userConfPassword = e.target.parentElement.children[0].children[3].value
         if(userName.length == 0 || userEmail.length == 0 || userPassword.length == 0 || userConfPassword.length == 0){
-            await inputError([atr.setWrongName, atr.setWrongEmail, atr.setWrongPass, atr.setWrongConfPass], "Ops, você esqueceu de completar todos os campos :)", setObj)
+            await inputError([setWrongName, setWrongEmail, setWrongPass, setWrongConfPass], "Ops, você esqueceu de completar todos os campos :)", setObj)
         }
         else if(!(isEmail(userEmail))){
-            await inputError([atr.setWrongEmail], "Ops, preencha o email corretamente :)", setObj)
+            await inputError([setWrongEmail], "Ops, preencha o email corretamente :)", setObj)
         }
         else if(userPassword != userConfPassword){
-            await inputError([atr.setWrongConfPass], "Ops, as senhas devem ser iguais :)", setObj)
+            await inputError([setWrongConfPass], "Ops, as senhas devem ser iguais :)", setObj)
         }
         else{
-            atr.setLoadingAnimation(true);
-            atr.setButtonDis(true)
-            let logObj = {name: names(userName), email: userEmail, password: userPassword};
+            setLoadingAnimation(true);
+            setButtonDis(true)
+            let logObj = {name: names(userName), email: userEmail.toLowerCase(), password: userPassword};
             await axios.post(API + "/signup", logObj)
                 .then(resposta => {localStorage.setItem("investerUser", JSON.stringify(resposta.data)); changeWindow()})
                 .catch(async response => {
@@ -73,20 +82,20 @@ export function AcessContainer(atr){
                         await inputError([], "Ops, não consegui me conectar ao servidor :(", setObj)
                     }
                     else if(response.response.status == 409){
-                        await inputError([atr.setWrongEmail], "Ops, esse email já está vinculado a uma conta :(", setObj)
+                        await inputError([setWrongEmail], "Ops, esse email já está vinculado a uma conta :(", setObj)
                     }
                 })
         }
     }
 
     return(
-        <SectionDiv $loading={atr.loadingAnimation} $disabled={atr.buttonDis}>
+        <SectionDiv $loading={loadingAnimation} $disabled={buttonDis}>
             {atr.openSignUp ? "Crie uma conta" : "Entre na sua conta"}
             <div>
-                <Input placeholder="Nome" $display={atr.openSignUp} $wrong={atr.wrongName}></Input>
-                <Input placeholder="Email" $display={true} $wrong={atr.wrongEmail}></Input>
-                <Input type="password" placeholder="Senha" $display={true} $wrong={atr.wrongPass}></Input>
-                <Input type="password" placeholder="Confirme sua senha" $display={atr.openSignUp} $wrong={atr.wrongConfPass}></Input>
+                <Input placeholder="Nome" $display={atr.openSignUp} $wrong={wrongName}></Input>
+                <Input placeholder="Email" $display={true} $wrong={wrongEmail}></Input>
+                <Input type="password" placeholder="Senha" $display={true} $wrong={wrongPass}></Input>
+                <Input type="password" placeholder="Confirme sua senha" $display={atr.openSignUp} $wrong={wrongConfPass}></Input>
             </div>
             <button onClick={atr.openSignUp ? (e) => signUp(e) : (e) => logIn(e)}>{atr.openSignUp ? "Criar" : "Entrar"}</button>
         </SectionDiv>

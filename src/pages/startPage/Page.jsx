@@ -16,14 +16,8 @@ export default function StartPage(){
     const [openSignUp, setOpenSignUp] = useState(false);
     const [transitionChange, setTransitionChange] = useState(false)
     const [showHelp, setShowHelp] = useState(false)
-    const [wrongName, setWrongName] = useState(false)
-    const [wrongEmail, setWrongEmail] = useState(false)
-    const [wrongPass, setWrongPass] = useState(false)
-    const [wrongConfPass, setWrongConfPass] = useState(false)
-    const [loadingAnimation, setLoadingAnimation] = useState(false)
     const [showAlert, setShowAlert] = useState(false)
     const [alertText, setAlertText] = useState("")
-    const [buttonDis, setButtonDis] = useState(false)
 
     return(
         <>
@@ -35,28 +29,12 @@ export default function StartPage(){
             <Topo setShowHelp={setShowHelp}/>
 
             <AcessContainer 
-                loadingAnimation={loadingAnimation}
-                setLoadingAnimation={setLoadingAnimation}
-                
-                wrongName={wrongName}
-                setWrongName={setWrongName}
-
-                wrongEmail={wrongEmail}
-                setWrongEmail={setWrongEmail}
-
-                wrongPass={wrongPass}
-                setWrongPass={setWrongPass}
-
-                wrongConfPass={wrongConfPass}
-                setWrongConfPass={setWrongConfPass}
-
-                buttonDis={buttonDis}
-                setButtonDis={setButtonDis}
-
                 openSignUp={openSignUp}
                 navigate={navigate}
+
                 setAlertText={setAlertText}
                 setShowAlert={setShowAlert}
+                
                 setTransitionChange={setTransitionChange}
             />
 
