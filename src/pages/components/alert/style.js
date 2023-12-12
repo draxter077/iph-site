@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { fontSizeSmall } from "../../../visualValues.js"
+import { colorSecundary, fontSizeSmall } from "../../../visualValues.js"
 
 export const ComponentDiv = styled.div`
     @keyframes changeOpacity{
@@ -14,6 +14,7 @@ export const ComponentDiv = styled.div`
 
     background: rgb(255, 255, 255);
     border-radius: 5px;
+    border: solid 2px ${colorSecundary};
     padding: 20px;
 
     font-size: ${fontSizeSmall};

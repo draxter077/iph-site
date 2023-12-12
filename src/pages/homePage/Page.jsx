@@ -72,7 +72,13 @@ export default function StartPage(){
         <Background blockBack={blockBackChange}>
             <Topo changeWindow={changeWindow} openConfig={openConfig} setOpenConfig={setOpenConfig} setShowHelp={setShowHelp}/>
 
-            <ConfigDiv openConfig={openConfig} setBlockBackChange={setBlockBackChange} userID={userID.userID}/>
+            <ConfigDiv 
+                openConfig={openConfig}
+                setBlockBackChange={setBlockBackChange}
+                userID={userID.userID}
+                setAlertText={setAlertText}
+                setShowAlert={setShowAlert}
+            />
                 
             <InformacoesBasicas infoBas={infoBas} setShowDeposits={setShowDeposits} setShowWithdraws={setShowWithdraws}/>
 

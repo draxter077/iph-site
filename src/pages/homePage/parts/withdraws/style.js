@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { transitionMedium, colorSecundary, fontSizeMedium, fontSizeSmall, transitionSlow } from "../../../../visualValues"
+import { transitionFast, transitionMedium, colorSecundary, fontSizeMedium, fontSizeSmall, transitionSlow } from "../../../../visualValues"
 
 export const SectionDiv = styled.div`
     box-sizing: border-box;
