@@ -1,6 +1,6 @@
 import { SectionDiv, Title, Info, Button } from "./style.js"
 
-export function HelpScreen(atr){
+export default function HelpScreen(atr){
     return(
     <SectionDiv $display={atr.$display}>
     <Title>Ajuda</Title>

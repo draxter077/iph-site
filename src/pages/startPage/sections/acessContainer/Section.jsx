@@ -7,14 +7,17 @@ import { API, homeURL } from "../../../../variablesValues.js"
 
 import axios from "axios"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
-export function AcessContainer(atr){
+export default function AcessContainer(atr){
     const [loadingAnimation, setLoadingAnimation] = useState(false)
     const [wrongName, setWrongName] = useState(false)
     const [wrongEmail, setWrongEmail] = useState(false)
     const [wrongPass, setWrongPass] = useState(false)
     const [wrongConfPass, setWrongConfPass] = useState(false)
     const [buttonDis, setButtonDis] = useState(false)
+
+    const navigate = useNavigate()
 
     const setObj = {setButtonDis: setButtonDis, 
         setAlertText: atr.setAlertText, 
@@ -24,7 +27,7 @@ export function AcessContainer(atr){
     async function changeWindow(){
         atr.setTransitionChange(true); 
         await sleep(1000);
-        atr.navigate(homeURL);
+        navigate(homeURL);
     }
 
     async function logIn(e){

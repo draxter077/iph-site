@@ -1,18 +1,16 @@
 import { Background, Button } from "./style.js"
 
-import { HelpScreen } from "./sections/help/Section.jsx"
-import { Topo } from "./sections/topo/Section.jsx"
-import { AcessContainer } from "./sections/acessContainer/Section.jsx"
+import HelpScreen from "./sections/help/Section.jsx"
+import Topo from "./sections/topo/Section.jsx"
+import AcessContainer from "./sections/acessContainer/Section.jsx"
 
 import Alert from "../components/alert/Section.jsx"
 
-import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 
 import TransitionScreen from "../components/transitionScreen/Page.jsx"
 
 export default function StartPage(){
-    const navigate = useNavigate()
     const [openSignUp, setOpenSignUp] = useState(false);
     const [transitionChange, setTransitionChange] = useState(false)
     const [showHelp, setShowHelp] = useState(false)
@@ -30,11 +28,10 @@ export default function StartPage(){
 
             <AcessContainer 
                 openSignUp={openSignUp}
-                navigate={navigate}
 
                 setAlertText={setAlertText}
                 setShowAlert={setShowAlert}
-                
+
                 setTransitionChange={setTransitionChange}
             />
 

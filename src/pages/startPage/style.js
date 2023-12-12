@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { backChangeTime, colorMain, colorSoftMain, colorSecundary, transitionFast, fontSizeSmall } from "../../visualValues"
+import { backChangeTime, colorMain, colorSoftMain, colorSecundary, transitionFast } from "../../visualValues"
 
 export const Background = styled.div`
     box-sizing: border-box;

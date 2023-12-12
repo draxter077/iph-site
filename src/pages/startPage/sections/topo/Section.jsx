@@ -1,6 +1,6 @@
 import { SectionDiv, Logo, Button } from "./style.js"
 
-export function Topo(atr){
+export default function Topo(atr){
     return(
         <SectionDiv>
             <Logo>iPH</Logo>
