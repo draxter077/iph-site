@@ -8,7 +8,7 @@ import { Deposits } from "./parts/deposits/Section.jsx"
 import { WithDraws } from "./parts/withdraws/Section.jsx"
 import { ConsoleLine } from "./parts/console/Section.jsx"
 
-import TransitionScreen from "../transitionScreen/Page.jsx"
+import TransitionScreen from "../components/transitionScreen/Page.jsx"
 
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"

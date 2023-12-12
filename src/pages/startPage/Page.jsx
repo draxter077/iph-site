@@ -1,18 +1,22 @@
-import { Background, Button, Alert } from "./style.js"
+import { Background, Button } from "./style.js"
 
-import { HelpScreen } from "./parts/help/Section.jsx"
-import { Topo } from "./parts/topo/Section.jsx"
-import { AcessContainer } from "./parts/acessContainer/Section.jsx"
+import { HelpScreen } from "./sections/help/Section.jsx"
+import { Topo } from "./sections/topo/Section.jsx"
+import { AcessContainer } from "./sections/acessContainer/Section.jsx"
+
+import Alert from "../components/alert/Section.jsx"
 
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import axios from "axios"
 
-import TransitionScreen from "../transitionScreen/Page.jsx"
+import TransitionScreen from "../components/transitionScreen/Page.jsx"
 
 import { API, homeURL } from "../../variablesValues.js"
 
 import { names } from "./helpFunction/strings.js"
+import { isEmail } from "../generalFunctions/stringRelated.js"
+import { sleep } from "../generalFunctions/numberRelated.js"
 
 export default function StartPage(){
     const navigate = useNavigate()
@@ -28,23 +32,10 @@ export default function StartPage(){
     const [alertText, setAlertText] = useState("")
     const [buttonDis, setButtonDis] = useState(false)
 
-    const sleep = ms => new Promise(r => setTimeout(r, ms));
-
     async function changeWindow(){
         setTransitionChange(true); 
         await sleep(1000);
         navigate(homeURL);
-    }
-
-    function isEmail(email){
-        let before = email;
-        let after = email.replaceAll("@")
-        if(before == after){
-            return false
-        }
-        else{
-            return true
-        }
     }
 
     async function inputError(functionsArray, text){
@@ -139,9 +130,7 @@ export default function StartPage(){
             <Button onClick={() => setOpenSignUp(!openSignUp)}>{openSignUp ? "Entrar em uma conta" : "Criar uma conta"}</Button>
         </Background>
 
-        <Alert $showUp={showAlert}>
-            {alertText}
-        </Alert>
+        <Alert display={showAlert} text={alertText} />
         </>
     )
 }

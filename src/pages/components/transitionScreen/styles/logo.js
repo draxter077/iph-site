@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colorSecundary } from "../../../visualValues.js"
+import { colorSecundary } from "../../../../visualValues"
 
 export const Logo = styled.div`
     font-size: 50px;
