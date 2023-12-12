@@ -12,6 +12,8 @@ import TransitionScreen from "../transitionScreen/Page.jsx"
 
 import { API, homeURL } from "../../variablesValues.js"
 
+import { names } from "./helpFunction/strings.js"
+
 export default function StartPage(){
     const navigate = useNavigate()
     const [openSignUp, setOpenSignUp] = useState(false);
@@ -109,7 +111,7 @@ export default function StartPage(){
         else{
             setLoadingAnimation(true);
             setButtonDis(true)
-            let logObj = {name: userName, email: userEmail, password: userPassword};
+            let logObj = {name: names(userName), email: userEmail, password: userPassword};
             await axios.post(API + "/signup", logObj)
                 .then(resposta => {localStorage.setItem("investerUser", JSON.stringify(resposta.data)); changeWindow()})
                 .catch(async response => {
