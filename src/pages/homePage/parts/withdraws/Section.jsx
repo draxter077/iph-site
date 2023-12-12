@@ -40,11 +40,11 @@ export default function WithDraws(atr){
         }
     }
     return(
-    <SectionDiv $display={atr.showWithdraws} $disabled={buttonDis} $loading={loadingAnimation}>
+    <SectionDiv $display={atr.showWithdraws}>
         <Title>Nova retirada</Title>
         <Info>
             <div>Devido à natureza das contas, o valor retirado só pode ser transferido via TED. Por isso, pode levar até 24h úteis para aparecer em sua conta.</div>
-            <InputSection $wrong={wrongValue}>
+            <InputSection $wrong={wrongValue}  $loading={loadingAnimation} $disabled={buttonDis}>
                 <input placeholder="Digite o valor (ex: 1234,56)"></input>
                 <button onClick={(e) => withdrawRequest(e)}>Retirar</button>
             </InputSection>
