@@ -2,7 +2,7 @@ import { SectionDiv } from "./style.js"
 import { API } from "../../../../variablesValues.js"
 import axios from "axios"
 
-export function ConsoleLine(atr){
+export default function ConsoleLine(atr){
     async function send(e){
         let line = e.target.parentElement.children[0].value
         await axios.post(API + "/console", {command: line})

@@ -1,6 +1,6 @@
 import { SectionDiv, Info, Titulo, Linhas, Linha } from "./style.js"
 
-export function InformacoesDetalhadas(atr){
+export default function InformacoesDetalhadas(atr){
     return(
         <SectionDiv>
         {atr.infoDet.map(dado =>

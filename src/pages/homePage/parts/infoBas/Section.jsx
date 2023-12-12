@@ -1,7 +1,7 @@
 import { SectionDiv, Info, ITitle, IValue, NewThing } from "./style"
 import PlusIcon from "./imgs/plusIcon.png"
 
-export function InformacoesBasicas(atr){
+export default function InformacoesBasicas(atr){
     return(
         <SectionDiv>
             {atr.infoBas.map(dado =>

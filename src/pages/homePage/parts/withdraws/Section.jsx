@@ -2,7 +2,7 @@ import axios from "axios"
 import { API } from "../../../../variablesValues.js"
 import { SectionDiv, Title, Info, InputSection, Button } from "./style.js"
 
-export function WithDraws(atr){
+export default function WithDraws(atr){
     async function withdrawRequest(e){
         let value = e.target.parentElement.children[0].value
         value = value.replaceAll(",", ".")

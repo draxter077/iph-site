@@ -23,15 +23,12 @@ export default function StartPage(){
         <HelpScreen $display={showHelp} setFunc={setShowHelp}/>
         
         <Background>
-
             <Topo setShowHelp={setShowHelp}/>
 
             <AcessContainer 
                 openSignUp={openSignUp}
-
                 setAlertText={setAlertText}
                 setShowAlert={setShowAlert}
-
                 setTransitionChange={setTransitionChange}
             />
 

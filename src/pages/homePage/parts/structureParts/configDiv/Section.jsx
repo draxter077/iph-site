@@ -2,7 +2,7 @@ import { SectionDiv, PaddingDiv, Title, ChangePasswordDiv, DivTitle } from "./st
 import { API } from "../../../../../variablesValues.js"
 import axios from "axios"
 
-export function ConfigDiv(atr){
+export default function ConfigDiv(atr){
     const sleep = ms => new Promise(r => setTimeout(r, ms));
 
     async function changePass(e){

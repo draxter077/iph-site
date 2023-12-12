@@ -1,14 +1,16 @@
-import { HelpScreen } from "./parts/help/Section.jsx"
-import { Topo } from "./parts/topo/Section.jsx"
+import HelpScreen from "./parts/help/Section.jsx"
+import Topo from "./parts/topo/Section.jsx"
 import { Background } from "./parts/structureParts/background.js"
-import { ConfigDiv } from "./parts/structureParts/configDiv/Section.jsx"
-import { InformacoesBasicas } from "./parts/infoBas/Section.jsx"
-import { InformacoesDetalhadas } from "./parts/infoDet/Section.jsx"
-import { Deposits } from "./parts/deposits/Section.jsx"
-import { WithDraws } from "./parts/withdraws/Section.jsx"
-import { ConsoleLine } from "./parts/console/Section.jsx"
+import ConfigDiv from "./parts/structureParts/configDiv/Section.jsx"
+import InformacoesBasicas from "./parts/infoBas/Section.jsx"
+import InformacoesDetalhadas from "./parts/infoDet/Section.jsx"
+import Deposits from "./parts/deposits/Section.jsx"
+import WithDraws from "./parts/withdraws/Section.jsx"
+import ConsoleLine from "./parts/console/Section.jsx"
+import Alert from "../components/alert/Section.jsx"
 
 import TransitionScreen from "../components/transitionScreen/Page.jsx"
+import { sleep } from "../generalFunctions/numberRelated.js"
 
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
@@ -26,10 +28,11 @@ export default function StartPage(){
     const [infoBas, setInfoBas] = useState([]);
     const [infoDet, setInfoDet] = useState([]);
     const [transitionText, setTransitionText] = useState("")
+    const [showAlert, setShowAlert] = useState(false)
+    const [alertText, setAlertText] = useState("")
 
     const userID = JSON.parse(localStorage.getItem("investerUser"))
 
-    const sleep = ms => new Promise(r => setTimeout(r, ms));
     async function changeTrans(){
         await sleep(1000);
         setTransitionChange(false);
@@ -58,7 +61,13 @@ export default function StartPage(){
         <TransitionScreen $display={transitionChange} text={transitionText}/>
         <HelpScreen showHelp={showHelp} setShowHelp={setShowHelp}/>
         <Deposits showDeposits={showDeposits} setShowDeposits={setShowDeposits}/>
-        <WithDraws showWithdraws={showWithdraws} setShowWithdraws={setShowWithdraws} userID={userID.userID}/>
+        <WithDraws 
+            showWithdraws={showWithdraws}
+            setShowWithdraws={setShowWithdraws}
+            userID={userID.userID}
+            setAlertText={setAlertText}
+            setShowAlert={setShowAlert}
+        />
 
         <Background blockBack={blockBackChange}>
             <Topo changeWindow={changeWindow} openConfig={openConfig} setOpenConfig={setOpenConfig} setShowHelp={setShowHelp}/>
@@ -70,8 +79,9 @@ export default function StartPage(){
             <ConsoleLine userID={userID.userID}/>
 
             <InformacoesDetalhadas infoDet={infoDet}/>
-
         </Background>
+
+        <Alert display={showAlert} text={alertText} />
         </>
     )
 }

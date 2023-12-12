@@ -1,6 +1,6 @@
 import { GroupDiv, Logo, Buttons } from "./style.js"
 
-export function Topo(atr){
+export default function Topo(atr){
     return(
         <GroupDiv>
             <Logo>iPH</Logo>

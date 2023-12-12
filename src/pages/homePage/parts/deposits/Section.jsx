@@ -1,6 +1,6 @@
 import { SectionDiv, Title, Info, BankData, Button } from "./style.js"
 
-export function Deposits(atr){
+export default function Deposits(atr){
     return(
     <SectionDiv $display={atr.showDeposits}>
         <Title>Novo depósito</Title>
