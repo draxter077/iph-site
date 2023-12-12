@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colorMain, colorSecundary, fontSizeMedium, fontSizeSmall, transitionSlow } from "../../../../visualValues"
+import { transitionMedium, colorSecundary, fontSizeMedium, fontSizeSmall, transitionSlow } from "../../../../visualValues"
 
 export const SectionDiv = styled.div`
     box-sizing: border-box;
@@ -44,6 +44,17 @@ export const BankData = styled.div`
     line-height: 1.4;
 `
 export const InputSection = styled.div`
+    @keyframes wrongInput{
+        0% {box-shadow: none}
+        100% {box-shadow: 0px 0px 5px 0px rgb(255, 0, 0)}
+    }
+
+    @keyframes loading{
+        0% {box-shadow: none}
+        100% {box-shadow: 0px 0px 15px 3px ${colorSecundary}}
+    }   
+
+
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -52,10 +63,13 @@ export const InputSection = styled.div`
     input{
         width: 15%;
         font-size: ${fontSizeSmall};
+        animation: ${atr => atr.$wrong ? `wrongInput ${transitionMedium} 2 alternate linear;` : "none"}, ${atr => atr.$loading ? `loading ${transitionSlow} infinite alternate linear;` : "none"};
     }
     button{
         margin: 0px 0px 0px 10px;
         height: 100%;
+        opacity: ${atr => atr.$disabled ? "0" : "1"};
+        transition: opacity ${transitionFast}, background ${transitionMedium};
     }
 `
 export const Button = styled.div`

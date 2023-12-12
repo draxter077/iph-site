@@ -2,21 +2,49 @@ import axios from "axios"
 import { API } from "../../../../variablesValues.js"
 import { SectionDiv, Title, Info, InputSection, Button } from "./style.js"
 
+import { inputError } from "../../../generalFunctions/windowsRelated.js"
+import { hasLetters } from "../../../generalFunctions/stringRelated.js"
+import { useState } from "react"
+
 export default function WithDraws(atr){
+    const [wrongValue, setWrongValue] = useState(false)
+    const [buttonDis, setButtonDis] = useState(false)
+    const [loadingAnimation, setLoadingAnimation] = useState(false)
+
+    const setObj = {setButtonDis: setButtonDis, 
+        setAlertText: atr.setAlertText, 
+        setShowAlert: atr.setShowAlert, 
+        setLoadingAnimation: setLoadingAnimation}
+
     async function withdrawRequest(e){
         let value = e.target.parentElement.children[0].value
-        value = value.replaceAll(",", ".")
-        value = Number(value)
-        await axios.post(API + "/withdraw", {userID: atr.userID, value: value})
-            .then(resposta => {e.target.parentElement.children[0].value = "Recebido 😉"})
-            .catch(response => {alert(response.response.status)})
+        if(hasLetters(value) || value.length == 0){
+            await inputError([setWrongValue], "Ops, digite um valor numérico para retirar :)", setObj)
+        }
+        else{
+            setLoadingAnimation(true);
+            setButtonDis(true)
+            value = value.replaceAll(",", ".")
+            value = Number(value)
+            await axios.post(API + "/withdraw", {userID: atr.userID, value: value})
+                .then(resposta => {
+                    e.target.parentElement.children[0].value = "Retirada efetuada 😉"
+                    setButtonDis(false)
+                    setLoadingAnimation(false)
+                })
+                .catch(async response => {
+                    if(response.response.status == 422){
+                        await inputError([setWrongValue], "Ops, digite um valor inferior ou igual ao seu saldo disponível :)", setObj)
+                    }
+                })
+        }
     }
     return(
-    <SectionDiv $display={atr.showWithdraws}>
+    <SectionDiv $display={atr.showWithdraws} $disabled={buttonDis} $loading={loadingAnimation}>
         <Title>Nova retirada</Title>
         <Info>
             <div>Devido à natureza das contas, o valor retirado só pode ser transferido via TED. Por isso, pode levar até 24h úteis para aparecer em sua conta.</div>
-            <InputSection>
+            <InputSection $wrong={wrongValue}>
                 <input placeholder="Digite o valor (ex: 1234,56)"></input>
                 <button onClick={(e) => withdrawRequest(e)}>Retirar</button>
             </InputSection>
