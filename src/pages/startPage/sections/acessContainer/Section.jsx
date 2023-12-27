@@ -13,6 +13,7 @@ export default function AcessContainer(atr){
     const [loadingAnimation, setLoadingAnimation] = useState(false)
     const [wrongName, setWrongName] = useState(false)
     const [wrongEmail, setWrongEmail] = useState(false)
+    const [wrongPix, setWrongPix] = useState(false)
     const [wrongPass, setWrongPass] = useState(false)
     const [wrongConfPass, setWrongConfPass] = useState(false)
     const [buttonDis, setButtonDis] = useState(false)
@@ -32,7 +33,7 @@ export default function AcessContainer(atr){
 
     async function logIn(e){
         let userEmail = e.target.parentElement.children[0].children[1].value
-        let userPassword = e.target.parentElement.children[0].children[2].value
+        let userPassword = e.target.parentElement.children[0].children[3].value
         if(userEmail.length == 0 || userPassword.length == 0){
             await inputError([setWrongEmail, setWrongPass], "Ops, você esqueceu de completar todos os campos :)", setObj)
         }
@@ -63,10 +64,11 @@ export default function AcessContainer(atr){
     async function signUp(e){
         let userName = e.target.parentElement.children[0].children[0].value
         let userEmail = e.target.parentElement.children[0].children[1].value
-        let userPassword = e.target.parentElement.children[0].children[2].value
-        let userConfPassword = e.target.parentElement.children[0].children[3].value
-        if(userName.length == 0 || userEmail.length == 0 || userPassword.length == 0 || userConfPassword.length == 0){
-            await inputError([setWrongName, setWrongEmail, setWrongPass, setWrongConfPass], "Ops, você esqueceu de completar todos os campos :)", setObj)
+        let userPix = e.target.parentElement.children[0].children[2].value
+        let userPassword = e.target.parentElement.children[0].children[3].value
+        let userConfPassword = e.target.parentElement.children[0].children[4].value
+        if(userName.length == 0 || userEmail.length == 0 || userPix.length == 0 || userPassword.length == 0 || userConfPassword.length == 0){
+            await inputError([setWrongName, setWrongEmail, setWrongPix, setWrongPass, setWrongConfPass], "Ops, você esqueceu de completar todos os campos :)", setObj)
         }
         else if(!(isEmail(userEmail))){
             await inputError([setWrongEmail], "Ops, preencha o email corretamente :)", setObj)
@@ -77,7 +79,7 @@ export default function AcessContainer(atr){
         else{
             setLoadingAnimation(true);
             setButtonDis(true)
-            let logObj = {name: names(userName), email: userEmail.toLowerCase(), password: userPassword};
+            let logObj = {name: names(userName), email: userEmail.toLowerCase(), password: userPassword, pix: userPix};
             await axios.post(API + "/signup", logObj)
                 .then(resposta => {localStorage.setItem("investerUser", JSON.stringify(resposta.data)); changeWindow()})
                 .catch(async response => {
@@ -97,6 +99,7 @@ export default function AcessContainer(atr){
             <div>
                 <Input placeholder="Nome" $display={atr.openSignUp} $wrong={wrongName}></Input>
                 <Input placeholder="Email" $display={true} $wrong={wrongEmail}></Input>
+                <Input placeholder="Chave Pix" $display={atr.openSignUp} $wrong={wrongPix}></Input>
                 <Input type="password" placeholder="Senha" $display={true} $wrong={wrongPass}></Input>
                 <Input type="password" placeholder="Confirme sua senha" $display={atr.openSignUp} $wrong={wrongConfPass}></Input>
             </div>
