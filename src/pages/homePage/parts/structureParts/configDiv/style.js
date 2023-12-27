@@ -26,6 +26,12 @@ export const Title = styled.div`
     font-weight: 700;
 `
 
+export const LineConfig = styled.div`
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+`
 export const DivTitle = styled.div`
     font-size: ${fontSizeSmall};
     color: ${colorSecundary};
@@ -34,7 +40,7 @@ export const DivTitle = styled.div`
     padding: 0px 0px 0px 5px;
 `
 
-export const ChangePasswordDiv = styled.div`
+export const ChangeDiv = styled.div`
     @keyframes wrongInput{
         0% {box-shadow: none}
         100% {box-shadow: 0px 0px 5px 0px rgb(255, 0, 0)}
@@ -48,7 +54,7 @@ export const ChangePasswordDiv = styled.div`
     display: flex;
     flex-direction: column;
     width: 20%;
-    margin: 20px 0px 0px 0px;
+    margin: 20px 20px 0px 0px;
     padding: 10px;
     border: solid 1px ${colorMain};
     border-radius: 10px;
