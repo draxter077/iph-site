@@ -30,6 +30,7 @@ export default function StartPage(){
     const [transitionText, setTransitionText] = useState("")
     const [showAlert, setShowAlert] = useState(false)
     const [alertText, setAlertText] = useState("")
+    const [pixKey, setPixKey] = useState("")
 
     const userID = JSON.parse(localStorage.getItem("investerUser"))
 
@@ -49,8 +50,9 @@ export default function StartPage(){
         axios.post(API + "/home", userID)
             .then(resposta => {
                 setTransitionText("Olá, " + resposta.data.userLog.userName.split(" ")[0] + " :)");
-                setInfoBas(resposta.data.infoBas)
-                setInfoDet(resposta.data.infoDet)
+                setInfoBas(resposta.data.infoBas);
+                setInfoDet(resposta.data.infoDet);
+                setPixKey(resposta.data.pix);
                 changeTrans()})
             .catch(response => {setTransitionText("Desculpe! Não consegui me conectar à base de dados :("); console.log(response)})
         }, []
@@ -67,6 +69,7 @@ export default function StartPage(){
             userID={userID.userID}
             setAlertText={setAlertText}
             setShowAlert={setShowAlert}
+            pix={pixKey}
         />
 
         <Background blockBack={blockBackChange}>

@@ -10,6 +10,7 @@ export default function WithDraws(atr){
     const [wrongValue, setWrongValue] = useState(false)
     const [buttonDis, setButtonDis] = useState(false)
     const [loadingAnimation, setLoadingAnimation] = useState(false)
+    const pixKey = atr.pix
 
     const setObj = {setButtonDis: setButtonDis, 
         setAlertText: atr.setAlertText, 
@@ -43,7 +44,8 @@ export default function WithDraws(atr){
     <SectionDiv $display={atr.showWithdraws}>
         <Title>Nova retirada</Title>
         <Info>
-            <div>Devido à natureza das contas, o valor retirado só pode ser transferido via TED. Por isso, pode levar até 24h úteis para aparecer em sua conta.</div>
+            <div>Devido à natureza das contas, pode levar até 24h úteis para a retirada ser efetivada.</div>
+            <div>A chave Pix cadastrada é {pixKey}</div>
             <InputSection $wrong={wrongValue}  $loading={loadingAnimation} $disabled={buttonDis}>
                 <input placeholder="Digite o valor (ex: 1234,56)"></input>
                 <button onClick={(e) => withdrawRequest(e)}>Retirar</button>
