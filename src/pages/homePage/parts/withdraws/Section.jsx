@@ -44,7 +44,7 @@ export default function WithDraws(atr){
     <SectionDiv $display={atr.showWithdraws}>
         <Title>Nova retirada</Title>
         <Info>
-            <div>Devido à natureza das contas, pode levar até 24h úteis para a retirada ser efetivada.</div>
+            <div>Devido à natureza das contas, pode levar até 24h úteis para a retirada ser efetivada 🕔</div>
             <div>A chave Pix cadastrada é {pixKey}</div>
             <InputSection $wrong={wrongValue}  $loading={loadingAnimation} $disabled={buttonDis}>
                 <input placeholder="Digite o valor (ex: 1234,56)"></input>

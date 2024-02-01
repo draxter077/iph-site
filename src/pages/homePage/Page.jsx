@@ -52,7 +52,7 @@ export default function StartPage(){
                 setTransitionText("Olá, " + resposta.data.userLog.userName.split(" ")[0] + " :)");
                 setInfoBas(resposta.data.infoBas);
                 setInfoDet(resposta.data.infoDet);
-                setPixKey(resposta.data.pix);
+                setPixKey(resposta.data.userLog.pix);
                 changeTrans()})
             .catch(response => {setTransitionText("Desculpe! Não consegui me conectar à base de dados :("); console.log(response)})
         }, []
