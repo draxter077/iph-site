@@ -28,7 +28,7 @@ export default function WithDraws(atr){
             setButtonDis(true)
             value = value.replaceAll(",", ".")
             value = Number(value)
-            await axios.post(API + "/withdraw", {userID: atr.userID, value: value, date: {day: dateD.getDate(), month: dateD.getMonth(), year: dateD.getFullYear()}})
+            await axios.post(API + "/withdraw", {userID: atr.userID, value: value, date: {day: dateD.getDate(), month: dateD.getMonth() + 1, year: dateD.getFullYear()}})
                 .then(resposta => {
                     e.target.parentElement.children[0].value = "Retirada efetuada 😉"
                     setButtonDis(false)
