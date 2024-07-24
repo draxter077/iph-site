@@ -1,7 +1,0 @@
-Esse é o código do site iPH.
-
-Ele está dividido em duas páginas: start e home.
-
-start: área de login.
-
-home: informações da conta.
