@@ -41,6 +41,7 @@ export function changeToCreateORLogin(Event){
                 <input class="initBodyInput" placeholder="Email">
                 <input class="initBodyInput" placeholder="Senha" type="password">
             </div>
+            <div class="initBodyFormsForgotPassDiv"><button class="initBodyFormsForgotPassButton">Esqueceu a senha?</button></div>
             <button class="initBodyFormsButton">Entrar</button>`
         btn.innerHTML = "Criar uma conta"
     }
