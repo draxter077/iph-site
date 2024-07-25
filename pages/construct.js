@@ -1,4 +1,5 @@
 import initMain from "./init/main.js"
+import homeMain from "./home/main.js"
 
 export default async function constructMain(data){
     const root = document.getElementById("root")
@@ -7,6 +8,6 @@ export default async function constructMain(data){
         initMain()
     }
     else{
-        root.innerHTML = `<button>${data.data}</button>`
+        homeMain(data)
     }
 }
