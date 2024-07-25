@@ -1,5 +1,6 @@
 import initMain from "./init/main.js"
 import { initPageAddFunctionsToButtons } from "./init/main.js"
+import axios from "axios"
 
 export default function constructMain(us){
     const root = document.getElementById("root")
@@ -9,6 +10,10 @@ export default function constructMain(us){
         initPageAddFunctionsToButtons()
     }
     else{
-        root.innerHTML = "<button>oi</button>"
+        let a = 100;
+        axios.get("http://ace-chimp-merry.ngrok-free.app/test")
+            .then(resposta => {a = resposta.data.teste})
+            .catch(response => {console.log(response.response)})
+        root.innerHTML = `<button>${a}</button>`
     }
 }
