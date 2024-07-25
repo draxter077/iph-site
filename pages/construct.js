@@ -1,12 +1,12 @@
 import initMain from "./init/main.js"
 
-export default async function constructMain(us){
+export default async function constructMain(data){
     const root = document.getElementById("root")
     root.innerHTML = ""
-    if(us == null){
+    if(data == null){
         initMain()
     }
     else{
-        root.innerHTML = `<button>${us.userID}</button>`
+        root.innerHTML = `<button>${data.data}</button>`
     }
 }

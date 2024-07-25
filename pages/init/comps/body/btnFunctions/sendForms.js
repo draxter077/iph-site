@@ -18,7 +18,7 @@ async function wrongAnimation(item){
 
 async function goToHome(data){
     axios.defaults.headers.common["userAuth"] = data.userID
-    await cleanScreen({data: data.data})
+    await cleanScreen({data: 0})
 }
 
 async function checkLogin(inputDivChildren){
