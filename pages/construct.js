@@ -1,6 +1,6 @@
 import initMain from "./init/main.js"
 import { initPageAddFunctionsToButtons } from "./init/main.js"
-import axios from "axios"
+import axios from "../node_modules/axios"
 
 export default function constructMain(us){
     const root = document.getElementById("root")
