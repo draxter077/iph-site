@@ -61,6 +61,11 @@ table {
 	from{max-height: 1000px;}
 	to{max-height: 0px;}
 }
+@keyframes inputWrongValue {
+	0%{box-shadow: 0px 0px 0px 0px rgb(255, 50, 0);}
+	50%{box-shadow: 0px 0px 10px 0px rgb(255, 50, 0);}
+	100%{box-shadow: 0px 0px 0px 0px rgb(255, 50, 0);}
+}
 :root{
 	--primaryGreen: rgb(0, 255, 150);
 	--transitionTime: 0.5s;
