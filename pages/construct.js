@@ -12,7 +12,7 @@ export default async function constructMain(us){
         let a = 100;
         await axios.get("https://ace-chimp-merry.ngrok-free.app/test", {headers: {"ngrok-skip-browser-warning": "69420"}})
             .then(resposta => {a = resposta.data; console.log(a)})
-            .catch(response => {console.log(response.response)})
+            .catch(response => {alert(response.response)})
         root.innerHTML = `<button>${a.teste}</button>`
     }
 }
