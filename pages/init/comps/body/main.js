@@ -1,16 +1,17 @@
-import { contentDivStyle, logoStyle, formsDivStyle, titleFormsDivStyle, inputStyle } from "./style.js"
-
 export default function bodyDiv(){
-    const inputs = ["Nome", "Email", "Senha"]
+    const inputs = ["Email", "Senha"]
     return(`
-        <div style="${contentDivStyle}">
-            <div style="${logoStyle}">iPH</div>
-            <div style="${formsDivStyle}">
-                <div style="${titleFormsDivStyle}">Criar conta</div>
-                <div style="display: flex; flex-direction: column;">
-                    ${inputs.map(i => `<input style="${inputStyle}" placeholder="${i}" onmouseover="this.style.boxShadow = '0px 0px 10px 0px rgb(0, 255, 150)'" onmouseout="this.style.boxShadow = '0px 0px 0px 0px rgb(0, 255, 150)'">`).join("")}
+        <div class="initBodyContentDiv">
+            <div class="initBodyLogo">iPH</div>
+            <div class="toBeOpenUp">
+                <div class="initBodyFormsDiv">
+                    <div class="initBodyTitleFormsDiv">Entrar em uma conta</div>
+                    <div class="initBodyFormsInputs">
+                        ${inputs.map(i => `<input class="initBodyInput" placeholder="${i}">`).join("")}
+                    </div>
+                    <div class="initBodyFormsForgotPassDiv"><button class="initBodyFormsForgotPassButton">Esqueceu a senha?</button></div>
+                    <button class="initBodyFormsButton">Entrar</button>
                 </div>
-                <button>Entrar</button>
             </div>
         </div>
     `)
