@@ -53,11 +53,22 @@ function sleep(ms) {
 
 export async function checkCredentialsAndGoToHome(Event){
     const btn = Event.target
-    const openUpDiv = document.getElementsByClassName("toBeOpenUp")[0]
-    const logo = document.getElementsByClassName("initBodyLogo")[0]
-    openUpDiv.style.animation = "closeUp 1s forwards"
-    logo.style.opacity = "1"
-    logo.style.animation = "fadeOut 1s 1s forwards"
-    await sleep(2000)
-    constructMain({teste:"teste"})
+    const inputDivChildren = btn.parentElement.children[0].children
+    const numberInputs = inputDivChildren.length
+    if(numberInputs == 2){
+        const userEmail = inputDivChildren[0].value, userPassword = inputDivChildren[1].value
+        await axios.post("https://ace-chimp-merry.ngrok-free.app/userAcess", {userEmail: userEmail, userPassword: userPassword})
+            .then(async resposta => {
+                let a = resposta.data
+                axios.defaults.headers.common["userAuth"] = a.userID
+                const openUpDiv = document.getElementsByClassName("toBeOpenUp")[0]
+                const logo = document.getElementsByClassName("initBodyLogo")[0]
+                openUpDiv.style.animation = "closeUp 1s forwards"
+                logo.style.opacity = "1"
+                logo.style.animation = "fadeOut 1s 1s forwards"
+                await sleep(2000)
+                constructMain({userLog: a.userID})
+            })
+            .catch(response => {console.log(response)})
+    }
 }
