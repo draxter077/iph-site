@@ -1,14 +1,12 @@
 import initMain from "./init/main.js"
-import { initPageAddFunctionsToButtons } from "./init/main.js"
 
 export default async function constructMain(us){
     const root = document.getElementById("root")
     root.innerHTML = ""
     if(us == null){
-        root.innerHTML = initMain()
-        initPageAddFunctionsToButtons()
+        initMain()
     }
     else{
-        root.innerHTML = `<button>${us.userLog}</button>`
+        root.innerHTML = `<button>${us.userID}</button>`
     }
 }
