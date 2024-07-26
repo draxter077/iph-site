@@ -21,12 +21,22 @@
     width: 100%;
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1000px) and (min-width: 500px){
     .homeBodySides{
         flex-direction: column;
     }
     .homeBodyContentSlider{
         width: 180%;
         translate: -44%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .homeBodySides{
+        flex-direction: column;
+    }
+    .homeBodyContentSlider{
+        width: 200%;
+        translate: -40%;
     }
 }

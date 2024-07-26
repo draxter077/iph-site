@@ -9,8 +9,11 @@ function homePageAddFunctionsToButtons(){
             if(screen.width > 1000){
                 document.getElementsByClassName("homeBodyContentSlider")[0].style.translate = "-23%"
             }
-            else{
+            else if(screen.width > 500){
                 document.getElementsByClassName("homeBodyContentSlider")[0].style.translate = "-44%"
+            }
+            else{
+                document.getElementsByClassName("homeBodyContentSlider")[0].style.translate = "-40%"
             }
         }
         else{
