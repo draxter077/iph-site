@@ -1,0 +1,18 @@
+@import url("./accountTotal/main.css");
+@import url("./requestDeposit/main.css");
+@import url("./requestWithdraw/main.css");
+@import url("./openConfig/main.css");
+
+.homeBodyLeftSideDiv{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 30%;
+    padding: 10px;
+}
+
+@media screen and (max-width: 1000px){
+    .homeBodyLeftSideDiv{
+        width: 100%;
+    }
+}

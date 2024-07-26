@@ -1,0 +1,39 @@
+.homeBodyLeftSideRequestWithdrawDiv{
+    background: rgb(255, 255, 255);
+    padding: 20px 25px;
+    border-radius: 20px;
+    margin: 0px 0px 20px 0px;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.homeBodyLeftSideRequestWithdrawDivSlider{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 200%;
+    translate: 0px;
+    transition: translate var(--transitionTime);
+}
+
+.homeBodyLeftSideRequestWithdrawTitle{
+    color: var(--primaryGreen);
+    font-size: 25px;
+    font-weight: 600;
+    width: 100%;
+    margin: 0px 50px 0px 0px;
+}
+
+.homeBodyLeftSideRequestWithdrawContent{
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+}
+
+.homeBodyLeftSideRequestWithdrawInput{
+    border: 1px solid rgb(0, 255, 150);
+    padding: 10px 15px;
+    border-radius: 10px;
+}

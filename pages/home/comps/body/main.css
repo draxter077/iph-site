@@ -1,0 +1,32 @@
+@import url("./config/main.css");
+@import url("./leftSide/main.css");
+@import url("./rightSide/main.css");
+
+.homeBodyContent{
+    width:100%;
+    overflow: hidden;
+}
+
+.homeBodyContentSlider{
+    display: flex;
+    flex-direction: row;
+    width: 130%;
+    height: 100%;
+    translate: -23%;
+}
+
+.homeBodySides{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+@media screen and (max-width: 1000px){
+    .homeBodySides{
+        flex-direction: column;
+    }
+    .homeBodyContentSlider{
+        width: 180%;
+        translate: -44%;
+    }
+}
