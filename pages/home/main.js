@@ -22,9 +22,11 @@ function homePageAddFunctionsToButtons(){
             document.getElementsByClassName("homeBodyLeftSideRequestWithdrawInput")[0].focus()
         }
     }
-    document.getElementsByClassName("homeBodyLeftSideRequestWithdrawButton")[0].onclick = function a(Event){
-        console.log('a');
+    document.getElementsByClassName("homeBodyLeftSideRequestWithdrawButton")[0].onclick = async function a(Event){
         Event.stopPropagation();
+        document.getElementsByClassName("homeBodyLeftSideRequestWithdrawInput")[0].value = "Aprovado"
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        document.getElementsByClassName("homeBodyLeftSideRequestWithdrawInput")[0].value = ""
     }
 }
 
