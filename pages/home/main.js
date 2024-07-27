@@ -34,6 +34,7 @@ function homePageAddFunctionsToButtons(){
     document.getElementsByClassName("homeBodyLeftSideOpenConfigDiv")[0].onclick = function a(){
         document.getElementsByClassName("homeBodyConfigDiv")[0].style.left = "0%";
         document.getElementsByClassName("homeBodyContent")[0].style.opacity = "0.5";
+        document.getElementsByClassName("homeBodyConfigDiv")[0].scrollIntoView({behavior: "smooth"})
     }
     document.getElementsByClassName("homeBodyConfigExitButton")[0].onclick = function a(){
         document.getElementsByClassName("homeBodyConfigDiv")[0].style.left = "-100%";

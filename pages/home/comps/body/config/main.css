@@ -197,3 +197,9 @@
     margin: 20px 0px 0px 0px;
     font-style: italic;
 }
+
+@media screen and (max-width: 1000px){
+    .homeBodyConfigDiv{
+        width: 100%;
+    }
+}
