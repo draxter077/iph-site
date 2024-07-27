@@ -22,7 +22,7 @@ function homePageAddFunctionsToButtons(){
             document.getElementsByClassName("homeBodyLeftSideRequestWithdrawInput")[0].focus()
         }
     }
-    document.getElementsByClassName("test")[0].onclick = function a(Event){
+    document.getElementsByClassName("homeBodyLeftSideRequestWithdrawButton")[0].onclick = function a(Event){
         console.log('a');
         Event.stopPropagation();
     }

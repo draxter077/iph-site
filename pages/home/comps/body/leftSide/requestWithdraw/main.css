@@ -33,7 +33,19 @@
 }
 
 .homeBodyLeftSideRequestWithdrawInput{
-    border: 1px solid rgb(0, 255, 150);
+    border: 1px solid var(--primaryGreen);
     padding: 10px 15px;
     border-radius: 10px;
+}
+
+.homeBodyLeftSideRequestWithdrawButton{
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background var(--transitionTime);
+}
+
+.homeBodyLeftSideRequestWithdrawButton:hover{
+    background: var(--primaryGreen);
 }

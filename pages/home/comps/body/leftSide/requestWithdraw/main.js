@@ -6,8 +6,8 @@ export default function requestWithdraw(){
                     Retirar
                 </div>
                 <div class="homeBodyLeftSideRequestWithdrawContent">
-                    <input class="homeBodyLeftSideRequestWithdrawInput" placeholder="Valor">
-                    <button class="test">Clique</button>
+                    <input class="homeBodyLeftSideRequestWithdrawInput" placeholder="1234,56">
+                    <button class="homeBodyLeftSideRequestWithdrawButton">Retirar</button>
                 </div>
             </div>
         </div>     
