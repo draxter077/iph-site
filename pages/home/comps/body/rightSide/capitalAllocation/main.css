@@ -10,13 +10,13 @@
     color: var(--primaryGreen);
     font-size: 25px;
     font-weight: 600;
-    margin: 0px 0px 10px 0px;
 }
 
 .homeBodyRightSideCapitalAllocationContents{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
 }
 
@@ -25,13 +25,5 @@
     padding: 10px;
     border-radius: 10px;
     font-size: 18px;
-}
-
-@media screen and (max-width: 1000px){
-    .homeBodyRightSideCapitalAllocationContents{
-        flex-wrap: wrap;
-    }
-    .homeBodyRightSideCapitalAllocationContent{
-        margin: 10px 0px 0px 0px;
-    }
+    margin: 10px 0px 0px 0px;
 }

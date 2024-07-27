@@ -2,24 +2,6 @@ import bodyDiv from "./comps/body/main.js"
 import topDiv from "./comps/top/main.js"
 
 function homePageAddFunctionsToButtons(){
-    document.getElementsByClassName("homeBodyContentSlider")[0].style.transition = "translate var(--transitionTime)"
-    document.getElementsByClassName("homeBodyLeftSideOpenConfigDiv")[0].onclick = function a(){
-        const nowValue = document.getElementsByClassName("homeBodyContentSlider")[0].style.translate
-        if(nowValue == "0%"){
-            if(screen.width > 1000){
-                document.getElementsByClassName("homeBodyContentSlider")[0].style.translate = "-23%"
-            }
-            else if(screen.width > 500){
-                document.getElementsByClassName("homeBodyContentSlider")[0].style.translate = "-44%"
-            }
-            else{
-                document.getElementsByClassName("homeBodyContentSlider")[0].style.translate = "-40%"
-            }
-        }
-        else{
-            document.getElementsByClassName("homeBodyContentSlider")[0].style.translate = "0%"
-        }
-    }
     document.getElementsByClassName("homeBodyLeftSideRequestDepositDiv")[0].onclick = function a(){
         const nowValue = document.getElementsByClassName("homeBodyLeftSideRequestDepositDivSlider")[0].style.translate
         if(nowValue == "-50%"){

@@ -5,13 +5,8 @@ import homeBodyRightSideDiv from "./rightSide/main.js"
 export default function bodyDiv(data){
     return(`
         <div class="homeBodyContent">
-            <div class="homeBodyContentSlider">
-                ${configDiv()}
-                <div class="homeBodySides">
-                    ${homeBodyLeftSideDiv()}
-                    ${homeBodyRightSideDiv()}
-                </div>
-            </div>
+            ${homeBodyLeftSideDiv()}
+            ${homeBodyRightSideDiv()}
         </div>
     `)
 }

@@ -11,14 +11,8 @@
     padding: 10px;
 }
 
-@media screen and (max-width: 1000px) and (min-width: 500px){
+@media screen and (max-width: 1000px){
     .homeBodyLeftSideDiv{
         width: 100%;
-    }
-}
-
-@media screen and (max-width: 500px){
-    .homeBodyLeftSideDiv{
-        width: 85%;
     }
 }

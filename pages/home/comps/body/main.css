@@ -3,40 +3,15 @@
 @import url("./rightSide/main.css");
 
 .homeBodyContent{
-    width:100%;
-    overflow: hidden;
-}
-
-.homeBodyContentSlider{
     display: flex;
     flex-direction: row;
-    width: 130%;
-    height: 100%;
-    translate: -23%;
-}
-
-.homeBodySides{
-    display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
+    height: fit-content;
 }
 
-@media screen and (max-width: 1000px) and (min-width: 500px){
-    .homeBodySides{
+@media screen and (max-width: 1000px){
+    .homeBodyContent{
         flex-direction: column;
-    }
-    .homeBodyContentSlider{
-        width: 180%;
-        translate: -44%;
-    }
-}
-
-@media screen and (max-width: 500px){
-    .homeBodySides{
-        flex-direction: column;
-    }
-    .homeBodyContentSlider{
-        width: 200%;
-        translate: -40%;
     }
 }
