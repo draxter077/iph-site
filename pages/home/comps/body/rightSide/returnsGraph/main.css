@@ -12,3 +12,9 @@ svg{
     width: 100%;
     height: 100%;
 }
+
+@media screen and (max-width: 1000px){
+    svg>text{
+        display: none;
+    }
+}
