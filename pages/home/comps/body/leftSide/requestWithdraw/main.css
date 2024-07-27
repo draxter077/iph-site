@@ -35,6 +35,7 @@
 .homeBodyLeftSideRequestWithdrawInput{
     border: 1px solid var(--primaryGreen);
     padding: 10px 15px;
+    width: 40%;
     border-radius: 10px;
 }
 
