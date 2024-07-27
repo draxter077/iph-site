@@ -39,6 +39,69 @@ function homePageAddFunctionsToButtons(){
         document.getElementsByClassName("homeBodyConfigDiv")[0].style.left = "-100%";
         document.getElementsByClassName("homeBodyContent")[0].style.opacity = "1";
     }
+
+    document.getElementsByClassName("homeBodyConfigChangeEmailDiv")[0].onclick = async function a(){
+        const nowValue = document.getElementsByClassName("homeBodyConfigChangeEmailSlider")[0].style.translate
+        if(nowValue == "-50%"){
+            document.getElementsByClassName("homeBodyConfigChangeEmailSlider")[0].style.translate = "0%"
+        }
+        else{
+            document.getElementsByClassName("homeBodyConfigChangeEmailSlider")[0].style.translate = "-50%"
+            await new Promise(resolve => setTimeout(resolve, 600));
+            document.getElementsByClassName("homeBodyConfigChangeEmailInput")[0].focus()
+        }
+    }
+    document.getElementsByClassName("homeBodyConfigChangeEmailButton")[0].onclick = async function a(Event){
+        Event.stopPropagation();
+        document.getElementsByClassName("homeBodyConfigChangeEmailInput")[0].value = "Aprovado"
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        document.getElementsByClassName("homeBodyConfigChangeEmailInput")[0].value = ""
+        if(document.getElementsByClassName("homeBodyConfigChangeEmailSlider")[0].style.translate == "-50%"){
+            document.getElementsByClassName("homeBodyConfigChangeEmailSlider")[0].style.translate = "0%"
+        }
+    }
+
+    document.getElementsByClassName("homeBodyConfigChangePixDiv")[0].onclick = async function a(){
+        const nowValue = document.getElementsByClassName("homeBodyConfigChangePixSlider")[0].style.translate
+        if(nowValue == "-50%"){
+            document.getElementsByClassName("homeBodyConfigChangePixSlider")[0].style.translate = "0%"
+        }
+        else{
+            document.getElementsByClassName("homeBodyConfigChangePixSlider")[0].style.translate = "-50%"
+            await new Promise(resolve => setTimeout(resolve, 600));
+            document.getElementsByClassName("homeBodyConfigChangePixInput")[0].focus()
+        }
+    }
+    document.getElementsByClassName("homeBodyConfigChangePixButton")[0].onclick = async function a(Event){
+        Event.stopPropagation();
+        document.getElementsByClassName("homeBodyConfigChangePixInput")[0].value = "Aprovado"
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        document.getElementsByClassName("homeBodyConfigChangePixInput")[0].value = ""
+        if(document.getElementsByClassName("homeBodyConfigChangePixSlider")[0].style.translate == "-50%"){
+            document.getElementsByClassName("homeBodyConfigChangePixSlider")[0].style.translate = "0%"
+        }
+    }
+
+    document.getElementsByClassName("homeBodyConfigChangePasswordDiv")[0].onclick = async function a(){
+        const nowValue = document.getElementsByClassName("homeBodyConfigChangePasswordSlider")[0].style.translate
+        if(nowValue == "-50%"){
+            document.getElementsByClassName("homeBodyConfigChangePasswordSlider")[0].style.translate = "0%"
+        }
+        else{
+            document.getElementsByClassName("homeBodyConfigChangePasswordSlider")[0].style.translate = "-50%"
+            await new Promise(resolve => setTimeout(resolve, 600));
+            document.getElementsByClassName("homeBodyConfigChangePasswordInput")[0].focus()
+        }
+    }
+    document.getElementsByClassName("homeBodyConfigChangePasswordButton")[0].onclick = async function a(Event){
+        Event.stopPropagation();
+        document.getElementsByClassName("homeBodyConfigChangePasswordInput")[0].value = "Aprovado"
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        document.getElementsByClassName("homeBodyConfigChangePasswordInput")[0].value = ""
+        if(document.getElementsByClassName("homeBodyConfigChangePasswordSlider")[0].style.translate == "-50%"){
+            document.getElementsByClassName("homeBodyConfigChangePasswordSlider")[0].style.translate = "0%"
+        }
+    }
 }
 
 export default function homeMain(data){
