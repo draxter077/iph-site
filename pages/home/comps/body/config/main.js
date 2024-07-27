@@ -47,7 +47,7 @@ export default function configDiv(){
                 </div>
             </div>
             <div class="homeBodyConfigDisclaimer">
-                Este não salva dados no seu navegador, de tal forma que
+                Este site não salva dados no seu navegador, de tal forma que
                 você será automaticamente deslogado assim que fechar a aba.
             </div>
         </div>    
