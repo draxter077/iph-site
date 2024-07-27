@@ -1,15 +1,21 @@
 .homeBodyConfigDiv{
     display: flex;
     flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    left: -100%;
     background: rgb(255, 255, 255);
     border-radius: 20px;
-    margin: 10px;
     padding: 20px;
-    height: 100%;
+    transition: left var(--transitionTime);
 }
 
 .homeBodyConfigTitle{
     color: var(--primaryGreen);
     font-size: 25px;
     font-weight: 600;
+}
+
+.homeBodyConfigExitButton{
+    background: red;
 }

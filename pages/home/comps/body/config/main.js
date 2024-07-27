@@ -3,6 +3,7 @@ export default function configDiv(){
         <div class="homeBodyConfigDiv">
             <div class="homeBodyConfigTitle">
                 Olá, CLIENTE
+                <button class="homeBodyConfigExitButton">Fechar</button>
             </div>
             <div>
                 Alterar chave pix
@@ -12,6 +13,9 @@ export default function configDiv(){
             </div>
             <div>
                 Excluir conta
+            </div>
+            <div>
+                O site da iPH não salva dados no seu navegador, de tal forma que você é automaticamente deslogado assim que fechar a aba.
             </div>
         </div>    
     `)

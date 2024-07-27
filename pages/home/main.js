@@ -27,6 +27,17 @@ function homePageAddFunctionsToButtons(){
         document.getElementsByClassName("homeBodyLeftSideRequestWithdrawInput")[0].value = "Aprovado"
         await new Promise(resolve => setTimeout(resolve, 3000));
         document.getElementsByClassName("homeBodyLeftSideRequestWithdrawInput")[0].value = ""
+        if(document.getElementsByClassName("homeBodyLeftSideRequestWithdrawDivSlider")[0].style.translate == "-50%"){
+            document.getElementsByClassName("homeBodyLeftSideRequestWithdrawDivSlider")[0].style.translate = "0%"
+        }
+    }
+    document.getElementsByClassName("homeBodyLeftSideOpenConfigDiv")[0].onclick = function a(){
+        document.getElementsByClassName("homeBodyConfigDiv")[0].style.left = "0%";
+        document.getElementsByClassName("homeBodyContent")[0].style.opacity = "0.5";
+    }
+    document.getElementsByClassName("homeBodyConfigExitButton")[0].onclick = function a(){
+        document.getElementsByClassName("homeBodyConfigDiv")[0].style.left = "-100%";
+        document.getElementsByClassName("homeBodyContent")[0].style.opacity = "1";
     }
 }
 

@@ -10,7 +10,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video, button, input {
+time, mark, audio, video, button, input, textarea {
 	margin: 0;
 	padding: 0;
 	border: none;
@@ -20,6 +20,7 @@ time, mark, audio, video, button, input {
 	text-decoration: none;
 	font-weight: none;
 	outline: none;
+	-webkit-tap-highlight-color: transparent;
 }
 input:focus, button:focus{
 	outline: none;
