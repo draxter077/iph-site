@@ -24,6 +24,12 @@
 .homeBodyConfigExitButton{
     background: none;
     cursor: pointer;
+    color: rgb(0, 0, 0);
+    transition: color var(--transitionTime);
+}
+
+.homeBodyConfigExitButton:hover{
+    color: var(--primaryGreen);
 }
 
 .homeBodyConfigUserInfo{

@@ -7,3 +7,9 @@ export default function openConfig(){
         </div>     
     `)
 }
+
+export function openConfigDiv(){
+    document.getElementsByClassName("homeBodyConfigDiv")[0].style.left = "0%";
+    document.getElementsByClassName("homeBodyContent")[0].style.opacity = "0.5";
+    document.getElementsByClassName("homeBodyConfigDiv")[0].scrollIntoView({behavior: "smooth"})
+}

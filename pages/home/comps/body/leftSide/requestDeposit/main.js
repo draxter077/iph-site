@@ -12,3 +12,13 @@ export default function requestDeposit(){
         </div>    
     `)
 }
+
+export function slideRequestDeposit(){
+    const nowValue = document.getElementsByClassName("homeBodyLeftSideRequestDepositDivSlider")[0].style.translate
+    if(nowValue == "-50%"){
+        document.getElementsByClassName("homeBodyLeftSideRequestDepositDivSlider")[0].style.translate = "0%"
+    }
+    else{
+        document.getElementsByClassName("homeBodyLeftSideRequestDepositDivSlider")[0].style.translate = "-50%"
+    }
+}
