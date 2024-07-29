@@ -69,6 +69,14 @@
                 border-radius: 15px;
                 color: rgb(255, 255, 255);
             }
+            .darf{
+                padding: 10px 15px;
+                border: 1px solid rgb(0, 255, 150);
+                width: fit-content;
+                margin: 0px 0px 20px 0px;
+                border-radius: 15px;
+                color: rgb(255, 255, 255);
+            }
             @media screen and (max-width: 1000px){
                 .login{
                     width: 100%;
@@ -90,17 +98,23 @@
         </div>
         <div class="total">
         </div>
+        <div class="darf">
+        </div>
         <div class="login">
             <button onclick="lastDay()">it is month last day</button>
         </div>
-        <div class="login" onclick="addDeposit()">
+        <div class="login">
             <input placeholder="id">
             <input placeholder="value">
-            <button>add deposit</button>
+            <button onclick="addDeposit(Event)">add deposit</button>
         </div>
         <div class="login">
             <input placeholder="value">
-            <button>add return</button>
+            <button onclick="addReturn(Event)">add return</button>
+        </div>
+        <div class="login">
+            <input placeholder="value">
+            <button onclick="addDarf(Event)">add darf</button>
         </div>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     </body>
@@ -114,6 +128,7 @@
             await axios.post("https://ace-chimp-merry.ngrok-free.app/adminAcess", {user: user, key: key})
                 .then(resposta => {
                     const users = resposta.data.users
+                    const darf = resposta.data.darf
                     const infoDiv = document.getElementsByClassName("info")[0]
                     let capitals = 0;
                     for(let i = 0; i < users.length; i++){
@@ -140,6 +155,8 @@
                         `
                         capitals += Number(u.capital)
                     }
+                    document.getElementsByClassName("total")[0].innerHTML = capitals
+                    document.getElementsByClassName("darf")[0].innerHTML = darf
                 })
                 .catch(response => {alert("ERRO"); console.log(response.response)})
         }
@@ -166,6 +183,16 @@
         if(id.length != 0 && value.length != 0)
         await axios.post("https://ace-chimp-merry.ngrok-free.app/transReturn", {value: Number(value)})
             .then(resposta => {
+                alert('Done')
+            })
+            .catch(response => {alert("ERRO"); console.log(response.response)})
+    }
+    async function addDarf(Event){
+        const value = Event.target.parentElement.children[0].value
+        if(id.length != 0 && value.length != 0)
+        await axios.post("https://ace-chimp-merry.ngrok-free.app/addDarf", {value: Number(value)})
+            .then(resposta => {
+                document.getElementsByClassName("darf")[0].innerHTML = resposta.data.darf
                 alert('Done')
             })
             .catch(response => {alert("ERRO"); console.log(response.response)})
