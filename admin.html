@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>iPH Admin</title>
+        <link rel="icon" type="image/x-icon" href="./ip.png">
+	    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./reset.css">
+
+        <style>
+            button{
+                padding: 10px 15px;
+                border: 1px solid rgb(0, 255, 150);
+                border-radius: 15px;
+                background: none;
+                width: 30%;
+                color: rgb(255, 255, 255);
+                transition: background 0.5s;
+            }
+            button:hover{
+                background: rgb(0, 255, 150);
+            }
+            input{
+                padding: 10px 15px;
+                border-radius: 15px;
+                width: 30%;
+                border: 1px solid rgb(0, 255, 150);
+                color: rgb(255, 255, 255);
+                background: none;
+            }
+            .login{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 50%;
+                margin: 0px 0px 20px 0px;
+            }
+            .info{
+                display: flex;
+                flex-direction: column;
+                height: fit-content;
+                margin: 0px 0px 20px 0px;
+                border: 1px solid rgb(0, 255, 150);
+                border-radius: 20px;
+                padding: 20px;
+            }
+            .user{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .user>div{
+                color: rgb(255, 255, 255);
+            }
+            .monthChange{
+                margin: 20px 0px 0px 0px;
+                width: 50%;
+            }
+            .total{
+                padding: 10px 15px;
+                border: 1px solid rgb(0, 255, 150);
+                width: fit-content;
+                margin: 0px 0px 20px 0px;
+                border-radius: 15px;
+                color: rgb(255, 255, 255);
+            }
+            @media screen and (max-width: 1000px){
+                .login{
+                    width: 100%;
+                }
+                .monthChange{
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="login">
+            <input placeholder="user">
+            <input type="password" placeholder="key">
+            <button onclick="check(Event)">try</button>
+        </div>
+        <div class="info">
+        </div>
+        <div class="total">
+        </div>
+        <div class="login">
+            <button onclick="lastDay()">it is month last day</button>
+        </div>
+        <div class="login" onclick="addDeposit()">
+            <input placeholder="id">
+            <input placeholder="value">
+            <button>add deposit</button>
+        </div>
+        <div class="login">
+            <input placeholder="value">
+            <button>add return</button>
+        </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </body>
+</html>
+
+<script>
+    async function check(Event){
+        const user = Event.target.parentElement.children[0].value
+        const key = Event.target.parentElement.children[1].value
+        if(user.length != 0 && key.length != 0){
+            await axios.post("https://ace-chimp-merry.ngrok-free.app/adminAcess", {user: user, key: key})
+                .then(resposta => {
+                    const users = resposta.data.users
+                    const infoDiv = document.getElementsByClassName("info")[0]
+                    let capitals = 0;
+                    for(let i = 0; i < users.length; i++){
+                        const u = users[i];
+                        infoDiv.innerHTML += `
+                            <div class="user">
+                                <div>${u.id}</div>
+                                <div>${u.name.split(" ")[0]}</div>
+                                <div>${u.email}</div>
+                                <div>R$${u.capital}</div>
+                                <div>R$${u.monthCapital}</div>
+                                <div>R$${u.nowResult}</div>
+                                <div>${u.rent10}%</div>
+                                <div>${u.rent9}%</div>
+                                <div>${u.rent8}%</div>
+                                <div>${u.rent7}%</div>
+                                <div>${u.rent6}%</div>
+                                <div>${u.rent5}%</div>
+                                <div>${u.rent4}%</div>
+                                <div>${u.rent3}%</div>
+                                <div>${u.rent2}%</div>
+                                <div>${u.rent1}%</div>
+                                <div>${Math.floor((Number(u.nowResult)/Number(u.monthCapital))*100)/100}%</div>
+                        `
+                        capitals += Number(u.capital)
+                    }
+                })
+                .catch(response => {alert("ERRO"); console.log(response.response)})
+        }
+    }
+    async function lastDay(){
+        await axios.get("https://ace-chimp-merry.ngrok-free.app/monthLastDay")
+            .then(resposta => {
+                alert('Refresh')
+            })
+            .catch(response => {alert("ERRO"); console.log(response.response)})
+    }
+    async function addDeposit(Event){
+        const id = Event.target.parentElement.children[0].value
+        const value = Event.target.parentElement.children[1].value
+        if(id.length != 0 && value.length != 0)
+        await axios.post("https://ace-chimp-merry.ngrok-free.app/userDeposit", {id: id, value: Number(value)})
+            .then(resposta => {
+                alert('Done')
+            })
+            .catch(response => {alert("ERRO"); console.log(response.response)})
+    }
+    async function addReturn(Event){
+        const value = Event.target.parentElement.children[0].value
+        if(id.length != 0 && value.length != 0)
+        await axios.post("https://ace-chimp-merry.ngrok-free.app/transReturn", {value: Number(value)})
+            .then(resposta => {
+                alert('Done')
+            })
+            .catch(response => {alert("ERRO"); console.log(response.response)})
+    }
+</script>
