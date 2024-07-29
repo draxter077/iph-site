@@ -30,7 +30,8 @@ export async function slideRequestWithdraw(){
 export async function sendWithdrawRequest(Event){
     Event.stopPropagation();
     const inputDiv = document.getElementsByClassName("homeBodyLeftSideRequestWithdrawInput")[0];
-    if(Number(inputDiv.value.toString().replaceAll("," ,".")) <= 0 || inputDiv.value.length == 0){
+    const nowCapital = Number(document.getElementsByClassName("homeBodyLeftSideAccountTotalContent")[0].innerHTML.replaceAll("R$ ", "").replaceAll(".", "").replaceAll(",", "."))
+    if(Number(inputDiv.value.replaceAll("," ,".")) <= 0 || Number(inputDiv.value.replaceAll("," ,".")) > nowCapital || inputDiv.value.length == 0){
         inputDiv.style.animation = "inputWrongValue 1s forwards"
         await new Promise(resolve => setTimeout(resolve, 1000))
         inputDiv.style.animation = ""

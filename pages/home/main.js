@@ -14,13 +14,13 @@ function homePageAddFunctionsToButtons(){
     document.getElementsByClassName("homeBodyConfigExitButton")[0].onclick = function a(){closeConfigDiv()}
 
     document.getElementsByClassName("homeBodyConfigChangeEmailDiv")[0].onclick = async function a(){await slideSomething("homeBodyConfigChangeEmail")}
-    document.getElementsByClassName("homeBodyConfigChangeEmailButton")[0].onclick = async function a(Event){await changeSomething(Event, "email", "homeBodyConfigChangeEmail")}
+    document.getElementsByClassName("homeBodyConfigChangeEmailButton")[0].onclick = async function a(Event){await changeSomething(Event, "Email", "homeBodyConfigChangeEmail")}
 
     document.getElementsByClassName("homeBodyConfigChangePixDiv")[0].onclick = async function a(){await slideSomething("homeBodyConfigChangePix")}
-    document.getElementsByClassName("homeBodyConfigChangePixButton")[0].onclick = async function a(Event){await changeSomething(Event, "pix", "homeBodyConfigChangePix")}
+    document.getElementsByClassName("homeBodyConfigChangePixButton")[0].onclick = async function a(Event){await changeSomething(Event, "Pix", "homeBodyConfigChangePix")}
 
     document.getElementsByClassName("homeBodyConfigChangePasswordDiv")[0].onclick = async function a(){await slideSomething("homeBodyConfigChangePassword")}
-    document.getElementsByClassName("homeBodyConfigChangePasswordButton")[0].onclick = async function a(Event){await changeSomething(Event, "password", "homeBodyConfigChangePassword")}
+    document.getElementsByClassName("homeBodyConfigChangePasswordButton")[0].onclick = async function a(Event){await changeSomething(Event, "Password", "homeBodyConfigChangePassword")}
 }
 
 export default function homeMain(data){

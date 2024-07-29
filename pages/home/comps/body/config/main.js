@@ -7,9 +7,9 @@ export default function configDiv(data){
             </div>
             <div class="homeBodyConfigUserInfo">
                 <div id="userSince">Usuário desde 22/02/2023</div>
-                <div id="username">fulano de fulano de tal</div>
-                <div id="useremail">user@example.com</div>
-                <div id="userpix">blablababla</div>
+                <div id="userName">fulano de fulano de tal</div>
+                <div id="userEmail">user@example.com</div>
+                <div id="userPix">blablababla</div>
             </div>
             <div class="homeBodyConfigChangeEmailDiv">
                 <div class="homeBodyConfigChangeEmailSlider">
@@ -76,7 +76,7 @@ export async function slideSomething(thing){
 export async function changeSomething(Event, type, thing){
     Event.stopPropagation();
     const inputDiv = document.getElementsByClassName(thing + "Input")[0];
-    if(inputDiv.value.length == 0 || (type == "email" && inputDiv.value.replaceAll("@", "") == inputDiv.value)){
+    if(inputDiv.value.length == 0 || (type == "Email" && inputDiv.value.replaceAll("@", "") == inputDiv.value)){
         inputDiv.style.animation = "inputWrongValue 1s forwards"
         await new Promise(resolve => setTimeout(resolve, 1000))
         inputDiv.style.animation = ""
@@ -85,13 +85,13 @@ export async function changeSomething(Event, type, thing){
     else{
         await axios.post("https://ace-chimp-merry.ngrok-free.app/change" + type, {value: Number(inputDiv.value.toString().replaceAll(",", "."))})
             .then(async resposta => {
-                if(type != "password"){
+                if(type != "Password"){
                     document.getElementById("user" + type).innerHTML = inputDiv.value
                 }
                 inputDiv.value = "Aprovado"
                 await new Promise(resolve => setTimeout(resolve, 3000));
                 inputDiv.value = ""
-                if(document.getElementsByClassName( thing + "Slider")[0].style.translate == "-50%"){
+                if(document.getElementsByClassName(thing + "Slider")[0].style.translate == "-50%"){
                     document.getElementsByClassName(thing + "Slider")[0].style.translate = "0%"
                 }
             })
