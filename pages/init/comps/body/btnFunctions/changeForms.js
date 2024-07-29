@@ -1,3 +1,5 @@
+import checkCredentialsAndGoToHome from "./sendForms.js"
+
 export default function changeToCreateORLogin(Event){
     const formsDiv = document.getElementsByClassName("initBodyFormsDiv")[0]
     const btn = Event.target
