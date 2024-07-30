@@ -18,7 +18,7 @@ export async function slideRequestWithdraw(){
     const nowValue = document.getElementsByClassName("homeBodyLeftSideRequestWithdrawDivSlider")[0].style.translate
     if(nowValue == "-50%"){
         document.getElementsByClassName("homeBodyLeftSideRequestWithdrawDivSlider")[0].style.translate = "0%"
-        document.getElementsByClassName(thing + "Input")[0].blur()
+        document.getElementsByClassName("homeBodyLeftSideRequestWithdrawInput")[0].blur()
     }
     else{
         document.getElementsByClassName("homeBodyLeftSideRequestWithdrawDivSlider")[0].style.translate = "-50%"

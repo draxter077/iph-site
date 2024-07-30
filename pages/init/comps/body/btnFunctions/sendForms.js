@@ -17,8 +17,8 @@ async function wrongAnimation(item){
 }
 
 async function goToHome(data){
-    axios.defaults.headers.common["userAuth"] = data.userID
-    await cleanScreen({data: 0})
+    axios.defaults.headers.common["userAuth"] = data.id
+    await cleanScreen(data)
 }
 
 async function checkLogin(inputDivChildren){
@@ -31,7 +31,7 @@ async function checkLogin(inputDivChildren){
     const userEmail = inputDivChildren[0].value, userPassword = inputDivChildren[1].value
     await axios.post("https://ace-chimp-merry.ngrok-free.app/userAcess", {userEmail: userEmail, userPassword: userPassword})
         .then(async resposta => {
-            await goToHome(resposta.data)
+            await goToHome(resposta.data.userInfo)
         })
         .catch(async response => {
             let errorStatus = response.response.status

@@ -2,14 +2,14 @@ export default function configDiv(data){
     return(`
         <div class="homeBodyConfigDiv">
             <div class="homeBodyConfigTitle">
-                Olá, CLIENTE
+                Olá, ${data.name.split(" ")[0]}
                 <button class="homeBodyConfigExitButton">Fechar</button>
             </div>
             <div class="homeBodyConfigUserInfo">
-                <div id="userSince">Usuário desde 22/02/2023</div>
-                <div id="userName">fulano de fulano de tal</div>
-                <div id="userEmail">user@example.com</div>
-                <div id="userPix">blablababla</div>
+                <div id="userSince">Usuário desde ${data.creation}</div>
+                <div id="userName">${data.name}</div>
+                <div id="userEmail">${data.email}</div>
+                <div id="userPix">${data.pix}</div>
             </div>
             <div class="homeBodyConfigChangeEmailDiv">
                 <div class="homeBodyConfigChangeEmailSlider">
