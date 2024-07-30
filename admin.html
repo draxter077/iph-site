@@ -101,26 +101,27 @@
         <div class="darf">
         </div>
         <div class="login">
-            <button onclick="lastDay()">it is month last day</button>
+            <button id="lastDay">it is month last day</button>
         </div>
         <div class="login">
             <input placeholder="id">
             <input placeholder="value">
-            <button onclick="addDeposit(event)">add deposit</button>
+            <button id="addDeposit">add deposit</button>
         </div>
         <div class="login">
             <input placeholder="value">
-            <button onclick="addReturn(event)">add return</button>
+            <button id="addReturn">add return</button>
         </div>
         <div class="login">
             <input placeholder="value">
-            <button onclick="addDarf(event)">add darf</button>
+            <button id="addDarf">add darf</button>
         </div>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     </body>
 </html>
 
 <script>
+    axios.defaults.headers.common["ngrok-skip-browser-warning"] = "69420"
     async function check(Event){
         const user = Event.target.parentElement.children[0].value
         const key = Event.target.parentElement.children[1].value
@@ -128,7 +129,7 @@
             await axios.post("https://ace-chimp-merry.ngrok-free.app/adminAcess", {user: user, key: key})
                 .then(resposta => {
                     const users = resposta.data.usersInfo
-                    const darf = resposta.data.darfInfo
+                    const darf = resposta.data.darfInfo.value
                     const infoDiv = document.getElementsByClassName("info")[0]
                     let capitals = 0;
                     for(let i = 0; i < users.length; i++){
@@ -142,7 +143,7 @@
                                 <div>R$${u.monthcapital}</div>
                                 <div>R$${u.transresults}</div>
                                 <div>${u.rent11}%</div>
-                                <div>${u.ren10}%</div>
+                                <div>${u.rent10}%</div>
                                 <div>${u.rent9}%</div>
                                 <div>${u.rent8}%</div>
                                 <div>${u.rent7}%</div>
@@ -152,20 +153,24 @@
                                 <div>${u.rent3}%</div>
                                 <div>${u.rent2}%</div>
                                 <div>${u.rent1}%</div>
-                                <div>${Math.floor((Number(u.transresults)/Number(u.monthcapital))*100)/100}%</div>
+                                <div>${Math.floor((Number(u.transresults)/Number(u.monthcapital))*10000)/100}%</div>
                         `
                         capitals += Number(u.capital)
                     }
                     document.getElementsByClassName("total")[0].innerHTML = capitals
                     document.getElementsByClassName("darf")[0].innerHTML = darf
+                    document.getElementById("lastDay").onclick = function a(){lastDay()}
+                    document.getElementById("addDeposit").onclick = function a(Event){addDeposit(Event)}
+                    document.getElementById("addReturn").onclick = function a(Event){addReturn(Event)}
+                    document.getElementById("addDarf").onclick = function a(Event){addDarf(Event)}
                 })
-                .catch(response => {alert("ERRO"); console.log(response.response)})
+                .catch(response => {alert("ERRO"); console.log(response)})
         }
     }
     async function lastDay(){
         await axios.get("https://ace-chimp-merry.ngrok-free.app/monthLastDay")
             .then(resposta => {
-                alert('Refresh')
+                alert('Refresh'); console.log(resposta)
             })
             .catch(response => {alert("ERRO"); console.log(response.response)})
     }
@@ -181,7 +186,7 @@
     }
     async function addReturn(Event){
         const value = Event.target.parentElement.children[0].value
-        if(id.length != 0 && value.length != 0)
+        if(value.length != 0)
         await axios.post("https://ace-chimp-merry.ngrok-free.app/transReturn", {value: Number(value)})
             .then(resposta => {
                 alert('Done')
@@ -190,12 +195,12 @@
     }
     async function addDarf(Event){
         const value = Event.target.parentElement.children[0].value
-        if(id.length != 0 && value.length != 0)
+        if(value.length != 0)
         await axios.post("https://ace-chimp-merry.ngrok-free.app/addDarf", {value: Number(value)})
             .then(resposta => {
-                document.getElementsByClassName("darf")[0].innerHTML = resposta.data.darf
+                document.getElementsByClassName("darf")[0].innerHTML = resposta.data.value
                 alert('Done')
             })
-            .catch(response => {alert("ERRO"); console.log(response.response)})
+            .catch(response => {alert("ERRO"); console.log(response)})
     }
 </script>
