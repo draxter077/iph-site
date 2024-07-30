@@ -127,8 +127,8 @@
         if(user.length != 0 && key.length != 0){
             await axios.post("https://ace-chimp-merry.ngrok-free.app/adminAcess", {user: user, key: key})
                 .then(resposta => {
-                    const users = resposta.data.users
-                    const darf = resposta.data.darf
+                    const users = resposta.data.usersInfo
+                    const darf = resposta.data.darfInfo
                     const infoDiv = document.getElementsByClassName("info")[0]
                     let capitals = 0;
                     for(let i = 0; i < users.length; i++){
@@ -139,9 +139,10 @@
                                 <div>${u.name.split(" ")[0]}</div>
                                 <div>${u.email}</div>
                                 <div>R$${u.capital}</div>
-                                <div>R$${u.monthCapital}</div>
-                                <div>R$${u.nowResult}</div>
-                                <div>${u.rent10}%</div>
+                                <div>R$${u.monthcapital}</div>
+                                <div>R$${u.transresults}</div>
+                                <div>${u.rent11}%</div>
+                                <div>${u.ren10}%</div>
                                 <div>${u.rent9}%</div>
                                 <div>${u.rent8}%</div>
                                 <div>${u.rent7}%</div>
@@ -151,7 +152,7 @@
                                 <div>${u.rent3}%</div>
                                 <div>${u.rent2}%</div>
                                 <div>${u.rent1}%</div>
-                                <div>${Math.floor((Number(u.nowResult)/Number(u.monthCapital))*100)/100}%</div>
+                                <div>${Math.floor((Number(u.transresults)/Number(u.monthcapital))*100)/100}%</div>
                         `
                         capitals += Number(u.capital)
                     }

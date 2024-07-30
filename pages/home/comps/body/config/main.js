@@ -83,7 +83,7 @@ export async function changeSomething(Event, type, thing){
         inputDiv.focus()
     }
     else{
-        await axios.post("https://ace-chimp-merry.ngrok-free.app/change" + type, {value: Number(inputDiv.value.toString().replaceAll(",", "."))})
+        await axios.post("https://ace-chimp-merry.ngrok-free.app/change" + type, {value: inputDiv.value})
             .then(async resposta => {
                 if(type != "Password"){
                     document.getElementById("user" + type).innerHTML = inputDiv.value

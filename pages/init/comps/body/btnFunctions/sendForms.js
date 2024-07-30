@@ -17,7 +17,7 @@ async function wrongAnimation(item){
 }
 
 async function goToHome(data){
-    axios.defaults.headers.common["userAuth"] = data.id
+    axios.defaults.headers.common["userAuth"] = data.userInfo.id
     await cleanScreen(data)
 }
 
@@ -31,7 +31,7 @@ async function checkLogin(inputDivChildren){
     const userEmail = inputDivChildren[0].value, userPassword = inputDivChildren[1].value
     await axios.post("https://ace-chimp-merry.ngrok-free.app/userAcess", {userEmail: userEmail, userPassword: userPassword})
         .then(async resposta => {
-            await goToHome(resposta.data.userInfo)
+            await goToHome(resposta.data)
         })
         .catch(async response => {
             let errorStatus = response.response.status
@@ -59,7 +59,7 @@ async function checkNewAccount(inputDivChildren){
     if(userConfPassword != userPassword){
         await wrongAnimation(inputDivChildren[4])
     }
-    if(userEmail == userEmail.replaceAll("@", "")){
+    else if(userEmail == userEmail.replaceAll("@", "")){
         await wrongAnimation(inputDivChildren[1])
     }
     else{
@@ -81,12 +81,15 @@ async function checkNewAccount(inputDivChildren){
 
 export default async function checkCredentialsAndGoToHome(Event){
     const btn = Event.target
+    btn.disabled = true
     const inputDivChildren = btn.parentElement.children[0].children
     const numberInputs = inputDivChildren.length
     if(numberInputs == 2){
         checkLogin(inputDivChildren)
+        btn.disabled = false
     }
     else{
         checkNewAccount(inputDivChildren)
+        btn.disabled = false
     }
 }
