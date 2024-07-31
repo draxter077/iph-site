@@ -103,6 +103,7 @@
         <div class="darf">
         </div>
         <div class="login">
+            <input placeholder="user">
             <button id="lastDay">it is month last day</button>
         </div>
         <div class="login">
@@ -162,7 +163,7 @@
                     }
                     document.getElementsByClassName("total")[0].innerHTML = capitals
                     document.getElementsByClassName("darf")[0].innerHTML = darf
-                    document.getElementById("lastDay").onclick = function a(){lastDay()}
+                    document.getElementById("lastDay").onclick = function a(Event){lastDay(Event)}
                     document.getElementById("addDeposit").onclick = function a(Event){addDeposit(Event)}
                     document.getElementById("addReturn").onclick = function a(Event){addReturn(Event)}
                     document.getElementById("addDarf").onclick = function a(Event){addDarf(Event)}
@@ -170,12 +171,19 @@
                 .catch(response => {alert("ERRO"); console.log(response)})
         }
     }
-    async function lastDay(){
-        await axios.get("https://ace-chimp-merry.ngrok-free.app/monthLastDay")
-            .then(resposta => {
-                alert('Refresh'); console.log(resposta)
-            })
-            .catch(response => {alert("ERRO"); console.log(response.response)})
+    async function lastDay(Event){
+        const btn = Event.target
+        const input = Event.target.parentElement.children[0]
+        if(input.value.length != 0){
+            await axios.get("https://ace-chimp-merry.ngrok-free.app/monthLastDay")
+                .then(resposta => {
+                    alert('Refresh'); console.log(resposta)
+                })
+                .catch(response => {alert("ERRO"); console.log(response.response)})
+        }
+        else{
+            alert("Enter user")
+        }
     }
     async function addDeposit(Event){
         const id = Event.target.parentElement.children[0].value
