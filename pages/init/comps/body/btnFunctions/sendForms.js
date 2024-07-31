@@ -72,7 +72,7 @@ async function checkNewAccount(inputDivChildren){
                 if(errorStatus == 404){
                     await wrongAnimation(inputDivChildren[0])
                 }
-                else if(errorStatus == 401){
+                else if(errorStatus == 409){
                     await wrongAnimation(inputDivChildren[1])
                 }
             })
@@ -86,10 +86,9 @@ export default async function checkCredentialsAndGoToHome(Event){
     const numberInputs = inputDivChildren.length
     if(numberInputs == 2){
         checkLogin(inputDivChildren)
-        btn.disabled = false
     }
     else{
         checkNewAccount(inputDivChildren)
-        btn.disabled = false
     }
+    btn.disabled = false
 }

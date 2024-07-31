@@ -6,7 +6,7 @@ import openConfig from "./openConfig/main.js"
 export default function homeBodyLeftSideDiv(data){
     return(`
         <div class="homeBodyLeftSideDiv">
-            ${accountTotal(data.capital.toString().replaceAll(".", ","))}
+            ${accountTotal(data)}
             ${requestWithdraw()}
             ${requestDeposit()}
             ${openConfig()}

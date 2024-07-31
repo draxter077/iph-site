@@ -75,6 +75,7 @@ export async function slideSomething(thing){
 
 export async function changeSomething(Event, type, thing){
     Event.stopPropagation();
+    Event.target.disabled = true
     const inputDiv = document.getElementsByClassName(thing + "Input")[0];
     if(inputDiv.value.length == 0 || (type == "Email" && inputDiv.value.replaceAll("@", "") == inputDiv.value)){
         inputDiv.style.animation = "inputWrongValue 1s forwards"
@@ -102,4 +103,5 @@ export async function changeSomething(Event, type, thing){
                 inputDiv.focus()
             })
     }
+    Event.target.disabled = false
 }

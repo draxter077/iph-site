@@ -1,4 +1,4 @@
-export default function accountTotal(capital){
+export default function accountTotal(data){
     return(`
         <div class="homeBodyLeftSideAccountTotalDiv">
             <div class="homeBodyLeftSideAccountTotalTitle">
@@ -6,10 +6,10 @@ export default function accountTotal(capital){
             </div>
             <div class="homeBodyLeftSideAccountTotalContents">
                 <div class="homeBodyLeftSideAccountTotalContent">
-                    R$ ${capital}
+                    R$ ${data.capital.toString().replaceAll(".", ",")}
                 </div>
-                <div class="homeBodyLeftSideAccountTotalContent" style="color: rgb(0, 255, 150); font-weight: 600">
-                    24%m
+                <div class="homeBodyLeftSideAccountTotalContent" style="color: ${data.averageRent >= 0 ? "rgb(0, 255, 150)" : "rgb(255, 0, 150)"}; font-weight: 600">
+                    ${data.averageRent}%m
                 </div>
             </div>
         </div>    

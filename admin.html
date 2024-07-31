@@ -178,7 +178,7 @@
         const id = Event.target.parentElement.children[0].value
         const value = Event.target.parentElement.children[1].value
         if(id.length != 0 && value.length != 0)
-        await axios.post("https://ace-chimp-merry.ngrok-free.app/userDeposit", {id: id, value: Number(value)})
+        await axios.post("https://ace-chimp-merry.ngrok-free.app/userDeposit", {id: id, value: Number(value.replaceAll(",", "."))})
             .then(resposta => {
                 alert('Done')
             })

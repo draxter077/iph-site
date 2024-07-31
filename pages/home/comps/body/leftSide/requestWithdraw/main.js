@@ -29,6 +29,7 @@ export async function slideRequestWithdraw(){
 
 export async function sendWithdrawRequest(Event){
     Event.stopPropagation();
+    Event.target.disabled = true
     const inputDiv = document.getElementsByClassName("homeBodyLeftSideRequestWithdrawInput")[0];
     const nowCapital = Number(document.getElementsByClassName("homeBodyLeftSideAccountTotalContent")[0].innerHTML.replaceAll("R$ ", "").replaceAll(".", "").replaceAll(",", "."))
     if(Number(inputDiv.value.replaceAll("," ,".")) <= 0 || Number(inputDiv.value.replaceAll("," ,".")) > nowCapital || inputDiv.value.length == 0){
@@ -54,4 +55,5 @@ export async function sendWithdrawRequest(Event){
                 inputDiv.focus()
             })
     }
+    Event.target.disabled = false
 }
