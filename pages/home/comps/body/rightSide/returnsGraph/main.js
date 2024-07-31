@@ -1,10 +1,11 @@
 export default function returnsGraph(){
-    const values = [{date: "07/2023: 0%", y: "50%"}, 
-                    {date: "08/2023: -5%", y: "72.5%"},
-                    {date: "09/2023: 10%", y: "5%"},
-                    {date: "10/2023: 0%", y: "50%"},
-                    {date: "11/2023: 5%", y: "27.5%"}
-                ]
+    //const values = [{date: "07/2023: 0%", y: "50%"}, 
+    //                {date: "08/2023: -5%", y: "72.5%"},
+    //                {date: "09/2023: 10%", y: "5%"},
+    //                {date: "10/2023: 0%", y: "50%"},
+    //                {date: "11/2023: 5%", y: "27.5%"}
+    //            ]
+    const values = []
     return(`
         <div class="homeBodyReturnsGraphDiv">
             <svg>
