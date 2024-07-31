@@ -55,7 +55,9 @@
                 justify-content: space-between;
             }
             .user>div{
+                width: 5%;
                 color: rgb(255, 255, 255);
+                overflow: hidden;
             }
             .monthChange{
                 margin: 20px 0px 0px 0px;
@@ -154,6 +156,7 @@
                                 <div>${u.rent2}%</div>
                                 <div>${u.rent1}%</div>
                                 <div>${Math.floor((Number(u.transresults)/Number(u.monthcapital))*10000)/100}%</div>
+                            </div>
                         `
                         capitals += Number(u.capital)
                     }
@@ -187,7 +190,7 @@
     async function addReturn(Event){
         const value = Event.target.parentElement.children[0].value
         if(value.length != 0)
-        await axios.post("https://ace-chimp-merry.ngrok-free.app/transReturn", {value: Number(value)})
+        await axios.post("https://ace-chimp-merry.ngrok-free.app/transReturn", {value: Number(value).replaceAll(",", ".")})
             .then(resposta => {
                 alert('Done')
             })
@@ -196,7 +199,7 @@
     async function addDarf(Event){
         const value = Event.target.parentElement.children[0].value
         if(value.length != 0)
-        await axios.post("https://ace-chimp-merry.ngrok-free.app/addDarf", {value: Number(value)})
+        await axios.post("https://ace-chimp-merry.ngrok-free.app/addDarf", {value: Number(value).replaceAll(",", ".")})
             .then(resposta => {
                 document.getElementsByClassName("darf")[0].innerHTML = resposta.data.value
                 alert('Done')
