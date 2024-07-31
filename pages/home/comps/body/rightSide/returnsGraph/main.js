@@ -1,11 +1,26 @@
-export default function returnsGraph(){
+export default function returnsGraph(data){
     //const values = [{date: "07/2023: 0%", y: "50%"}, 
     //                {date: "08/2023: -5%", y: "72.5%"},
     //                {date: "09/2023: 10%", y: "5%"},
     //                {date: "10/2023: 0%", y: "50%"},
     //                {date: "11/2023: 5%", y: "27.5%"}
     //            ]
-    const values = []
+    let highest = 0, lowest = 0
+    const rents = [data.rent11, data.rent10, data.rent9, data.rent8, data.rent7, data.rent6, data.rent5, data.rent4, data.rent3, data.rent2, data.rent1]
+    for(let i = 0; i < rents.length; i++){
+        if(rents[i] > highest){
+            highest = rents[i]
+        }
+        if(rents[i] < lowest){
+            lowest = rents[i]
+        }
+    }
+    let values = []
+    for(let j = 0; j < rents.length; j++){
+        let a = Math.floor(((rents[i] - lowest)/(highest - lowest))*10000)/100
+        a = 100 - a
+        values.push({date: rents[i].toString() + "%", y: a.toString() + "%"})
+    }
     return(`
         <div class="homeBodyReturnsGraphDiv">
             <svg>
