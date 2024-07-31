@@ -19,7 +19,10 @@ export default function returnsGraph(data){
     for(let j = 0; j < rents.length; j++){
         let a = Math.floor(((rents[i] - lowest)/(highest - lowest))*10000)/100
         a = 100 - a
-        //values.push({date: rents[i].toString() + "%", y: a.toString() + "%"})
+        if(data.email == "philippe.idalgoprestes@gmail.com"){
+            values.push({date: rents[i].toString() + "%", y: a.toString() + "%"})
+            console.log("another one adde :)")
+        }
     }
     return(`
         <div class="homeBodyReturnsGraphDiv">
