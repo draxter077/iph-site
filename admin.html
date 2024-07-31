@@ -159,7 +159,7 @@
                                 <div>${Math.floor((Number(u.transresults)/Number(u.monthcapital))*10000)/100}%</div>
                             </div>
                         `
-                        capitals += Number(u.capital)
+                        capitals += Number(u.capital) + Number(u.transresults)
                     }
                     document.getElementsByClassName("total")[0].innerHTML = capitals
                     document.getElementsByClassName("darf")[0].innerHTML = darf
