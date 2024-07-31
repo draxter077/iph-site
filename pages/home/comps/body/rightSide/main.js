@@ -5,7 +5,7 @@ export default function homeBodyRightSideDiv(data){
     return(`
         <div class="homeBodyRightSideDiv">
             ${capitalAllocation()}
-            ${returnsGraph(data)}
+            ${returnsGraph(data.userInfo)}
         </div>    
     `)
 }

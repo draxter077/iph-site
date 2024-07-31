@@ -7,6 +7,7 @@ export default function returnsGraph(data){
     //            ]
     let highest = 0, lowest = 0
     const rents = [data.rent11, data.rent10, data.rent9, data.rent8, data.rent7, data.rent6, data.rent5, data.rent4, data.rent3, data.rent2, data.rent1]
+    console.log(rents)
     for(let i = 0; i < rents.length; i++){
         if(rents[i] > highest){
             highest = rents[i]
@@ -17,13 +18,11 @@ export default function returnsGraph(data){
     }
     let values = []
     for(let j = 0; j < rents.length; j++){
-        let a = Math.floor(((rents[i] - lowest)/(highest - lowest))*10000)/100
+        let a = Math.floor(((rents[j] - lowest)/(highest - lowest))*10000)/100
         a = 100 - a
-        if(data.email == "philippe.idalgoprestes@gmail.com"){
-            values.push({date: rents[i].toString() + "%", y: a.toString() + "%"})
-            console.log("another one adde :)")
-        }
+        values.push({date: rents[j].toString() + "%", y: a.toString() + "%"})
     }
+    values = []
     return(`
         <div class="homeBodyReturnsGraphDiv">
             <svg>
