@@ -85,3 +85,21 @@ div{
 	overflow: hidden;
 	animation: openUp 2s 3s forwards;
 }
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background: none;
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgb(0, 255, 150);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-button{
+    height: 10px;
+    padding: none;
+    margin: none;
+}

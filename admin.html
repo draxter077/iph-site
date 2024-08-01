@@ -55,7 +55,6 @@
                 justify-content: space-between;
             }
             .user>div{
-                width: 5%;
                 color: rgb(255, 255, 255);
                 overflow: hidden;
             }
@@ -139,24 +138,24 @@
                         const u = users[i];
                         infoDiv.innerHTML += `
                             <div class="user">
-                                <div>${u.id}</div>
-                                <div>${u.name.split(" ")[0]}</div>
-                                <div>${u.email}</div>
-                                <div>R$${u.capital}</div>
-                                <div>R$${u.monthcapital}</div>
-                                <div>R$${u.transresults}</div>
-                                <div>${u.rent11}%</div>
-                                <div>${u.rent10}%</div>
-                                <div>${u.rent9}%</div>
-                                <div>${u.rent8}%</div>
-                                <div>${u.rent7}%</div>
-                                <div>${u.rent6}%</div>
-                                <div>${u.rent5}%</div>
-                                <div>${u.rent4}%</div>
-                                <div>${u.rent3}%</div>
-                                <div>${u.rent2}%</div>
-                                <div>${u.rent1}%</div>
-                                <div>${Math.floor((Number(u.transresults)/Number(u.monthcapital))*10000)/100}%</div>
+                                <div style="width: 6%;">${u.id}</div>
+                                <div style="width: 6%;">${u.name.split(" ")[0]}</div>
+                                <div style="width: 21%;">${u.email}</div>
+                                <div style="width: 9%;">R$${u.capital}</div>
+                                <div style="width: 9%;">R$${u.monthcapital}</div>
+                                <div style="width: 9%;">R$${u.transresults}</div>
+                                <div style="width: 3%;">${u.rent11}%</div>
+                                <div style="width: 3%;">${u.rent10}%</div>
+                                <div style="width: 3%;">${u.rent9}%</div>
+                                <div style="width: 3%;">${u.rent8}%</div>
+                                <div style="width: 3%;">${u.rent7}%</div>
+                                <div style="width: 3%;">${u.rent6}%</div>
+                                <div style="width: 3%;">${u.rent5}%</div>
+                                <div style="width: 3%;">${u.rent4}%</div>
+                                <div style="width: 3%;">${u.rent3}%</div>
+                                <div style="width: 3%;">${u.rent2}%</div>
+                                <div style="width: 3%;">${u.rent1}%</div>
+                                <div style="width: 3%;">${Math.floor((Number(u.transresults)/Number(u.monthcapital))*10000)/100}%</div>
                             </div>
                         `
                         capitals += Number(u.capital) + Number(u.transresults)
