@@ -91,6 +91,7 @@ div{
 
 ::-webkit-scrollbar-track{
     background: none;
+	margin: 10px 0px;
 }
 
 ::-webkit-scrollbar-thumb{

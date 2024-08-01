@@ -1,5 +1,3 @@
-import constructMain from "../../../construct.js"
-
 export default function bodyDiv(){
     return(`
         <div class="initBodyContentDiv">
@@ -9,7 +7,7 @@ export default function bodyDiv(){
                     A iPH nasceu em 17/09/2023, com o objetivo de ser uma solução simples para o
                     gerenciamento do seu capital.<br><br>
                     Acreditamos que investimentos devem ser realizados seguindo três princípios:
-                    lógica, estruturação e consistência. Assim, diversificamos seu dinheiro em
+                    lógica, estruturação e consistência. Assim, diversificamos seu capital em
                     quatro ativos: renda fixa, ações estrangeiras, ações nacionais e mercado futuro.
                     A proporção do seu capital em cada um deles será definida por oportunidades lógicas, 
                     respeitando a estrutura de um gerenciamento de risco; tudo isso seguindo a 
