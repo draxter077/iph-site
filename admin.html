@@ -160,7 +160,7 @@
                         `
                         capitals += Number(u.capital) + Number(u.transresults)
                     }
-                    document.getElementsByClassName("total")[0].innerHTML = capitals
+                    document.getElementsByClassName("total")[0].innerHTML = Math.round(capitals*100)/100
                     document.getElementsByClassName("darf")[0].innerHTML = darf
                     document.getElementById("lastDay").onclick = function a(Event){lastDay(Event)}
                     document.getElementById("addDeposit").onclick = function a(Event){addDeposit(Event)}
