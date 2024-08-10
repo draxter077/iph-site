@@ -1,20 +1,20 @@
 export default function capitalAllocation(){
     return(`
-        <div class="homeBodyRightSideCapitalAllocationDiv">
+        <div class="homeBodyRightSideCapitalAllocation">
             <div class="homeBodyRightSideCapitalAllocationTitle">
                 Alocação do capital
             </div>
-            <div class="homeBodyRightSideCapitalAllocationContents">
-                <div class="homeBodyRightSideCapitalAllocationContent">
+            <div class="homeBodyRightSideCapitalAllocationContent">
+                <div>
                     Mercado Futuro: 20%
                 </div>
-                <div class="homeBodyRightSideCapitalAllocationContent">
+                <div>
                     Ações estrangeiras: 15%
                 </div>
-                <div class="homeBodyRightSideCapitalAllocationContent">
+                <div>
                     Ações nacionais: 15%
                 </div>
-                <div class="homeBodyRightSideCapitalAllocationContent">
+                <div>
                     Renda Fixa: 50%
                 </div>
             </div>

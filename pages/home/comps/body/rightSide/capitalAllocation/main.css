@@ -1,4 +1,4 @@
-.homeBodyRightSideCapitalAllocationDiv{
+.homeBodyRightSideCapitalAllocation{
     display: flex;
     flex-direction: column;
     background: rgb(255, 255, 255);
@@ -13,7 +13,7 @@
     margin: 0px 0px 10px 0px;
 }
 
-.homeBodyRightSideCapitalAllocationContents{
+.homeBodyRightSideCapitalAllocationContent{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -21,7 +21,7 @@
     width: 100%;
 }
 
-.homeBodyRightSideCapitalAllocationContent{
+.homeBodyRightSideCapitalAllocationContent>div{
     border: 1px solid rgb(0, 0, 0);
     padding: 10px;
     border-radius: 10px;

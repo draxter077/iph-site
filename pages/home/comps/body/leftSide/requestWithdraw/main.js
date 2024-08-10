@@ -1,13 +1,13 @@
 export default function requestWithdraw(){
     return(`
-        <div class="homeBodyLeftSideRequestWithdrawDiv">
-            <div class="homeBodyLeftSideRequestWithdrawDivSlider">
+        <div class="homeBodyLeftSideRequestWithdraw">
+            <div>
                 <div class="homeBodyLeftSideRequestWithdrawTitle">
                     Retirar
                 </div>
                 <div class="homeBodyLeftSideRequestWithdrawContent">
-                    <input class="homeBodyLeftSideRequestWithdrawInput" type="number" placeholder="1234,56">
-                    <button class="homeBodyLeftSideRequestWithdrawButton">Retirar</button>
+                    <input type="number" placeholder="1234,56">
+                    <button>Retirar</button>
                 </div>
             </div>
         </div>     
@@ -15,15 +15,15 @@ export default function requestWithdraw(){
 }
 
 export async function slideRequestWithdraw(){
-    const nowValue = document.getElementsByClassName("homeBodyLeftSideRequestWithdrawDivSlider")[0].style.translate
+    const nowValue = document.getElementsByClassName("homeBodyLeftSideRequestWithdraw")[0].children[0].style.translate
     if(nowValue == "-50%"){
-        document.getElementsByClassName("homeBodyLeftSideRequestWithdrawDivSlider")[0].style.translate = "0%"
-        document.getElementsByClassName("homeBodyLeftSideRequestWithdrawInput")[0].blur()
+        document.getElementsByClassName("homeBodyLeftSideRequestWithdraw")[0].children[0].style.translate = "0%"
+        document.getElementsByClassName("homeBodyLeftSideRequestWithdrawContent")[0].children[0].blur()
     }
     else{
-        document.getElementsByClassName("homeBodyLeftSideRequestWithdrawDivSlider")[0].style.translate = "-50%"
+        document.getElementsByClassName("homeBodyLeftSideRequestWithdraw")[0].children[0].style.translate = "-50%"
         await new Promise(resolve => setTimeout(resolve, 600));
-        document.getElementsByClassName("homeBodyLeftSideRequestWithdrawInput")[0].focus()
+        document.getElementsByClassName("homeBodyLeftSideRequestWithdrawContent")[0].children[0].focus()
     }
 }
 

@@ -1,4 +1,7 @@
-.homeBodyConfigDiv{
+@import url("./comps/userInfo/main.css");
+@import url("./comps/toChange/main.css");
+
+.homeBodyConfig{
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -21,182 +24,15 @@
     width: 100%;
 }
 
-.homeBodyConfigExitButton{
+.homeBodyConfigTitle>button{
     background: none;
     cursor: pointer;
     color: rgb(0, 0, 0);
     transition: color var(--transitionTime);
 }
 
-.homeBodyConfigExitButton:hover{
+.homeBodyConfigTitle>button:hover{
     color: var(--primaryGreen);
-}
-
-.homeBodyConfigUserInfo{
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0px;
-}
-
-.homeBodyConfigUserInfo>div{
-    font-size: 18px;
-    margin: 0px 0px 5px 0px;
-}
-
-.homeBodyConfigChangePixDiv{
-    width: 100%;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 15px;
-    padding: 10px 15px;
-    overflow: hidden;
-    cursor: pointer;
-    margin: 0px 0px 10px 0px;
-}
-
-.homeBodyConfigChangePixSlider{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    translate: 0%;
-    transition: translate var(--transitionTime);
-    width: 200%;
-}
-
-.homeBodyConfigChangePixTitle{
-    width: 100%;
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.homeBodyConfigChangePixContent{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 100%;
-}
-
-.homeBodyConfigChangePixInput{
-    border: 1px solid var(--primaryGreen);
-    border-radius: 10px;
-    padding: 10px 15px;
-    width: 40%;
-}
-
-.homeBodyConfigChangePixButton{
-    background: rgb(0, 0, 0);
-    padding: 10px 15px;
-    border-radius: 10px;
-    color: rgb(255, 255, 255);
-    margin: 0px 0px 0px 5px;
-    transition: background var(--transitionTime);
-}
-
-.homeBodyConfigChangePixButton:hover{
-    background: var(--primaryGreen);
-}
-
-.homeBodyConfigChangeEmailDiv{
-    width: 100%;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 15px;
-    padding: 10px 15px;
-    overflow: hidden;
-    cursor: pointer;
-    margin: 0px 0px 10px 0px;
-}
-
-.homeBodyConfigChangeEmailSlider{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    translate: 0%;
-    transition: translate var(--transitionTime);
-    width: 200%;
-}
-
-.homeBodyConfigChangeEmailTitle{
-    width: 100%;
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.homeBodyConfigChangeEmailContent{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 100%;
-}
-
-.homeBodyConfigChangeEmailInput{
-    border: 1px solid var(--primaryGreen);
-    border-radius: 10px;
-    padding: 10px 15px;
-    width: 40%;
-}
-
-.homeBodyConfigChangeEmailButton{
-    background: rgb(0, 0, 0);
-    padding: 10px 15px;
-    border-radius: 10px;
-    color: rgb(255, 255, 255);
-    margin: 0px 0px 0px 5px;
-    transition: background var(--transitionTime);
-}
-
-.homeBodyConfigChangeEmailButton:hover{
-    background: var(--primaryGreen);
-}
-
-.homeBodyConfigChangePasswordDiv{
-    width: 100%;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 15px;
-    padding: 10px 15px;
-    overflow: hidden;
-    cursor: pointer;
-    margin: 0px 0px 10px 0px;
-}
-
-.homeBodyConfigChangePasswordSlider{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    translate: 0%;
-    transition: translate var(--transitionTime);
-    width: 200%;
-}
-
-.homeBodyConfigChangePasswordTitle{
-    width: 100%;
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.homeBodyConfigChangePasswordContent{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 100%;
-}
-
-.homeBodyConfigChangePasswordInput{
-    border: 1px solid var(--primaryGreen);
-    border-radius: 10px;
-    padding: 10px 15px;
-    width: 40%;
-}
-
-.homeBodyConfigChangePasswordButton{
-    background: rgb(0, 0, 0);
-    padding: 10px 15px;
-    border-radius: 10px;
-    color: rgb(255, 255, 255);
-    margin: 0px 0px 0px 5px;
-    transition: background var(--transitionTime);
-}
-
-.homeBodyConfigChangePasswordButton:hover{
-    background: var(--primaryGreen);
 }
 
 .homeBodyConfigDisclaimer{
@@ -205,7 +41,7 @@
 }
 
 @media screen and (max-width: 1000px){
-    .homeBodyConfigDiv{
+    .homeBodyConfig{
         width: 100%;
     }
 }

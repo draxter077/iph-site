@@ -34,7 +34,7 @@ export default function returnsGraph(data){
         values.push({date: rents[j].toString() + "%", y: a.toString() + "%"})
     }
     return(`
-        <div class="homeBodyReturnsGraphDiv">
+        <div class="homeBodyReturnsGraph">
             <svg>
                 <line x1="5%" x2="95%" y1="95%" y2="95%" stroke-width="1" stroke="rgb(0, 0, 0, 0.2)"></line>
                 <line x1="5%" x2="95%" y1="72.5%" y2="72.5%" stroke-width="1" stroke="rgb(0, 0, 0, 0.2)"></line>

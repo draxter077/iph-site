@@ -2,7 +2,7 @@
 @import url("./leftSide/main.css");
 @import url("./rightSide/main.css");
 
-.homeBodyContent{
+.homeBody{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 1000px){
-    .homeBodyContent{
+    .homeBody{
         flex-direction: column-reverse;
     }
 }

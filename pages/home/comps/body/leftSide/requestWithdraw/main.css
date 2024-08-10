@@ -1,4 +1,4 @@
-.homeBodyLeftSideRequestWithdrawDiv{
+.homeBodyLeftSideRequestWithdraw{
     background: rgb(255, 255, 255);
     padding: 20px 25px;
     border-radius: 20px;
@@ -9,7 +9,7 @@
     cursor: pointer;
 }
 
-.homeBodyLeftSideRequestWithdrawDivSlider{
+.homeBodyLeftSideRequestWithdraw>div{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -32,14 +32,14 @@
     font-size: 18px;
 }
 
-.homeBodyLeftSideRequestWithdrawInput{
+.homeBodyLeftSideRequestWithdrawContent>input{
     border: 1px solid var(--primaryGreen);
     padding: 10px 15px;
     width: 40%;
     border-radius: 10px;
 }
 
-.homeBodyLeftSideRequestWithdrawButton{
+.homeBodyLeftSideRequestWithdrawContent>button{
     background: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
     padding: 10px 15px;
@@ -47,6 +47,6 @@
     transition: background var(--transitionTime);
 }
 
-.homeBodyLeftSideRequestWithdrawButton:hover{
+.homeBodyLeftSideRequestWithdrawContent>button:hover{
     background: var(--primaryGreen);
 }

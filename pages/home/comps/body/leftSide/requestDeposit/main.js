@@ -1,7 +1,7 @@
 export default function requestDeposit(){
     return(`
-        <div class="homeBodyLeftSideRequestDepositDiv">
-            <div class="homeBodyLeftSideRequestDepositDivSlider">
+        <div class="homeBodyLeftSideRequestDeposit">
+            <div>
                 <div class="homeBodyLeftSideRequestDepositTitle">
                     Depositar
                 </div>
@@ -14,11 +14,11 @@ export default function requestDeposit(){
 }
 
 export function slideRequestDeposit(){
-    const nowValue = document.getElementsByClassName("homeBodyLeftSideRequestDepositDivSlider")[0].style.translate
+    const nowValue = document.getElementsByClassName("homeBodyLeftSideRequestDeposit")[0].children[0].style.translate
     if(nowValue == "-50%"){
-        document.getElementsByClassName("homeBodyLeftSideRequestDepositDivSlider")[0].style.translate = "0%"
+        document.getElementsByClassName("homeBodyLeftSideRequestDeposit")[0].children[0].style.translate = "0%"
     }
     else{
-        document.getElementsByClassName("homeBodyLeftSideRequestDepositDivSlider")[0].style.translate = "-50%"
+        document.getElementsByClassName("homeBodyLeftSideRequestDeposit")[0].children[0].style.translate = "-50%"
     }
 }

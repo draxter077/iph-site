@@ -1,4 +1,4 @@
-.homeBodyLeftSideAccountTotalDiv{
+.homeBodyLeftSideAccountTotal{
     display: flex;
     flex-direction: column;
     background: rgb(255, 255, 255);
@@ -22,6 +22,6 @@
     width: 100%;
 }
 
-.homeBodyLeftSideAccountTotalContent{
+.homeBodyLeftSideAccountTotalContents>div{
     font-size: 25px;
 }

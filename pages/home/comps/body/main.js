@@ -5,7 +5,7 @@ import homeBodyRightSideDiv from "./rightSide/main.js"
 export default function bodyDiv(data){
     return(`
         ${configDiv(data.userInfo)}
-        <div class="homeBodyContent">
+        <div class="homeBody">
             ${homeBodyLeftSideDiv(data.userInfo)}
             ${homeBodyRightSideDiv(data)}
         </div>

@@ -3,7 +3,7 @@
 @import url("./requestWithdraw/main.css");
 @import url("./openConfig/main.css");
 
-.homeBodyLeftSideDiv{
+.homeBodyLeftSide{
     display: flex;
     flex-direction: column;
     height: fit-content;
@@ -12,7 +12,7 @@
 }
 
 @media screen and (max-width: 1000px){
-    .homeBodyLeftSideDiv{
+    .homeBodyLeftSide{
         width: 100%;
     }
 }

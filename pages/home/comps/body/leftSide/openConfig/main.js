@@ -1,7 +1,7 @@
 export default function openConfig(){
     return(`
-        <div class="homeBodyLeftSideOpenConfigDiv">
-            <div class="homeBodyLeftSideOpenConfigTitle">
+        <div class="homeBodyLeftSideOpenConfig">
+            <div>
                 Configurações
             </div>
         </div>     
@@ -9,7 +9,7 @@ export default function openConfig(){
 }
 
 export function openConfigDiv(){
-    document.getElementsByClassName("homeBodyConfigDiv")[0].style.left = "0%";
-    document.getElementsByClassName("homeBodyContent")[0].style = "opacity: 0.5 !important;";
-    document.getElementsByClassName("homeBodyConfigDiv")[0].scrollIntoView({behavior: "smooth"})
+    document.getElementsByClassName("homeBodyConfig")[0].style.left = "0%";
+    document.getElementsByClassName("homeBody")[0].style = "opacity: 0.5 !important;";
+    document.getElementsByClassName("homeBodyConfig")[0].scrollIntoView({behavior: "smooth"})
 }

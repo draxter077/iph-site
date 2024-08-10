@@ -5,7 +5,7 @@ import openConfig from "./openConfig/main.js"
 
 export default function homeBodyLeftSideDiv(data){
     return(`
-        <div class="homeBodyLeftSideDiv">
+        <div class="homeBodyLeftSide">
             ${accountTotal(data)}
             ${requestWithdraw()}
             ${requestDeposit()}
