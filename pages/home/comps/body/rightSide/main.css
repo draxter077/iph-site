@@ -1,7 +1,7 @@
 @import url("./capitalAllocation/main.css");
 @import url("./returnsGraph/main.css");
 
-.homeBodyRightSideDiv{
+.homeBodyRightSide{
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 1000px){
-    .homeBodyRightSideDiv{
+    .homeBodyRightSide{
         width: 100%;
     }
 }

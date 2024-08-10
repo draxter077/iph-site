@@ -3,7 +3,7 @@ import returnsGraph from "./returnsGraph/main.js"
 
 export default function homeBodyRightSideDiv(data){
     return(`
-        <div class="homeBodyRightSideDiv">
+        <div class="homeBodyRightSide">
             ${capitalAllocation()}
             ${returnsGraph(data.userInfo)}
         </div>    
