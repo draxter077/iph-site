@@ -1,9 +1,9 @@
 export default function bodyDiv(){
     return(`
-        <div class="initBodyContentDiv">
+        <div class="initBody">
             <div class="initBodyLogo">iPH</div>
-            <div class="aboutUsDiv">
-                <div class="aboutUs">
+            <div class="aboutUs">
+                <div>
                     A iPH nasceu em 17/09/2023, com o objetivo de ser uma solução simples para o
                     gerenciamento do seu capital.<br><br>
                     Acreditamos que investimentos devem ser realizados seguindo três princípios:
@@ -16,15 +16,15 @@ export default function bodyDiv(){
                 </div>
             </div>
             <div class="toBeOpenUp">
-                <div class="initBodyFormsDiv">
+                <div class="initBodyForms">
                     <div class="initBodyFormsInputs">
-                        <input class="initBodyInput" placeholder="Email">
-                        <input class="initBodyInput" placeholder="Senha" type="password">
+                        <input placeholder="Email">
+                        <input placeholder="Senha" type="password">
                     </div>
-                    <div class="initBodyFormsForgotPassDiv"><button class="initBodyFormsForgotPassButton">Esqueceu a senha?</button></div>
-                    <button class="initBodyFormsButton">Entrar</button>
+                    <div class="initBodyFormsForgotPass"><button>Esqueceu a senha?</button></div>
+                    <button>Entrar</button>
                 </div>
-                <div class="initBodyFormsCreateAccountDiv"><button class="initBodyFormsCreateAccountButton">Criar uma conta</button></div>
+                <div class="initBodyChangeForms"><button>Criar uma conta</button></div>
             </div>
         </div>
     `)

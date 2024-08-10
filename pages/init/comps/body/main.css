@@ -1,4 +1,4 @@
-.initBodyContentDiv{
+.initBody{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,7 +20,7 @@
     cursor: pointer;
 }
 
-.initBodyFormsDiv{
+.initBodyForms{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,7 +42,7 @@
     flex-direction: column;
 }
 
-.initBodyInput{
+.initBodyFormsInputs>input{
     width: 15vw;
     padding: 10px 15px;
     border: 1px solid rgb(0, 0, 0, 0.2);
@@ -51,29 +51,29 @@
     font-size: 15px;
     transition: border var(--transitionTime);
 }
-.initBodyInput:hover{
+.initBodyFormsInputs>input:hover{
     border: 1px solid var(--primaryGreen);
 }
-.initBodyInput:focus{
+.initBodyFormsInputs>input:focus{
     border: 1px solid var(--primaryGreen);
 }
 
-.initBodyFormsForgotPassDiv{
+.initBodyFormsForgotPass{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     width: 100%;
 }
-.initBodyFormsForgotPassButton{
+.initBodyFormsForgotPass>button{
     background: rgb(255, 255, 255);
     font-size: 15px;
     transition: color var(--transitionTime);
 }
-.initBodyFormsForgotPassButton:hover{
+.initBodyFormsForgotPass>button:hover{
     color: var(--primaryGreen);
 }
 
-.initBodyFormsButton{
+.initBodyForms>button{
     width: 50%;
     padding: 10px 15px;
     margin: 20px 0px 0px 0px;
@@ -84,29 +84,29 @@
     font-size: 15px;
     transition: background var(--transitionTime);
 }
-.initBodyFormsButton:hover{
+.initBodyForms>button:hover{
     background: var(--primaryGreen);
 }
 
-.initBodyFormsCreateAccountDiv{
+.initBodyChangeForms{
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
 }
 
-.initBodyFormsCreateAccountButton{
+.initBodyChangeForms>button{
     background: rgb(0, 0, 0);
     margin: 20px 0px 0px 0px;
     color: rgb(255, 255, 255);
     font-weight: 600;
     transition: color var(--transitionTime);
 }
-.initBodyFormsCreateAccountButton:hover{
+.initBodyChangeForms>button:hover{
     color: var(--primaryGreen);
 }
 
-.aboutUsDiv{
+.aboutUs{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -115,7 +115,7 @@
     overflow: hidden;
     margin: 0px 0px 30px 0px
 }
-.aboutUs{
+.aboutUs>div{
     background: rgb(255, 255, 255);
     border-radius: 15px;
     padding: 30px;
@@ -124,10 +124,10 @@
 }
 
 @media (max-width: 1200px){
-    .initBodyInput{
+    .initBodyFormsInputs>input{
         width: 60vw;
     }
-    .aboutUs{
+    .aboutUs>div{
         max-width: 90%;
     }
 }
