@@ -4,7 +4,8 @@ import { slideRequestDeposit } from "./comps/body/leftSide/requestDeposit/main.j
 import { slideRequestWithdraw } from "./comps/body/leftSide/requestWithdraw/main.js"
 import { sendWithdrawRequest } from "./comps/body/leftSide/requestWithdraw/main.js"
 import { openConfigDiv } from "./comps/body/leftSide/openConfig/main.js"
-import { changeSomething, closeConfigDiv, slideSomething } from "./comps/body/config/main.js"
+import { closeConfigDiv } from "./comps/body/config/main.js"
+import { changeSomething, slideSomething } from "./comps/body/config/comps/toChange/main.js"
 
 function homePageAddFunctionsToButtons(){
     document.getElementsByClassName("homeBodyLeftSideRequestDeposit")[0].onclick = function a(){slideRequestDeposit()}

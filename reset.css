@@ -69,6 +69,11 @@ table {
 }
 :root{
 	--primaryGreen: rgb(0, 255, 150);
+	--colorWhite: rgb(255, 255, 255);
+	--colorBlack: rgb(0, 0, 0);
+	--topPadding: 30px 20px;
+	--padding: 15px 10px;
+	--margin: 20px;
 	--transitionTime: 0.5s;
 }
 body{

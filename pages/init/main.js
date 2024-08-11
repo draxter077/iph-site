@@ -1,8 +1,5 @@
 import bodyDiv from "./comps/body/main.js"
-import changeToCreateORLogin from "./comps/body/btnFunctions/changeForms.js"
-import checkCredentialsAndGoToHome from "./comps/body/btnFunctions/sendForms.js"
-import forgotPassword from "./comps/body/btnFunctions/forgotPass.js"
-import aboutUs from "./comps/body/btnFunctions/aboutUs.js"
+import { aboutUs, changeToCreateORLogin, checkCredentialsAndGoToHome, forgotPassword } from "./comps/body/main.js"
 
 function initPageAddFunctionsToButtons(){
     document.getElementsByClassName("initBodyChangeForms")[0].children[0].onclick = function a(Event){changeToCreateORLogin(Event)}

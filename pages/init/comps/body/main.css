@@ -29,14 +29,6 @@
     border-radius: 15px;
 }
 
-.initBodyTitleFormsDiv{
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    font-size: 20px;
-    text-align: center;
-    margin: 0px 0px 30px 0px;
-}
-
 .initBodyFormsInputs{
     display: flex;
     flex-direction: column;
