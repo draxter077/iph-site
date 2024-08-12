@@ -8,12 +8,6 @@ async function cleanScreen(cmUS){
     construct(cmUS)
 }
 
-async function wrongAnimation(item){
-    item.style.animation = "inputWrongValue 1s forwards"
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    item.style.animation = ""
-}
-
 async function goToHome(data){
     axios.defaults.headers.common["userAuth"] = data.userInfo.id
     await cleanScreen(data)

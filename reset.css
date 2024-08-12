@@ -85,11 +85,6 @@ body{
 div{
 	box-sizing: border-box;
 }
-.toBeOpenUp{
-	max-height: 0px;
-	overflow: hidden;
-	animation: openUp 2s 3s forwards;
-}
 ::-webkit-scrollbar{
     width: 5px;
 }

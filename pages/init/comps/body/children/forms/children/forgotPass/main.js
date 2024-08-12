@@ -1,3 +1,9 @@
+async function wrongAnimation(item){
+    item.style.animation = "inputWrongValue 1s forwards"
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    item.style.animation = ""
+}
+
 async function forgotPassword(Event){
     Event.target.disabled = true
     const input = document.getElementsByClassName("initBodyFormsInputs")[0].children[0]
