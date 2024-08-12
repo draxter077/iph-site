@@ -2,7 +2,15 @@ import inputs from "../forms/children/inputs/main.js"
 import forgotPass from "../forms/children/forgotPass/main.js"
 import enter from "../forms/children/enter/main.js"
 
-import { aboutUs } from "../logo/main.js"
+function aboutUs(){
+    const aboutUsDiv = document.getElementsByClassName("aboutUs")[0]
+    if(aboutUsDiv.style.maxHeight == "200px"){
+        aboutUsDiv.style.maxHeight = "0px";
+    }
+    else{
+        aboutUsDiv.style.maxHeight = "200px";
+    }
+}
 
 function change(Event){
     const formsDiv = document.getElementsByClassName("initBodyForms")[0]
