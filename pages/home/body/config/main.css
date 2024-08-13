@@ -1,0 +1,22 @@
+@import url("./title/main.css");
+@import url("./toChange/main.css");
+@import url("./disclaimer/main.css");
+
+.homeBodyConfig{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    left: -100%;
+    width: 30%;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 20px;
+    transition: left var(--transitionTime);
+}
+
+@media screen and (max-width: 1000px){
+    .homeBodyConfig{
+        width: 100%;
+    }
+}

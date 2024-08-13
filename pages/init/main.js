@@ -1,6 +1,7 @@
-import body from "./comps/body/main.js"
+import body from "./body/main.js"
 
-export default function initMain(){
-    const root = document.getElementById("root")
-    root.appendChild(body())
+export default function init(){
+    const initHTML = document.createElement("div")
+    initHTML.appendChild(body())
+    return(initHTML)
 }

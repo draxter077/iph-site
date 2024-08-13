@@ -1,0 +1,13 @@
+@import url("./logo/main.css");
+@import url("./aboutUs/main.css");
+@import url("./forms/main.css");
+@import url("./changeForms/main.css");
+
+.initBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
