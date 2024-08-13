@@ -44,7 +44,7 @@ async function change(Event, type, n){
 function protect(s){
     let ns = ""
     for(let i = 0; i < s.length; i++){
-        if(i != s.length - 1 || i == 0){
+        if(i != s.length - 1 || i != 0){
             ns += "*"
         }
         else{
