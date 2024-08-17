@@ -80,16 +80,13 @@ export default function toChange(data){
             forms.className = "homeBodyConfigChangeForms"
                 let input = document.createElement("input")
                 input.placeholder = tosChange[i].input
+                input.value = tosChange[i].current
                 forms.appendChild(input)
                 let button = document.createElement("button")
                 button.innerHTML = "Alterar"
                 button.onclick = function b(Event){change(Event, tosChange[i].type, i)}
                 forms.appendChild(button)
             formsInfo.appendChild(forms)
-            let info = document.createElement("div")
-            info.className = "homeBodyConfigChangeInfo"
-            info.innerHTML = "Atual: " + tosChange[i].current
-            formsInfo.appendChild(info)
         slider.appendChild(formsInfo)
         
 

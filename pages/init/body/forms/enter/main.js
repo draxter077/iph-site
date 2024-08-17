@@ -6,17 +6,14 @@ async function wrongAnimation(item){
     item.style.animation = ""
 }
 
-async function cleanScreen(cmUS){
+async function goToHome(data){
+    axios.defaults.headers.common["userAuth"] = data.userInfo.id
+
     const body = document.getElementsByClassName("initBody")[0]
     body.style.opacity = "1"
     body.style.animation = "fadeOut 1s 1s forwards"
     await new Promise(resolve => setTimeout(resolve, 2000))
-    construct(cmUS)
-}
-
-async function goToHome(data){
-    axios.defaults.headers.common["userAuth"] = data.userInfo.id
-    await cleanScreen(data)
+    construct(data)
 }
 
 async function checkLogin(inputDivChildren){
@@ -88,10 +85,10 @@ async function check(Event){
     const inputDivChildren = btn.parentElement.children[0].children
     const numberInputs = inputDivChildren.length
     if(numberInputs == 2){
-        checkLogin(inputDivChildren)
+        await checkLogin(inputDivChildren)
     }
     else{
-        checkNewAccount(inputDivChildren)
+        await checkNewAccount(inputDivChildren)
     }
     btn.disabled = false
 }
