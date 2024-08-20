@@ -20,7 +20,7 @@ async function sendWithdrawRequest(Event){
                 }
             })
             .catch(async response => {
-                inputDiv.style.animation = "inputWrongValue 1s forwards"
+                inputDiv.style.animation = "inputRightValue 1s forwards"
                 await new Promise(resolve => setTimeout(resolve, 1000))
                 inputDiv.style.animation = ""
                 inputDiv.focus()
