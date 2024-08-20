@@ -12,9 +12,7 @@ async function sendWithdrawRequest(Event){
     else{
         await axios.post("https://ace-chimp-merry.ngrok-free.app/requestWithdraw", {value: Number(inputDiv.value.toString().replaceAll(",", "."))})
             .then(async resposta => {
-                inputDiv.value = "Aprovado"
                 await new Promise(resolve => setTimeout(resolve, 3000));
-                inputDiv.value = ""
                 if(document.getElementsByClassName("homeBodyLeftSideRequestWithdrawDivSlider")[0].style.translate == "-50%"){
                     document.getElementsByClassName("homeBodyLeftSideRequestWithdrawDivSlider")[0].style.translate = "0%"
                 }
