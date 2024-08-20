@@ -5,6 +5,7 @@
     width: 100%;
     opacity: 0;
     animation: fadeIn 2s 0s forwards;
+    margin: 30px 0px 0px 0px;
 }
 
 .homeTop>div{
