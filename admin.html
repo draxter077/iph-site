@@ -127,6 +127,9 @@
     async function check(Event){
         const user = Event.target.parentElement.children[0].value
         const key = Event.target.parentElement.children[1].value
+        document.getElementsByClassName("info")[0].innerHTML = ""
+        document.getElementsByClassName("total")[0].innerHTML = ""
+        document.getElementsByClassName("darf")[0].innerHTML = ""
         if(user.length != 0 && key.length != 0){
             await axios.post("https://ace-chimp-merry.ngrok-free.app/adminAcess", {user: user, key: key})
                 .then(resposta => {
