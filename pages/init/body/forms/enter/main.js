@@ -16,7 +16,8 @@ async function goToHome(data){
     construct(data)
 }
 
-async function checkLogin(inputDivChildren){
+async function checkLogin(inputDivChildren, btn){
+    btn.innerHTML = "Carregando..."
     const userEmail = inputDivChildren[0].value, userPassword = inputDivChildren[1].value
     for(let i = 0; i < 2; i++){
         if(inputDivChildren[i].value.length == 0){
@@ -44,7 +45,8 @@ async function checkLogin(inputDivChildren){
     }
 }
 
-async function checkNewAccount(inputDivChildren){
+async function checkNewAccount(inputDivChildren, btn){
+    btn.innerHTML = "Carregando..."
     for(let i = 0; i < 5; i++){
         if(inputDivChildren[i].value.length == 0){
             await wrongAnimation(inputDivChildren[i])
@@ -85,10 +87,12 @@ async function check(Event){
     const inputDivChildren = btn.parentElement.children[0].children
     const numberInputs = inputDivChildren.length
     if(numberInputs == 2){
-        await checkLogin(inputDivChildren)
+        await checkLogin(inputDivChildren, btn)
+        btn.innerHTML = "Entrar"
     }
     else{
-        await checkNewAccount(inputDivChildren)
+        await checkNewAccount(inputDivChildren, btn)
+        btn.innerHTML = "Criar"
     }
     btn.disabled = false
 }
