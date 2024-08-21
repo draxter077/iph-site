@@ -10,15 +10,25 @@ async function sendWithdrawRequest(Event){
         inputDiv.focus()
     }
     else{
-        await axios.post("https://ace-chimp-merry.ngrok-free.app/requestWithdraw", {value: Number(inputDiv.value.toString().replaceAll(",", "."))})
+        const inputValue = Number(inputDiv.value.toString().replaceAll(",", "."))
+        await axios.post("https://ace-chimp-merry.ngrok-free.app/requestWithdraw", {value: inputValue})
             .then(async resposta => {
+                inputDiv.style.animation = "inputRightValue 1s forwards"
+                inputDiv.type = "text"
+                inputDiv.value = "Aprovado"
+                let acc = document.getElementsByClassName("homeBodyLeftSideAccountTotalContents")[0].children[0]
+                let accTotal = Number(acc.innerHTML.replace("R$ ", "").replaceAll(",", "."))
+                acc.innerHTML = "R$ " + (Math.floor((accTotal - inputValue)*100)/100).toString().replace(".", ",")
                 await new Promise(resolve => setTimeout(resolve, 3000));
-                if(document.getElementsByClassName("homeBodyLeftSideRequestWithdrawDivSlider")[0].style.translate == "-50%"){
-                    document.getElementsByClassName("homeBodyLeftSideRequestWithdrawDivSlider")[0].style.translate = "0%"
+                inputDiv.value = ""
+                inputDiv.type = "number"
+                inputDiv.style.animation = ""
+                if(document.getElementsByClassName("homeBodyLeftSideRequestWithdraw")[0].children[0].style.translate == "-50%"){
+                    document.getElementsByClassName("homeBodyLeftSideRequestWithdraw")[0].children[0].style.translate = "0%"
                 }
             })
             .catch(async response => {
-                inputDiv.style.animation = "inputRightValue 1s forwards"
+                inputDiv.style.animation = "inputWrongValue 1s forwards"
                 await new Promise(resolve => setTimeout(resolve, 1000))
                 inputDiv.style.animation = ""
                 inputDiv.focus()
