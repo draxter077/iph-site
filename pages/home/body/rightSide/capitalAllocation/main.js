@@ -8,7 +8,7 @@ export default function capitalAllocation(){
 
         const content = document.createElement("div")
         content.className = "homeBodyRightSideCapitalAllocationContent"
-        let childs = ["Mercado Futuro: 15%", "Ações estrangeiras: 10%", "Ações nacionais: 10%", "CDI/CDB: 65%"]
+        let childs = ["Mercado Futuro: 10%", "Ações estrangeiras: 10%", "Ações nacionais: 15%", "CDI/CDB: 65%"]
         for(let i = 0; i < childs.length; i++){
             let d = document.createElement("div")
             d.innerHTML = childs[i]
