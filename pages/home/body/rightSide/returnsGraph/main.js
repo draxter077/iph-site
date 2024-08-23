@@ -46,7 +46,7 @@ export default function returnsGraph(data){
             }
             for(let j = 0; j < 5; j++){
                 let text = document.createElementNS("http://www.w3.org/2000/svg", "text")
-                text.setAttribute("x", "0%"); text.setAttribute("y", ((97.5 - 22.5*j) + "%").toString())
+                text.setAttribute("x", "0%"); text.setAttribute("y", ((7.5 + 22.5*j) + "%").toString())
                 text.innerHTML = Math.floor(((highest - lowest)*(1 - (0.25*j)) + lowest)*100)/100 + "%"
                 svg.appendChild(text)
             }
