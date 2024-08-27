@@ -99,6 +99,8 @@
         </div>
         <div class="total">
         </div>
+        <div class="total">
+        </div>
         <div class="darf">
         </div>
         <div class="login">
@@ -137,6 +139,7 @@
                     const darf = resposta.data.darfInfo.value
                     const infoDiv = document.getElementsByClassName("info")[0]
                     let capitals = 0;
+                    let monthCapitals = 0
                     for(let i = 0; i < users.length; i++){
                         const u = users[i];
                         infoDiv.innerHTML += `
@@ -161,9 +164,11 @@
                                 <div style="width: 3%;">${Math.floor((Number(u.transresults)/Number(u.monthcapital))*10000)/100}%</div>
                             </div>
                         `
-                        capitals += Number(u.capital) + Number(u.transresults)
+                        capitals += Number(u.capital)
+                        monthCapitals += Number(u.monthcapital)
                     }
-                    document.getElementsByClassName("total")[0].innerHTML = `Total: R$ ${Math.floor(capitals*100)/100} (10% = ${Math.floor((Math.floor(capitals*100)/100)*0.10*100)/100} => ${Math.floor(Math.floor((Math.floor(capitals*100)/100)*0.15*100)/100/150)} contracts)`
+                    document.getElementsByClassName("total")[0].innerHTML = `Total: R$ ${Math.floor(capitals*100)/100} (20% = R$ ${Math.floor((Math.floor(capitals*100)/100)*0.20*100)/100} => ${Math.floor(Math.floor((Math.floor(capitals*100)/100)*0.20*100)/100/150)} contracts)`
+                    document.getElementsByClassName("total")[1].innerHTML = `Total monthCapital: R$ ${Math.floor(monthCapitals*100)/100} (2% = R$ ${Math.floor(monthCapitals*0.02*100)/100})`
                     document.getElementsByClassName("darf")[0].innerHTML = "Darf: R$ " + Math.floor(darf*100)/100
                     document.getElementById("lastDay").onclick = function a(Event){lastDay(Event)}
                     document.getElementById("addDeposit").onclick = function a(Event){addDeposit(Event)}
