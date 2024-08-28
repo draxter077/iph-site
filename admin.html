@@ -215,7 +215,7 @@
     async function addReturn(Event){
         const value = Event.target.parentElement.children[0].value
         if(value.length != 0)
-        await axios.post("https://ace-chimp-merry.ngrok-free.app/transReturn", {value: Number(value).replaceAll(",", ".")})
+        await axios.post("https://ace-chimp-merry.ngrok-free.app/transReturn", {value: Number(value.replaceAll(",", "."))})
             .then(resposta => {
                 alert('Done')
             })
@@ -224,7 +224,7 @@
     async function addDarf(Event){
         const value = Event.target.parentElement.children[0].value
         if(value.length != 0)
-        await axios.post("https://ace-chimp-merry.ngrok-free.app/addDarf", {value: Number(value).replaceAll(",", ".")})
+        await axios.post("https://ace-chimp-merry.ngrok-free.app/addDarf", {value: Number(value.replaceAll(",", "."))})
             .then(resposta => {
                 document.getElementsByClassName("darf")[0].innerHTML = resposta.data.value
                 alert('Done')
