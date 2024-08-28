@@ -15,7 +15,6 @@ export default function accountTotal(data){
             const rent = document.createElement("div")
             rent.style = `color: ${data.averageRent >= 0 ? "rgb(0, 255, 150)" : "rgb(255, 0, 150)"}; font-weight: 600`
             rent.innerHTML = data.averageRent + "%m"
-            console.log(data)
             contents.appendChild(rent)
         accountTotal.appendChild(contents)
     return(accountTotal)

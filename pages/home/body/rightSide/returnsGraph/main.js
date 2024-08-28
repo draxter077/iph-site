@@ -26,7 +26,6 @@ export default function returnsGraph(data){
         lowest = -2.5
     }
     const zeroLineY = Math.floor(((0 - lowest)/(highest - lowest))*10000)/100
-    console.log(zeroLineY)
     let values = []
     for(let j = 0; j < rents.length; j++){
         let a = Math.floor(((rents[j] - lowest)/(highest - lowest))*10000)/100
