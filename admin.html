@@ -104,6 +104,14 @@
         <div class="darf">
         </div>
         <div class="login">
+            <input placeholder="nowValue 0.00">
+            <button id="checkContracts">check contracts</button>
+        </div>
+        <div class="login">
+            <input placeholder="checkDiference 0.00">
+            <button id="checkDif">check dif</button>
+        </div>
+        <div class="login">
             <input placeholder="user">
             <button id="lastDay">it is month last day</button>
         </div>
@@ -167,9 +175,11 @@
                         capitals += Number(u.capital)
                         monthCapitals += Number(u.monthcapital)
                     }
-                    document.getElementsByClassName("total")[0].innerHTML = `Total: R$ ${Math.floor(capitals*100)/100} (20% = R$ ${Math.floor((Math.floor(capitals*100)/100)*0.20*100)/100} => ${Math.floor(Math.floor((Math.floor(capitals*100)/100)*0.20*100)/100/150)} contracts)`
+                    document.getElementsByClassName("total")[0].innerHTML = `Total: R$ ${Math.floor(capitals*100)/100}`
                     document.getElementsByClassName("total")[1].innerHTML = `Total monthCapital: R$ ${Math.floor(monthCapitals*100)/100} (2% = R$ ${Math.floor(monthCapitals*0.02*100)/100})`
                     document.getElementsByClassName("darf")[0].innerHTML = "Darf: R$ " + Math.floor(darf*100)/100
+                    document.getElementById("checkContracts").onclick = function a(Event){checkContracts(Event)}
+                    document.getElementById("checkDif").onclick = function a(Event){checkDif(Event)}
                     document.getElementById("lastDay").onclick = function a(Event){lastDay(Event)}
                     document.getElementById("addDeposit").onclick = function a(Event){addDeposit(Event)}
                     document.getElementById("addReturn").onclick = function a(Event){addReturn(Event)}
@@ -220,5 +230,16 @@
                 alert('Done')
             })
             .catch(response => {alert("ERRO"); console.log(response)})
+    }
+    function checkContracts(Event){
+        const inpt = Event.target.parentElement.children[0]
+        const value = Number(inpt.value)
+        inpt.value = `R$ ${value} (20%R$ ${Math.floor(value*0.2*100)/100}/${Math.floor(value*0.2/150)}c)`
+    }
+    function checkDif(Event){
+        const inpt = Event.target.parentElement.children[0]
+        const value = Number(inpt.value)
+        const realValue = Number(document.getElementsByClassName("total")[0].innerHTML.replace("Total: R$ ", ""))
+        inpt.value = `R$ ${value} (${Math.floor(((value/realValue)*100)*100)/100}%/R$ ${Math.floor((value - realValue)*100)/100})`
     }
 </script>
