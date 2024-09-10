@@ -1,7 +1,7 @@
 import body from "./body/main.js"
 
 export default function init(){
-    const initHTML = document.createElement("div")
-    initHTML.appendChild(body())
-    return(initHTML)
+    const init = document.createElement("div")
+    init.appendChild(body())
+    return(init)
 }

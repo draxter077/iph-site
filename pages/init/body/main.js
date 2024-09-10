@@ -6,11 +6,9 @@ import changeForms from "./changeForms/main.js"
 export default function body(){
     const body = document.createElement("div")
     body.className = "initBody"
-
     body.appendChild(logo())
     body.appendChild(aboutUs())
     body.appendChild(forms("login"))
     body.appendChild(changeForms())
-
     return(body)
 }
