@@ -8,6 +8,8 @@
     font-weight: 600;
     font-size: 15px;
     transition: background var(--transitionTime);
+    display: flex;
+    justify-content: center;
 }
 
 .initBodyForms>button:hover{

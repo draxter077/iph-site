@@ -16,8 +16,7 @@ async function goToHome(data){
     construct(data)
 }
 
-async function checkLogin(inputDivChildren, btn){
-    btn.innerHTML = "Carregando..."
+async function checkLogin(inputDivChildren){
     const userEmail = inputDivChildren[0].value, userPassword = inputDivChildren[1].value
     for(let i = 0; i < 2; i++){
         if(inputDivChildren[i].value.length == 0){
@@ -45,8 +44,7 @@ async function checkLogin(inputDivChildren, btn){
     }
 }
 
-async function checkNewAccount(inputDivChildren, btn){
-    btn.innerHTML = "Carregando..."
+async function checkNewAccount(inputDivChildren){
     for(let i = 0; i < 5; i++){
         if(inputDivChildren[i].value.length == 0){
             await wrongAnimation(inputDivChildren[i])
@@ -87,11 +85,13 @@ async function check(Event){
     const inputDivChildren = btn.parentElement.children[0].children
     const numberInputs = inputDivChildren.length
     if(numberInputs == 2){
-        await checkLogin(inputDivChildren, btn)
+        btn.innerHTML = "<img style='height: 20px; width: 20px;' src='https://media.tenor.com/tga0EoNOH-8AAAAM/loading-load.gif'>"
+        await checkLogin(inputDivChildren)
         btn.innerHTML = "Entrar"
     }
     else{
-        await checkNewAccount(inputDivChildren, btn)
+        btn.innerHTML = "<img style='height: 20px; width: 20px;' src='https://media.tenor.com/tga0EoNOH-8AAAAM/loading-load.gif'>"
+        await checkNewAccount(inputDivChildren)
         btn.innerHTML = "Criar"
     }
     btn.disabled = false
