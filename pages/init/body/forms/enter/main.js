@@ -85,12 +85,12 @@ async function check(Event){
     const inputDivChildren = btn.parentElement.children[0].children
     const numberInputs = inputDivChildren.length
     if(numberInputs == 2){
-        btn.innerHTML = "<img style='height: 20px; width: 20px;' src='https://media.tenor.com/tga0EoNOH-8AAAAM/loading-load.gif'>"
+        btn.innerHTML = "<img style='height: 20px; width: 20px; border-radius: 1000px' src='https://media.tenor.com/tga0EoNOH-8AAAAM/loading-load.gif'>"
         await checkLogin(inputDivChildren)
         btn.innerHTML = "Entrar"
     }
     else{
-        btn.innerHTML = "<img style='height: 20px; width: 20px;' src='https://media.tenor.com/tga0EoNOH-8AAAAM/loading-load.gif'>"
+        btn.innerHTML = "<img style='height: 20px; width: 20px; border-radius: 1000px' src='https://media.tenor.com/tga0EoNOH-8AAAAM/loading-load.gif'>"
         await checkNewAccount(inputDivChildren)
         btn.innerHTML = "Criar"
     }
