@@ -1,17 +1,20 @@
 .initBodyForms>button{
     width: 50%;
-    padding: 10px 15px;
+    padding: 7px 12px;
     margin: 20px 0px 0px 0px;
     border-radius: 10px;
+    border: 3px solid var(--colorBlack);
     background: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
     font-weight: 600;
     font-size: 15px;
-    transition: background var(--transitionTime);
+    transition: border var(--transitionTime), color var(--transitionTime);
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .initBodyForms>button:hover{
-    background: var(--primaryGreen);
+    border: 3px solid var(--primaryGreen);
+    color: var(--primaryGreen);
 }

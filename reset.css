@@ -30,6 +30,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 body {
 	line-height: 1.3;
+	cursor: default;
 }
 ol, ul {
 	list-style: none;
