@@ -28,7 +28,7 @@ async function forgotPassword(Event){
     }
     else{
         const userEmail = input.value
-        await axios.post("https://ace-chimp-merry.ngrok-free.app/forgotPassword", {userEmail: userEmail})
+        await axios.post("https://ace-chimp-merry.ngrok-free.app/iPH/forgotPassword", {userEmail: userEmail})
             .then(async resposta => {
                 input.value = "Nova senha enviada por email 📬"
                 await new Promise(resolve => setTimeout(resolve, 3000))
