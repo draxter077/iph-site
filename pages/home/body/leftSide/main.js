@@ -4,8 +4,17 @@ import requestWithdraw from "./requestWithdraw/main.js"
 import openConfig from "./openConfig/main.js"
 
 export default function homeBodyLeftSideDiv(data){
-    const leftSide = document.createElement("div")
-    leftSide.className = "homeBodyLeftSide"
+    let style = `
+        {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            padding: 10px;
+        }
+        :responsive{
+            width: 100%;
+        }`
+    const leftSide = cE("div", style)
     leftSide.appendChild(accountTotal(data))
     leftSide.appendChild(requestWithdraw())
     leftSide.appendChild(requestDeposit())

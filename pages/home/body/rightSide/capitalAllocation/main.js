@@ -1,19 +1,22 @@
-export default function capitalAllocation(){
-    const capitalAllocation = document.createElement("div")
-    capitalAllocation.className = "homeBodyRightSideCapitalAllocation"
-        const title = document.createElement("div")
-        title.className = "homeBodyRightSideCapitalAllocationTitle"
-        title.innerHTML = "Alocação do capital"
-        capitalAllocation.appendChild(title)
+import title from "./title/main.js"
+import content from "./content/main.js"
 
-        const content = document.createElement("div")
-        content.className = "homeBodyRightSideCapitalAllocationContent"
-        let childs = ["Mercado Futuro: 17%", "Ações estrangeiras: 15%", "Ações nacionais: 18%", "CDI/CDB: 50%"]
-        for(let i = 0; i < childs.length; i++){
-            let d = document.createElement("div")
-            d.innerHTML = childs[i]
-            content.appendChild(d)
+export default function capitalAllocation(){
+    let style = `
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--colorWhite);
+            padding: 20px 25px;
+            border-radius: 20px;
         }
-        capitalAllocation.appendChild(content)
+        :responsive{
+            flex-direction: column;
+        }`
+    const capitalAllocation = cE("div", style)
+    capitalAllocation.appendChild(title())
+    capitalAllocation.appendChild(content())
     return(capitalAllocation)
 }

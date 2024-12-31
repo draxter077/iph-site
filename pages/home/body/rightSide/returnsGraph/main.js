@@ -1,4 +1,22 @@
 export default function returnsGraph(data){
+    let style = `
+        {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            padding: 20px 25px;
+            margin: 20px 0px 0px 0px;
+        }
+        >svg{
+            width: 100%;
+            height: 100%;
+        }
+        >svg>text{
+            display: none;
+        }`
+
     let highest = 0, lowest = 0
     const rents = [data.rent11, 
                     data.rent10, 
@@ -34,8 +52,7 @@ export default function returnsGraph(data){
         values.push({date: rents[j].toString() + "%", y: a.toString() + "%"})
     }
 
-    const returnsGraph = document.createElement("div")
-    returnsGraph.className = "homeBodyReturnsGraph"
+    const returnsGraph = cE("div", style)
         const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg")
             for(let i = 0; i < 5; i++){
                 let line = document.createElementNS("http://www.w3.org/2000/svg", "line")

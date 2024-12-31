@@ -1,19 +1,53 @@
 import construct from "../../../../construct.js"
 
-async function wrongAnimation(item){
-    item.style.animation = "inputWrongValue 1s forwards"
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    item.style.animation = ""
+export default function enter(type){
+    let style = `
+        {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            padding: 10px 15px;
+            margin: 25px 0px 0px 0px;
+            border-radius: 5px;
+            background: var(--colorBlack);
+            color: var(--colorWhite);
+            font-weight: 900;
+            font-size: 15px;
+            text-align: center;
+            transition: color var(--transitionTime);
+        }
+        :hover{
+            color: var(--colorGreen);
+        }`
+
+    const entrar = cE("button", style)
+
+    if(type == "login"){
+        entrar.innerHTML = "Entrar"
+    }
+    else if(type == "createAccount"){
+        entrar.innerHTML = "Criar"
+    }
+    
+    entrar.onclick = check
+    return(entrar)
 }
 
-async function goToHome(data){
-    axios.defaults.headers.common["userAuth"] = data.userInfo.id
-
-    const body = document.getElementsByClassName("initBody")[0]
-    body.style.opacity = "1"
-    body.style.animation = "fadeOut 1s 1s forwards"
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    construct(data)
+async function check(Event){
+    const btn = Event.target
+    btn.disabled = true
+    const inputDivChildren = btn.parentElement.children[0].children
+    const numberInputs = inputDivChildren.length
+    btn.innerHTML = "<img style='height: 20px; width: 20px; border-radius: 1000px;' src='https://media.tenor.com/tga0EoNOH-8AAAAM/loading-load.gif'>"
+    if(numberInputs == 2){
+        await checkLogin(inputDivChildren)
+        btn.innerHTML = "Entrar"
+    }
+    else{
+        await checkNewAccount(inputDivChildren)
+        btn.innerHTML = "Criar"
+    }
+    btn.disabled = false
 }
 
 async function checkLogin(inputDivChildren){
@@ -28,7 +62,7 @@ async function checkLogin(inputDivChildren){
         await wrongAnimation(inputDivChildren[0])
     }
     else{
-        await axios.post("https://ace-chimp-merry.ngrok-free.app/userAcess", {userEmail: userEmail, userPassword: userPassword})
+        await axios.post("https://ace-chimp-merry.ngrok-free.app/iPH/userAcess", {userEmail: userEmail, userPassword: userPassword})
             .then(async resposta => {
                 await goToHome(resposta.data)
             })
@@ -63,7 +97,7 @@ async function checkNewAccount(inputDivChildren){
         await wrongAnimation(inputDivChildren[1])
     }
     else{
-        await axios.post("https://ace-chimp-merry.ngrok-free.app/userCreation", {userName: userName, userEmail: userEmail, userPix: userPix, userPassword: userPassword})
+        await axios.post("https://ace-chimp-merry.ngrok-free.app/iPH/userCreation", {userName: userName, userEmail: userEmail, userPix: userPix, userPassword: userPassword})
             .then(async resposta => {
                 await goToHome(resposta.data)
             })
@@ -79,34 +113,13 @@ async function checkNewAccount(inputDivChildren){
     }
 }
 
-async function check(Event){
-    const btn = Event.target
-    btn.disabled = true
-    const inputDivChildren = btn.parentElement.children[0].children
-    const numberInputs = inputDivChildren.length
-    if(numberInputs == 2){
-        btn.innerHTML = "<img style='height: 20px; width: 20px; border-radius: 1000px' src='https://media.tenor.com/tga0EoNOH-8AAAAM/loading-load.gif'>"
-        await checkLogin(inputDivChildren)
-        btn.innerHTML = "Entrar"
-    }
-    else{
-        btn.innerHTML = "<img style='height: 20px; width: 20px; border-radius: 1000px' src='https://media.tenor.com/tga0EoNOH-8AAAAM/loading-load.gif'>"
-        await checkNewAccount(inputDivChildren)
-        btn.innerHTML = "Criar"
-    }
-    btn.disabled = false
+async function wrongAnimation(item){
+    item.style.animation = "inputWrongValue 1s forwards"
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    item.style.animation = ""
 }
 
-export default function enter(type){
-    const entrar = document.createElement("button")
-
-    if(type == "login"){
-        entrar.innerHTML = "Entrar"
-    }
-    else if(type == "createAccount"){
-        entrar.innerHTML = "Criar"
-    }
-    
-    entrar.onclick = check
-    return(entrar)
+async function goToHome(data){
+    axios.defaults.headers.common["userAuth"] = data.userInfo.id
+    construct(data)
 }

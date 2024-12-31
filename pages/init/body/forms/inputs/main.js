@@ -1,39 +1,24 @@
+import input from "./input/main.js"
+
 export default function inputs(type){
-    const inputs = document.createElement("div")
-    inputs.className = "initBodyFormsInputs"
+    let style = `
+        {
+            display: flex;
+            flex-direction: column;
+        }`
+
+    const inputs = cE("div", style)
 
     if(type == "login"){
-        const inputEmail = document.createElement("input")
-        inputEmail.placeholder = "Email"
-        inputs.append(inputEmail)
-
-        const inputPassword = document.createElement("input")
-        inputPassword.placeholder = "Senha"
-        inputPassword.type = "password"
-        inputs.append(inputPassword)
+        inputs.append(input("Email", undefined))
+        inputs.append(input("Senha", "password"))
     }
     else if(type == "createAccount"){
-        const inputName = document.createElement("input")
-        inputName.placeholder = "Nome"
-        inputs.append(inputName)
-    
-        const inputEmail = document.createElement("input")
-        inputEmail.placeholder = "Email"
-        inputs.append(inputEmail)
-
-        const inputPix = document.createElement("input")
-        inputPix.placeholder = "Chave pix"
-        inputs.append(inputPix)
-
-        const inputPassword = document.createElement("input")
-        inputPassword.placeholder = "Senha"
-        inputPassword.type = "password"
-        inputs.append(inputPassword)
-
-        const inputConfPassword = document.createElement("input")
-        inputConfPassword.placeholder = "Confirmar senha"
-        inputConfPassword.type = "password"
-        inputs.append(inputConfPassword)
+        inputs.append(input("Nome", undefined))
+        inputs.append(input("Email", undefined))
+        inputs.append(input("Chave Pix", undefined))
+        inputs.append(input("Senha", "password"))
+        inputs.append(input("Confirmar senha", "password"))
     }
 
     return(inputs)

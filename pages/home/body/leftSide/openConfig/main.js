@@ -1,17 +1,28 @@
-function open(){
-    for(let i = 1; i < document.getElementsByClassName("homeBody")[0].children.length; i++){
-        document.getElementsByClassName("homeBody")[0].children[i].style = "transition: opacity var(--transitionTime); opacity: 0.5 !important;";
-    }
-    document.getElementsByClassName("homeBodyConfig")[0].style.left = "0%";
-    document.getElementsByClassName("homeBodyConfig")[0].scrollIntoView({behavior: "smooth"})
-}
+import title from "./title/main.js"
 
 export default function openConfig(){
-    const openConfig = document.createElement("div")
+    let style = `
+        {
+            background: var(--colorWhite);
+            padding: 20px 25px;
+            border-radius: 20px;
+            width: 100%;
+            cursor: pointer;
+            color: var(--colorBlack);
+            transition: color var(--transitionTime);
+        }
+        :hover{
+            color: var(--colorGreen);
+        }`
+    const openConfig = cE("div", style)
     openConfig.onclick = open
-    openConfig.className = "homeBodyLeftSideOpenConfig"
-        const title = document.createElement("div")
-        title.innerHTML = "Configurações"
-        openConfig.appendChild(title)
+    openConfig.appendChild(title())
     return(openConfig)
+}
+
+function open(){
+    let body = document.getElementById("root").children[0]
+    let bodyConfig = body.children[1].children[0]
+    bodyConfig.style.left = "0%";
+    bodyConfig.scrollIntoView({behavior: "smooth"})
 }

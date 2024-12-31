@@ -1,27 +1,15 @@
-function slide(){
-    const nowValue = document.getElementsByClassName("homeBodyLeftSideRequestDeposit")[0].children[0].style.translate
-    if(nowValue == "-50%"){
-        document.getElementsByClassName("homeBodyLeftSideRequestDeposit")[0].children[0].style.translate = "0%"
-    }
-    else{
-        document.getElementsByClassName("homeBodyLeftSideRequestDeposit")[0].children[0].style.translate = "-50%"
-    }
-}
+import slider from "./slider/main.js"
 
 export default function requestDeposit(){
-    const requestDeposit = document.createElement("div")
-    requestDeposit.className = "homeBodyLeftSideRequestDeposit"
-        const slider = document.createElement("div")
-        slider.onclick = slide
-            const title = document.createElement("div")
-            title.className = "homeBodyLeftSideRequestDepositTitle"
-            title.innerHTML = "Depositar"
-            slider.appendChild(title)
-
-            const content = document.createElement("div")
-            content.className = "homeBodyLeftSideRequestDepositContent"
-            content.innerHTML = `Para depósitos, utilize a chave pix <span style="font-weight: 600">i@ph.net.br</span>`
-            slider.appendChild(content)
-        requestDeposit.appendChild(slider)
+    let style = `
+        {
+            border-radius: 20px;
+            margin: 0px 0px 20px 0px;
+            width: 100%;
+            overflow: hidden;
+            cursor: pointer;
+        }`
+    const requestDeposit = cE("div", style)
+    requestDeposit.appendChild(slider())
     return(requestDeposit)
 }

@@ -1,19 +1,18 @@
-function closeConfig(){
-    document.getElementsByClassName("homeBodyConfig")[0].style.left = "-100%";
-    for(let i = 1; i < document.getElementsByClassName("homeBody")[0].children.length; i++){
-        document.getElementsByClassName("homeBody")[0].children[i].style = "opacity: 1;";
-    }
-}
+import btn from "./btn/main.js"
 
 export default function title(data){
-    const title = document.createElement("div")
-    title.className = "homeBodyConfigTitle"
+    let style = `
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 25px;
+            font-weight: 600;
+            width: 100%;
+            margin: 0px 0px 20px 0px;
+        }`
+    const title = cE("div", style)
     title.innerHTML = "Olá, " + data.name.split(" ")[0]
-
-    const closeButton = document.createElement("button")
-    closeButton.onclick = closeConfig
-    closeButton.innerHTML = "Fechar"
-    title.appendChild(closeButton)
-
+    title.appendChild(btn())
     return(title)
 }

@@ -1,10 +1,15 @@
-export default function top(){
-    const top = document.createElement("div")
-    top.className = "homeTop"
-    
-    const logo = document.createElement("div")
-    logo.innerHTML = "iPH"
-    top.appendChild(logo)
+import logo from "./logo/main.js"
 
+export default function top(){
+    let style = `
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            margin: 30px 0px 0px 0px;
+        }`
+    const top = cE("div", style)
+    top.appendChild(logo())
     return(top)
 }
