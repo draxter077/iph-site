@@ -24,5 +24,4 @@ function open(){
     let body = document.getElementById("root").children[0]
     let bodyConfig = body.children[1].children[0]
     bodyConfig.style.left = "0%";
-    bodyConfig.scrollIntoView({behavior: "smooth"})
 }

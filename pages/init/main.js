@@ -5,8 +5,9 @@ export default function init(){
         {
             width: 100%;
             height: 100dvh;
+            opacity: 0;
+            animation: fadeIn var(--transitionTime) var(--animationDelay0) forwards;
         }`
-
     const init = cE("div", style)
     init.appendChild(body())
     return(init)
