@@ -13,6 +13,9 @@
         <link rel="stylesheet" href="./reset.css">
 
         <style>
+            body{
+                background: black;
+            }
             button{
                 padding: 10px 15px;
                 border: 1px solid rgb(0, 255, 150);
@@ -128,10 +131,9 @@
             <input placeholder="value">
             <button id="addDarf">add darf</button>
         </div>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     </body>
 </html>
-
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
     axios.defaults.headers.common["ngrok-skip-browser-warning"] = "69420"
     async function check(Event){
@@ -176,7 +178,7 @@
                         monthCapitals += Number(u.monthcapital)
                     }
                     document.getElementsByClassName("total")[0].innerHTML = `Total: R$ ${Math.floor(capitals*100)/100}`
-                    document.getElementsByClassName("total")[1].innerHTML = `Total monthCapital: R$ ${Math.floor(monthCapitals*100)/100} (2% = R$ ${Math.floor(monthCapitals*0.02*100)/100})`
+                    document.getElementsByClassName("total")[1].innerHTML = `Total monthCapital: R$ ${Math.floor(monthCapitals*100)/100} (1.5% = R$ ${Math.floor(monthCapitals*0.015*100)/100})`
                     document.getElementsByClassName("darf")[0].innerHTML = "Darf: R$ " + Math.floor(darf*100)/100
                     document.getElementById("checkContracts").onclick = function a(Event){checkContracts(Event)}
                     document.getElementById("checkDif").onclick = function a(Event){checkDif(Event)}
