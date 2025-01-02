@@ -6,6 +6,9 @@ export default function input(data){
             padding: 10px 15px;
             width: 50%;
             color: var(--colorBlack);
+        }
+        :focus{
+            border: 1px solid var(--colorGreen);
         }` 
     const input = cE("input", style)
     input.placeholder = data.input
