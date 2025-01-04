@@ -27,7 +27,7 @@ async function sendWithdrawRequest(Event){
         inputDiv.focus()
     }
     else{
-        const inputValue = Number(inputDiv.value.toString().replaceAll(".", "").replaceAll(",", "."))
+        const inputValue = Number(inputDiv.value.replaceAll(",", "."))
         await axios.post("https://ace-chimp-merry.ngrok-free.app/iPH/requestWithdraw", {value: inputValue})
             .then(async resposta => {
                 inputDiv.style.animation = "inputRightValue 1s forwards"
@@ -42,7 +42,7 @@ async function sendWithdrawRequest(Event){
                 inputDiv.style.animation = ""
                 let slider = Event.target.parentElement.parentElement
                 slider.style.translate = "0%"
-                slider.children[2].children[0].blur()
+                inputDiv.blur()
             })
             .catch(async response => {
                 inputDiv.style.animation = "inputWrongValue 1s forwards"
