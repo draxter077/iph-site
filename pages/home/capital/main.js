@@ -35,6 +35,5 @@ export default function capital(movs){
 
     capital.appendChild(value(cap, rents))
     capital.appendChild(graph(rents))
-    console.log(rents)
     return(capital)
 }
