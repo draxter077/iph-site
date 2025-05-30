@@ -48,12 +48,11 @@ export default function enter(){
             if(emailInput.value == passwordInput.value && emailInput.value != undefined && emailInput.value.length > 0){
                 await axios.post(`${apiURL}/login/post/userForgotPassword`,{email:emailInput.value})
                     .then(async r => {
-                        let w = window("Uma senha temporária foi enviado para seu email!")
+                        let w = window("Uma senha temporária foi enviada para seu email!")
                         document.getElementById("root").appendChild(w)
                         await new Promise(resolve => setTimeout(resolve, 100))
                         w.style.opacity = 1
                         await new Promise(resolve => setTimeout(resolve, 5000))
-                        inputElement.style.animation = ""
                         w.style.opacity = 0
                         await new Promise(resolve => setTimeout(resolve, 500))
                         document.getElementById("root").removeChild(w)
