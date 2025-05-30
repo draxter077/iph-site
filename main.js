@@ -139,18 +139,18 @@ window.construct = function construct(p){
     if(p == undefined){
         if(window.location.href.split("br/")[1] != undefined && window.location.href.split("br/")[1] != ""){
             let paths = window.location.href.split("br/")[1].split("/")
-            if(paths[0] == "login"){root.appendChild(login())}
+            if(paths[0] == "login" || paths[0] == "home"){root.appendChild(login())}
             else if(paths[0] == "admin"){root.appendChild(admin())}
             else{root.appendChild(nopath())}
         }
         else{
-            //root.appendChild(main())
-            root.appendChild(login())
+            root.appendChild(main())
         }
     }
     else{
         if(p.page == "home"){
             axios.defaults.headers.common["userAuth"] = p.data.id
+            window.history.pushState('', '', '/home');
             root.appendChild(home(p.data))
         }
     }
