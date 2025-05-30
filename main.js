@@ -245,5 +245,23 @@ window.stringifyNumber = function stringifyNumber(n){
     
     return(`R$ ${newIntegerPart.split("").reverse().join("")},${newFractionalPart}`)
 }
+
+window.correctName = function correctName(s){
+    let parts = s.toLowerCase().split(" ")
+    let newName = ""
+    for(let i = 0; i < parts.length; i++){
+        let p = parts[i]
+        for(let j = 0; j < p.length; j++){
+            if(j == 0){
+                newName += p[j].toUpperCase()
+            }
+            else{
+                newName += p[j]
+            }
+        }
+        if(i != parts.length - 1){newName += " "}
+    }
+    return(newName)
+}
     
 construct()

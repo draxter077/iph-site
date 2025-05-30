@@ -43,7 +43,7 @@ export default function enter(){
             let pixInput = document.getElementById("chave pix")
             let emailInput = document.getElementById("email")
             let passwordInput = document.getElementById("senha")
-            let obj = {name:nameInput.value,pix:pixInput.value,email:emailInput.value,password:passwordInput.value}
+            let obj = {name:correctName(nameInput.value),pix:pixInput.value,email:emailInput.value,password:passwordInput.value}
             // Caso tenha esquecido a senha
             if(emailInput.value == passwordInput.value && emailInput.value != undefined && emailInput.value.length > 0){
                 await axios.post(`${apiURL}/login/post/userForgotPassword`,{email:emailInput.value})
