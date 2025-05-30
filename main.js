@@ -1,4 +1,8 @@
-import construct from "./pages/construct.js"
+import main from "./pages/main/main.js"
+import login from "./pages/login/main.js"
+import home from "./pages/home/main.js"
+import admin from "./pages/admin/main.js"
+import nopath from "./pages/nopath/main.js"
 
 window.cE = function cE(t, stl){
     function addClass(){
@@ -30,7 +34,7 @@ window.cE = function cE(t, stl){
                         .replaceAll("\n", "")
                         .replaceAll("  ", "")
                         .split("}") // Retorna array com elementos do tipo .nome{atr: value,...
-
+        // Formata o style do argumento
         let stylesGotten = stl.split("}") // Retorna array com elementos do tipo {atr: value,...
         stl = stylesGotten[0] + "}" // O primeiro estilo tem a chave fechada
         let style = stylesGotten[0]
@@ -39,9 +43,11 @@ window.cE = function cE(t, stl){
                         .replace("{", "")
                         .replace("}", "")
                         .split(";") // Retorna uma array com elementos 'atr: value', ....
+        // Cria e popula arrays relevantes
         let stylesNames = []
         let stylesNamesObject = []
         let styleAtr = []
+        // Adiciona o nome e os atributos dos styles criados
         for(let i = 0; i < styles.length; i++){
             let s = styles[i].split("{") // Divide em nome e atributos os estilos da tag
             let n = s[0]
@@ -61,13 +67,14 @@ window.cE = function cE(t, stl){
                 stylesNamesObject.push([n, atrValues]) // Adiciona a uma lista de estilos o nome e sua lista de atributos, formatada acima
             }
         }
+        // Adiciona os atributos do style do argumento
         for(let j = 0; j < style.length; j++){
             let s = style[j].split(": ")
             if (s[0] != ""){
                 styleAtr.push([s[0], s[1]]) // Cria uma lista com os atributos do estilo fornecido
             }
         }
-        
+        // Verifica se existe algum estilo com os mesmos atributos
         let className = ""
         for(let k = 0; k < stylesNamesObject.length; k++){ // Para cada estilo já criado, verifica se pode reutilizar o nome
             let sN = stylesNamesObject[k]
@@ -87,7 +94,18 @@ window.cE = function cE(t, stl){
                 break
             }
         }
-        if(className == ""){
+
+        if(t == "root"){
+            document.getElementsByTagName("style")[0].innerHTML += `.${className}${stl.replaceAll("\n", "").replaceAll("  ","")}`
+            for(let p = 1; p < stylesGotten.length; p++){
+                let inst = stylesGotten[p]
+                let insN = inst.split("{")[0].replaceAll("\n", "").replaceAll("  ", "")
+                let insA = inst.split("{")[1]
+                if(insA != undefined){document.getElementsByTagName("style")[0].innerHTML += `${insN}{${insA.replaceAll("\n", "").replaceAll("  ","")}}`}
+            }
+        }
+        // Caso não tenha adicionado nome (ou seja, não foi encontrado estilo com atributos similares), adiciona-se
+        else if(className == ""){
             className = randomName(stylesNames)
             document.getElementsByTagName("style")[0].innerHTML += `.${className}${stl.replaceAll("\n", "").replaceAll("  ","")}`
             for(let p = 1; p < stylesGotten.length; p++){
@@ -96,6 +114,9 @@ window.cE = function cE(t, stl){
                 let insA = inst.split("{")[1]
                 if(insN == ":responsive"){
                     document.getElementsByTagName("style")[0].innerHTML += `@media screen and (max-width: 1000px){.${className}{${insA.replaceAll("\n", "").replaceAll("  ","")}}}`
+                }
+                else if(insN.split(" ")[0] == "@keyframes"){ // Em vez de { e }, será usado [ e ] no argumento
+                    document.getElementsByTagName("style")[0].innerHTML += `${insN}{${insA.replaceAll("\n", "").replaceAll("  ","").replaceAll("[", "{").replaceAll("]", "}")}}`
                 }
                 else if(insN != undefined && insN != ""){
                     document.getElementsByTagName("style")[0].innerHTML += `.${className}${insN}{${insA.replaceAll("\n", "").replaceAll("  ","")}}`
@@ -112,6 +133,117 @@ window.cE = function cE(t, stl){
     return(el)
 }
 
+window.construct = function construct(p){
+    const root = document.getElementById("root")
+    root.innerHTML = ""
+    if(p == undefined){
+        if(window.location.href.split("br/")[1] != undefined && window.location.href.split("br/")[1] != ""){
+            let paths = window.location.href.split("br/")[1].split("/")
+            if(paths[0] == "login"){root.appendChild(login())}
+            else if(paths[0] == "admin"){root.appendChild(admin())}
+            else{root.appendChild(nopath())}
+        }
+        else{
+            //root.appendChild(main())
+            root.appendChild(login())
+        }
+    }
+    else{
+        if(p.page == "home"){
+            axios.defaults.headers.common["userAuth"] = p.data.id
+            root.appendChild(home(p.data))
+        }
+    }
+}
+
+window.apiURL = ""
+
 axios.defaults.headers.common["ngrok-skip-browser-warning"] = "69420"
 document.getElementsByTagName("head")[0].appendChild(document.createElement("style"))
+cE("root", `html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big, 
+    cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,
+    dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article, 
+    aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,
+    time,mark,audio,video,button,input,textarea{
+        display:block;
+        background:none;
+        margin:0px;
+        padding:0px;
+        border:none;
+        font-size:100%;
+        font:inherit;
+        vertical-align:baseline;
+        text-decoration:none;
+        font-weight:none;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+        box-sizing: border-box;
+    }
+    span{display:inline-block;}
+    input:focus, button:focus{outline: none;border: auto;}
+    button{cursor: pointer;}
+    body {line-height: 1.3;}
+    ol, ul {list-style: none;}
+    blockquote, q {quotes: none;}
+    blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
+    table {border-collapse: collapse;border-spacing: 0;}
+    :root{
+    	--colorGreen: rgb(0, 191, 99);
+        --colorRed: rgb(191, 0, 99);
+	    --colorWhite: rgb(255, 255, 255);
+	    --colorBlack: rgb(0, 0, 0);
+        --colorGray: rgb(100, 100, 100);
+    }
+    @font-face{
+        font-family:"Garet";
+        src:url("./assets/font/Garet-Book.otf");
+    }
+    body{
+    	box-sizing:border-box;
+    	font-family:"Garet";
+    	background:var(--colorBlack);
+    	cursor:default;
+        user-select:none;
+    }
+    ::-webkit-scrollbar{
+    	height: 3px;
+        width: 3px;
+    	background: none;
+    }
+    ::-webkit-scrollbar-track{
+        background: none;
+    	margin: 0px;
+    }
+    ::-webkit-scrollbar-thumb{
+        background: var(--colorWhite);
+        border-radius: 20px;
+    }
+    ::-webkit-scrollbar-button{
+        height: 0px;
+        width: 0px;
+    	background: none;
+        padding: 0px;
+        margin: 0px;
+    }`)
+
+window.stringifyNumber = function stringifyNumber(n){
+    let numberParts = n.toString().split(".")
+    let integerPart = numberParts[0]
+    integerPart = integerPart.split("").reverse().join(""); // 1234 => 4321, para ficar mais fácil adicionar os pontos nas centenas
+    let newIntegerPart = "", newFractionalPart = ""    
+    
+    for(let i = 0; i < integerPart.length; i++){
+        newIntegerPart += integerPart[i]
+        if((i + 1)%3 == 0 && i != integerPart.length - 1 && n > 0){newIntegerPart += "."}
+    }
+
+    if(numberParts.length > 1){ // Verifica se há casa decimal
+        newFractionalPart = (Math.floor(Number("0." + numberParts[1])*100)).toString() // Formata para dois algarismos significativos
+        if(newFractionalPart.length == 1){newFractionalPart = "0" + newFractionalPart} // Adciona o zero a esquerda caso menor do que 10
+    }
+    else{newFractionalPart = "00"} // Não havendo, atribui 00
+    
+    return(`R$ ${newIntegerPart.split("").reverse().join("")},${newFractionalPart}`)
+}
+    
 construct()

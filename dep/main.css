@@ -59,7 +59,7 @@ table {
 	100%{opacity: 1}
 }
 :root{
-	--colorGreen: rgb(80, 195, 80);
+	--colorGreen: rgb(0, 191, 99);
 	--colorWhite: rgb(255, 255, 255);
 	--colorBlack: rgb(0, 0, 0);
 	--color02Black: rgb(0, 0, 0, 0.2);
@@ -71,7 +71,7 @@ table {
 }
 body{
 	box-sizing: border-box;
-	font-family: "Roboto", sans-serif;
+	font-family: system-ui;
 	background: var(--colorBlack);
 	cursor: default;
 }
