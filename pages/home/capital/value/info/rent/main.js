@@ -13,6 +13,6 @@ export default function rent(rents){
     for(let i = 0; i < rents.length; i++){s += rents[i].value}
     rent.innerHTML = (Math.floor((s/rents.length)*100)/100).toString() + "%m"
 
-    if(rents == undefined){rent.innerHTML = "-%m"}
+    if(rents == []){rent.innerHTML = "-%m"}
     return(rent)
 }
