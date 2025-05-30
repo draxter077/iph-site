@@ -77,10 +77,13 @@ export default function enter(){
                         r => {
                             let status = r.response.status
                             if(status == 409){
-                                wrong(emailInput, "Você já possui uma conta!<br>Caso tenha esquecido sua senha, digite seu email no campo 'senha'.")
+                                wrong(emailInput, "Você já possui uma conta!<br>Caso tenha esquecido sua senha, digite seu email no campo 'senha'")
                             }
                             else if(status == 403){
-                                wrong(passwordInput, "Senha incorreta.<br>Caso tenha esquecido sua senha, digite seu email no campo 'senha'.")
+                                wrong(passwordInput, "Senha incorreta.<br>Caso tenha esquecido sua senha, digite seu email no campo 'senha'")
+                            }
+                            else if(status == 404){
+                                wrong(emailInput, "Não há uma conta vinculada a esse email")
                             }
                         }
                     )
