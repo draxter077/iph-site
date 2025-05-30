@@ -39,7 +39,7 @@ export default function graph(rents){
         let unit = (highestRent*1.1 - lowestRent*0.9)/4
         let x = "2.5%"
         let y = (7.5 + 20*i).toString() + "%"
-        let t = (highestRent*1.1 - unit*i).toString() + "%"
+        let t = (Math.round((highestRent*1.1 - unit*i)*100)/100).toString() + "%"
         let y2 = (10 + 20*i).toString() + "%"
         graph.appendChild(label(x,y,t))
         graph.appendChild(line(y2))
