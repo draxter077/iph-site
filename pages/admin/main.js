@@ -25,7 +25,7 @@ export default function admin(){
                         admin.appendChild(body(r.data))
                         admin.children[1].style.maxHeight = "1000px"
                     })
-                    .catch(r => console.log(r.response))
+                    .catch(r => alert(r.response.status))
             }
         }
     )
