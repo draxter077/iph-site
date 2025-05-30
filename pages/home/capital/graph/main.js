@@ -20,7 +20,15 @@ export default function graph(rents){
         }`
 
     const graph = cE("div", style)
-    
+    if(rents == undefined){
+        rents = [
+            {date:"00/00/00", value:0},
+            {date:"00/00/00", value:0},
+            {date:"00/00/00", value:0},
+            {date:"00/00/00", value:0},
+            {date:"00/00/00", value:0}
+        ]
+    }
     let highestRent = 0, lowestRent = 1000
     for(let i = 0; i < rents.length; i++){
         let r = rents[i].value

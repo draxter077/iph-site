@@ -140,14 +140,14 @@ window.construct = function construct(p){
         if(window.location.href.split("br/")[1] != undefined && window.location.href.split("br/")[1] != ""){
             let paths = window.location.href.split("br/")[1].split("/")
             if(paths[0] == "login" || paths[0] == "home"){
-                window.history.pushState('', '', '/login');
+                window.history.pushState('', '', '/login')
                 root.appendChild(login())}
             else if(paths[0] == "admin"){
-                window.history.pushState('', '', '/admin');
+                window.history.pushState('', '', '/admin')
                 root.appendChild(admin())
             }
             else{
-                window.history.pushState('', '', '/nothing');
+                window.history.pushState('', '', '/nothing')
                 root.appendChild(nopath())
             }
         }
@@ -157,8 +157,8 @@ window.construct = function construct(p){
     }
     else{
         if(p.page == "home"){
+            window.history.pushState('', '', '/home')
             axios.defaults.headers.common["userAuth"] = p.data.id
-            window.history.pushState('', '', '/home');
             root.appendChild(home(p.data))
         }
     }
