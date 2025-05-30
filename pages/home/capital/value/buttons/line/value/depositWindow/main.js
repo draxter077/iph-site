@@ -33,9 +33,9 @@ export default async function depositWindow(input){
     const depositWindow = cE("div", style)
     // enviar email para mim avisando do pedido de depósito
     let brCode
-    await axios.get("https://gerarqrcodepix.com.br/api/v1?nome=iph&cidade=Curitiba&saida=br&chave=i@ph.net.br&valor=" + input.value)
+    await axios.get("https://gerarqrcodepix.com.br/api/v1?nome=iph&cidade=Curitiba&saida=br&chave=i@ph.net.br&valor=" + input.value.toString())
         .then(r => brCode = r.data.brcode)
-        .catch(r => brCode = `00020126330014br.gov.bcb.pix0111i@ph.net.br5204000053039865802BR5903iph6008Curitiba62070503***630454A4&amp`)
+        .catch(r => {console.log(r.response);brCode = `00020126330014br.gov.bcb.pix0111i@ph.net.br5204000053039865802BR5903iph6008Curitiba62070503***630454A4&amp`})
         
     depositWindow.appendChild(title())
     depositWindow.appendChild(qr(brCode))

@@ -30,6 +30,7 @@ export default function deposit(input){
                 await new Promise(resolve => setTimeout(resolve, 500))
                 document.getElementById("root").removeChild(w)
             }
+            console.log(Number(input.value.toString().replaceAll(".","").replaceAll(",",".")))
             await axios.post(`${apiURL}/home/post/userDeposit`,{value:Number(input.value.toString().replaceAll(".","").replaceAll(",","."))})
                 .then(async r => {
                     await showWindow("Seu depósito está em andamento")
