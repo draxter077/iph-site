@@ -18,8 +18,6 @@ export default function option(t, v){
 
     const option = cE("div", style)
     option.appendChild(title(t))
-    if(t == "senha"){t = "password"}
-    if(t == "chave Pix"){t = "pix"}
     option.appendChild(value(v,t))
     return(option)
 }

@@ -29,7 +29,8 @@ export default function value(v,t){
                     await new Promise(resolve => setTimeout(resolve, 500))
                     document.getElementById("root").removeChild(w)
                 }
-                if(t=="chave pix"){t="pix"}
+                if(t == "senha"){t = "password"}
+                if(t == "chave Pix"){t = "pix"}
                 await axios.post(`${apiURL}/home/post/changeInfo`,{type:t,newInfo:value.value})
                     .then(async r => {
                         await showWindow("Alteração feita com sucesso")
