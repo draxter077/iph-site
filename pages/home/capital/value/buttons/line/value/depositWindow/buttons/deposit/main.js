@@ -30,15 +30,11 @@ export default function deposit(input){
                 await new Promise(resolve => setTimeout(resolve, 500))
                 document.getElementById("root").removeChild(w)
             }
-            console.log(input)
-            console.log(input.value)
-            console.log(input.value.toString())
-            console.log(Number(input.value.toString().replaceAll(".","").replaceAll(",",".")))
-            await axios.post(`${apiURL}/home/post/userDeposit`,{value:Number(input.value.toString().replaceAll(".","").replaceAll(",","."))})
+            await axios.post(`${apiURL}/home/post/userDeposit`,{value:Number(input.value.toString().replaceAll("R$ ", "0").replaceAll(".","").replaceAll(",","."))})
                 .then(async r => {
-                    await showWindow("Seu depósito está em andamento")
+                    showWindow("Seu depósito está em andamento")
                 })
-                .catch(async r => {await showWindow("Algo deu errado!");console.log(r.response)})
+                .catch(async r => {showWindow("Algo deu errado!");console.log(r.response)})
 
             let depositWindow = e.target.parentElement.parentElement
             depositWindow.style.transform = "scale(0)"

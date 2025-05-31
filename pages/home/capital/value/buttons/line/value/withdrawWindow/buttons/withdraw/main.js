@@ -17,7 +17,6 @@ export default function withdraw(input){
 
     const withdraw = cE("div", style)
     withdraw.innerHTML = "Retirar"
-    // Enviar email para mim e para o cliente
     withdraw.addEventListener(
         "click",
         async function a(e){
@@ -32,11 +31,11 @@ export default function withdraw(input){
                 document.getElementById("root").removeChild(w)
             }
 
-            await axios.post(`${apiURL}/home/post/userWithdraw`,{value:Number(input.value.toString().replaceAll(".","").replaceAll(",","."))})
+            await axios.post(`${apiURL}/home/post/userWithdraw`,{value:Number(input.value.toString().replaceAll("R$ ", "").replaceAll(".","").replaceAll(",","."))})
                 .then(async r => {
-                    await showWindow("Sua retirada está em andamento")
+                    showWindow("Sua retirada está em andamento")
                 })
-                .catch(async r => {await showWindow("Algo deu errado!");console.log(r.response)})
+                .catch(async r => {showWindow("Algo deu errado!");console.log(r.response)})
 
             let withdrawWindow = e.target.parentElement.parentElement
             withdrawWindow.style.transform = "scale(0)"

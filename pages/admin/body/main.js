@@ -26,7 +26,7 @@ export default function body(data){
             if(m.type == "Lucro"){
                 rs.push(Math.floor(Math.round((m.value/capUser)*10000)/100))
             }
-            capUser += m.value
+            if(m.status == 1){capUser += m.value}
         }
         caps.push({id:d.id,capital:capUser})
         cap += capUser
