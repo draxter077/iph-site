@@ -157,7 +157,7 @@ window.construct = function construct(p){
     }
     else{
         if(p.page == "home"){
-            indow.history.pushState('', '', '/home')
+            window.history.pushState('', '', '/home')
             axios.defaults.headers.common["userAuth"] = p.data.id
             root.appendChild(home(p.data))
         }
