@@ -22,6 +22,7 @@ export default function admin(){
                 let id = admin.children[0].children[1].value, pass = admin.children[0].children[2].value
                 await axios.post(`${apiURL}/admin/post/adminLog`,{id:id,password:pass})
                     .then(r => {
+                        console.log(r.data)
                         admin.appendChild(body(r.data))
                         admin.children[1].style.maxHeight = "1000px"
                     })

@@ -152,13 +152,12 @@ window.construct = function construct(p){
             }
         }
         else{
-            //root.appendChild(main())
-            root.appendChild(admin())
+            root.appendChild(main())
         }
     }
     else{
         if(p.page == "home"){
-            //indow.history.pushState('', '', '/home')
+            indow.history.pushState('', '', '/home')
             axios.defaults.headers.common["userAuth"] = p.data.id
             root.appendChild(home(p.data))
         }
