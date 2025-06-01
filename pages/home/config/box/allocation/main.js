@@ -10,6 +10,6 @@ export default function allocation(){
         }`
 
     const allocation = cE("div", style)
-    allocation.innerHTML = "Atualmente, seu capital está investido em Renda Fixa e Mercado Futuro.<br>Não foram encontradas oportunidades em Ações Nacionais e Ações Estrangeiras."
+    allocation.innerHTML = "Atualmente, seu capital está investido em Ações Estrangeiras e Renda Fixa<br>Não foram encontradas oportunidades em Mercado Futuro"
     return(allocation)
 }
