@@ -24,7 +24,7 @@ export default function body(data){
         for(let j = 0; j < ms.length; j++){
             let m = ms[j]
             if(m.type == "Lucro"){
-                rs.push(Math.floor(Math.round((m.value/capUser)*10000)/100))
+                rs.push(Math.round((m.value/capUser)*10000)/100)
             }
             if(m.status == 1){capUser += m.value}
         }

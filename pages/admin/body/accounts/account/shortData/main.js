@@ -1,7 +1,8 @@
 export default function shortData(v){
     let style = `
         {
-            width:50px;
+            width:60px;
+            text-align:center;
             overflow:hidden;
             margin:0px 10px 0px 0px;
         }`
