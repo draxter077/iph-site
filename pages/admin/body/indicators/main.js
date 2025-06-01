@@ -24,6 +24,6 @@ export default function indicators(cap, n, rents){
             rentsSum += rs[j]
         }
     }
-    indicators.appendChild(indicator("Retorno médio", `${Math.floor(Math.round((rentsSum/rentsNs)*100)/100)}%m`))
+    indicators.appendChild(indicator("Retorno médio", `${Math.round((rentsSum/rentsNs)*100)/100}%m`))
     return(indicators)
 }
