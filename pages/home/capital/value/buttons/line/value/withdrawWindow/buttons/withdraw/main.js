@@ -31,7 +31,7 @@ export default function withdraw(input){
                 document.getElementById("root").removeChild(w)
             }
 
-            await axios.post(`${apiURL}/home/post/userWithdraw`,{value:Number(input.value.toString().replaceAll("R$ ", "").replaceAll(".","").replaceAll(",","."))})
+            await axios.post(`${apiURL}/home/post/userWithdraw`,{value:Number(input.value.replaceAll(".", "").replaceAll(",", ".").replaceAll("R$ ", ""))})
                 .then(async r => {
                     showWindow("Sua retirada está em andamento")
                 })

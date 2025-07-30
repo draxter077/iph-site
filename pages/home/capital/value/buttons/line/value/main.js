@@ -14,8 +14,6 @@ export default function value(){
             font-style:italic;
         }`
     const value = cE("input", style)
-    value.placeholder = "Digite o valor (1234,56)"
-    value.type = "number"
 
     function blur(e){document.getElementById("list").removeChild(e.target.parentElement)}
 
@@ -24,12 +22,27 @@ export default function value(){
         blur
     )
 
+    value.value = "R$ "
+    value.addEventListener(
+        "input",
+        function a(e){
+            let v = e.target.value.replaceAll(".","").replaceAll(",","").replaceAll("R$ ","")
+            let nS = "R$ "
+            for(let i = 0; i < v.length; i++){
+                let c = v[i]
+                if(i == v.length - 2){nS += ","}
+                else if(i < v.length - 2 && (v.length - 2 - i)%3 == 0 && i != 0){nS += "."}
+                nS += c
+            }
+            e.target.value = nS
+        }
+    )
+
     value.addEventListener(
         "keypress",
         async function a(e){
             if(e.key == "Enter"){
                 value.removeEventListener("blur", blur)
-                let valor = e.target.value.replaceAll(".", "").replaceAll(",", ".")
                 if(e.target.parentElement.children[0].innerHTML.split(" ")[1] == "depósito"){
                     e.target.parentElement.children[0].innerHTML = "Depósito em andamento"
                     e.target.disabled = true
@@ -37,8 +50,6 @@ export default function value(){
                     document.getElementById("root").appendChild(w)
                     await new Promise(resolve => setTimeout(resolve, 10))
                     w.style.transform = "scale(1)"
-                    e.target.type = "text"
-                    e.target.value = "R$ " + e.target.value
                     e.target.style.border = "none"
                 }
                 else{
@@ -48,8 +59,6 @@ export default function value(){
                     document.getElementById("root").appendChild(w)
                     await new Promise(resolve => setTimeout(resolve, 10))
                     w.style.transform = "scale(1)"
-                    e.target.type = "text"
-                    e.target.value = "R$ " + e.target.value
                     e.target.style.border = "none"
                 }
                 value.removeEventListener("keypress", a)

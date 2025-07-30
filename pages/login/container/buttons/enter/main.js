@@ -25,6 +25,8 @@ export default function enter(){
     enter.addEventListener(
         "click",
         async function a(e){
+            e.target.disabled = true
+
             async function wrong(inputElement, t){
                 inputElement.style.animation = "wrong 1s linear 0s 1 forwards"
                 let w = window(t)
@@ -87,6 +89,8 @@ export default function enter(){
                         }
                     )
             }
+
+            e.target.disabled = false
         }
     )
 
