@@ -23,7 +23,7 @@ export default function cancel(input){
 
     const cancel = cE("div", style)
     cancel.innerHTML = "Cancelar"
-    // Tirar input de movs se cancelar
+
     cancel.addEventListener(
         "click",
         async function a(e){

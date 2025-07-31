@@ -39,7 +39,7 @@ export default async function depositWindow(input){
         
     depositWindow.appendChild(title())
     depositWindow.appendChild(qr(brCode))
-    //depositWindow.appendChild(copy(brCode))
+    depositWindow.appendChild(copy(brCode))
     depositWindow.appendChild(disclaimer())
     depositWindow.appendChild(buttons(input))
     return(depositWindow)
