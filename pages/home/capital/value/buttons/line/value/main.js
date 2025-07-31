@@ -46,7 +46,7 @@ export default function value(){
                 if(e.target.parentElement.children[0].innerHTML.split(" ")[1] == "depósito"){
                     e.target.parentElement.children[0].innerHTML = "Depósito em andamento"
                     e.target.disabled = true
-                    let w = await depositWindow(e.target)
+                    let w = await depositWindow(value)
                     document.getElementById("root").appendChild(w)
                     await new Promise(resolve => setTimeout(resolve, 10))
                     w.style.transform = "scale(1)"
@@ -55,7 +55,7 @@ export default function value(){
                 else{
                     e.target.parentElement.children[0].innerHTML = "Retirada em andamento"
                     e.target.disabled = true
-                    let w = await withdrawWindow(e.target)
+                    let w = await withdrawWindow(value)
                     document.getElementById("root").appendChild(w)
                     await new Promise(resolve => setTimeout(resolve, 10))
                     w.style.transform = "scale(1)"
