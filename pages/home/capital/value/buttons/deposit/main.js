@@ -21,6 +21,7 @@ export default function deposit(){
         }`
 
     const deposit = cE("img", style)
+    deposit.title = "Novo depósito"
     deposit.src = "./assets/arrow.png"
     deposit.addEventListener(
         "click",

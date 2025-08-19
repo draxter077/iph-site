@@ -20,6 +20,7 @@ export default function withdraw(){
         }`
 
     const withdraw = cE("img", style)
+    withdraw.title = "Nova retirada"
     withdraw.src = "./assets/arrow.png"
     withdraw.addEventListener(
         "click",
