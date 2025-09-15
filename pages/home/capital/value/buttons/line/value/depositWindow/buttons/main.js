@@ -13,6 +13,6 @@ export default function buttons(input){
 
     const buttons = cE("div", style)
     buttons.appendChild(cancel(input))
-    buttons.appendChild(deposit(input))
+    buttons.appendChild(deposit())
     return(buttons)
 }

@@ -1,6 +1,6 @@
 import window from "./window/main.js"
 
-export default function deposit(input){
+export default function deposit(){
     let style = `
         {
             font-size:16px;
@@ -20,21 +20,14 @@ export default function deposit(input){
     deposit.addEventListener(
         "click",
         async function a(e){
-            async function showWindow(t){
-                let w = window(t)
-                document.getElementById("root").appendChild(w)
-                await new Promise(resolve => setTimeout(resolve, 100))
-                w.style.opacity = 1
-                await new Promise(resolve => setTimeout(resolve, 5000))
-                w.style.opacity = 0
-                await new Promise(resolve => setTimeout(resolve, 500))
-                document.getElementById("root").removeChild(w)
-            }
-            await axios.post(`${apiURL}/home/post/userDeposit`,{value:Number(input.value.replaceAll(".", "").replaceAll(",", ".").replaceAll("R$ ", ""))})
-                .then(async r => {
-                    showWindow("Seu depósito está em andamento")
-                })
-                .catch(async r => {showWindow("Algo deu errado!");console.log(r.response)})
+            let w = window("Seu depósito está em andamento")
+            document.getElementById("root").appendChild(w)
+            await new Promise(resolve => setTimeout(resolve, 100))
+            w.style.opacity = 1
+            await new Promise(resolve => setTimeout(resolve, 5000))
+            w.style.opacity = 0
+            await new Promise(resolve => setTimeout(resolve, 500))
+            document.getElementById("root").removeChild(w)
 
             let depositWindow = e.target.parentElement.parentElement
             depositWindow.style.transform = "scale(0)"
