@@ -25,7 +25,7 @@ export default function tasks(data){
         for(let j = 0; j < ms.length; j++){
             let m = ms[j]
             if(m.status == 0){
-                tasks.appendChild(task(`${m.type} de ${m.value} para ${m.type == "Depósito" ? d.name : d.pix}`, m.id))
+                tasks.appendChild(task(`${m.id} - ${m.type} de ${m.value} para ${m.type == "Depósito" ? d.name : d.pix}`, m.id))
             }
         }
     }
