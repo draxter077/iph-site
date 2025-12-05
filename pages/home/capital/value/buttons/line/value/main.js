@@ -41,8 +41,8 @@ export default function value(){
     value.addEventListener(
         "keypress",
         async function a(e){
-            value.disabled = true
             if(e.key == "Enter"){
+                value.disabled = true
                 value.removeEventListener("blur", blur)
                 if(e.target.parentElement.children[0].innerHTML.split(" ")[1] == "depósito"){
                     e.target.parentElement.children[0].innerHTML = "Depósito em andamento"
@@ -64,7 +64,6 @@ export default function value(){
                 }
                 value.removeEventListener("keypress", a)
             }
-            value.disabled = false
         }
     )
     return(value)
